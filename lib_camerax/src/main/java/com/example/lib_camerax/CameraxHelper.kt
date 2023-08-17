@@ -33,7 +33,7 @@ object CameraxHelper {
 
     private val imageCapture by lazy {
         ImageCapture.Builder()
-            .setTargetRotation(previewView!!.display.rotation)
+//            .setTargetRotation(previewView!!.display.rotation)
             .build()
     }
 
@@ -61,15 +61,6 @@ object CameraxHelper {
             }
         ).build()
     }
-    val cacheFile by lazy {
-        File(context?.cacheDir, "${System.currentTimeMillis()}.jpg")
-    }
-
-    private val cacheOption by lazy {
-        ImageCapture.OutputFileOptions.Builder(
-            cacheFile
-        ).build()
-    }
 
 
     private var context: Context? = null
@@ -87,13 +78,13 @@ object CameraxHelper {
         this.previewView = previewView
         startCamera()
 
-        val orientationEventListener = object : OrientationEventListener(context) {
-            override fun onOrientationChanged(orientation: Int) {
-                val rotation = previewView.display.rotation
-                imageCapture.targetRotation = rotation // 更新目标旋转
-            }
-        }
-        orientationEventListener.enable()
+//        val orientationEventListener = object : OrientationEventListener(context) {
+//            override fun onOrientationChanged(orientation: Int) {
+//                val rotation = previewView.display.rotation
+//                imageCapture.targetRotation = rotation // 更新目标旋转
+//            }
+//        }
+//        orientationEventListener.enable()
 
     }
 
@@ -157,14 +148,23 @@ object CameraxHelper {
 
     /**
      * 拍照
-     *
+     *@param isSave 是否保存到相册?
      * @return
      * @author zhangxuyang
      * @create 2023/8/12
      **/
-
     fun takePhoto(isSave: Boolean = false) {
         if (!isSave) {
+            val cacheFile =
+                File(context?.cacheDir, "${System.currentTimeMillis()}.jpg")
+
+
+            val cacheOption =
+                ImageCapture.OutputFileOptions.Builder(
+                    cacheFile
+                ).build()
+
+
             imageCapture.takePicture(
                 cacheOption,
                 ContextCompat.getMainExecutor(context!!),
