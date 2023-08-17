@@ -13,7 +13,7 @@ android {
         // ...
     }
 
-    namespace 'com.example.lib_camerax'
+    namespace 'com.onBit.lib_camerax'
     compileSdk 33
 
     buildFeatures {

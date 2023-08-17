@@ -1,4 +1,4 @@
-package com.example.lib_camerax
+package com.onBit.lib_camerax
 
 import android.annotation.SuppressLint
 import android.content.ContentValues

@@ -1,4 +1,4 @@
-package com.example.lib_base
+package com.onBit.lib_base
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.lib_base.test", appContext.packageName)
+        assertEquals("com.onBit.lib_base.test", appContext.packageName)
     }
 }

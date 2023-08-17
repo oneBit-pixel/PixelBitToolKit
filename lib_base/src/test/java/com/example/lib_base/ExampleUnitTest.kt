@@ -1,4 +1,4 @@
-package com.example.lib_base
+package com.onBit.lib_base
 
 import org.junit.Test
 

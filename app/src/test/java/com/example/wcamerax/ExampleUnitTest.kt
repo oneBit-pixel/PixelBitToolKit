@@ -1,4 +1,4 @@
-package com.example.wcamerax
+package com.onBit.pixelDemo
 
 import org.junit.Test
 

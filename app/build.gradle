@@ -4,11 +4,15 @@ plugins {
 }
 
 android {
-    namespace 'com.example.wcamerax'
+    namespace 'com.onBit.PixelBitToolKit'
     compileSdk 33
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
-        applicationId "com.example.wcamerax"
+        applicationId "com.onBit.PixelBitToolKit"
         minSdk 21
         targetSdk 33
         versionCode 1
@@ -39,6 +43,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation project(path: ':lib_camerax')
+    implementation project(path: ':lib_base')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

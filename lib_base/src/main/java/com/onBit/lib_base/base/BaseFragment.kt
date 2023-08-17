@@ -1,4 +1,4 @@
-package com.example.lib_base.base
+package com.onBit.lib_base.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

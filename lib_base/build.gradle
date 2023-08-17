@@ -19,7 +19,7 @@ android {
         viewBinding = true
         dataBinding = true
     }
-    namespace 'com.example.lib_base'
+    namespace 'com.onBit.lib_base'
     compileSdk 33
 
     defaultConfig {

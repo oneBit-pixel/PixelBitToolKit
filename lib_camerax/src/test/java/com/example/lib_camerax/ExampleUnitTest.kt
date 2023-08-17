@@ -1,4 +1,4 @@
-package com.example.lib_camerax
+package com.onBit.lib_camerax
 
 import org.junit.Test
 
