@@ -6,10 +6,10 @@
 
     <TextView
         android:id="@+id/diloag_tv"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@color/black"
-        android:text="这是一个dialog"
+        android:text="666"
         android:textSize="50sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

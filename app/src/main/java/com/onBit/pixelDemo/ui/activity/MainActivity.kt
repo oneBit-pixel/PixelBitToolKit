@@ -6,15 +6,17 @@ import android.view.LayoutInflater
 import com.onBit.PixelBitToolKit.R
 import com.onBit.PixelBitToolKit.databinding.ActivityMainBinding
 import com.onBit.lib_base.base.BaseActivity
+import com.onBit.pixelDemo.ui.dialog.DialogDemo
 import com.onBit.pixelDemo.ui.dialog.Mdialog
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding
         get() = ActivityMainBinding::inflate
 
-    private val  dialog by lazy {
-        Mdialog(this)
+    private val dialog by lazy {
+        DialogDemo(this)
     }
+
 
     override fun initListener() {
         super.initListener()
