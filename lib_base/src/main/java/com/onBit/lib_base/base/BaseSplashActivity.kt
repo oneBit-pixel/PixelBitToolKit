@@ -18,7 +18,7 @@ import java.util.TimerTask
  **/
 
 abstract class BaseSplashActivity<VB : ViewBinding> : BaseActivity<VB>() {
-    val totalTime = 4000.0
+    var totalTime: Float = 4000.0f
     val intervalsTime = 100L
     var currentTime = 10
 
@@ -44,6 +44,10 @@ abstract class BaseSplashActivity<VB : ViewBinding> : BaseActivity<VB>() {
             timer.cancel()
             onFinishTime()
         }, totalTime.toLong())
+    }
+
+    fun setTotalTime(time: Float) {
+        totalTime = time
     }
 
     abstract fun onFinishTime()
