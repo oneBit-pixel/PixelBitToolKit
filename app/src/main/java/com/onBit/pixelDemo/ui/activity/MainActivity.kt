@@ -1,13 +1,9 @@
 package com.onBit.pixelDemo.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.view.LayoutInflater
-import com.onBit.PixelBitToolKit.R
 import com.onBit.PixelBitToolKit.databinding.ActivityMainBinding
 import com.onBit.lib_base.base.BaseActivity
 import com.onBit.pixelDemo.ui.dialog.DialogDemo
-import com.onBit.pixelDemo.ui.dialog.Mdialog
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding
