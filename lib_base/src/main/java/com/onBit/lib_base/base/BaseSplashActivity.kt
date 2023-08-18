@@ -2,7 +2,6 @@ package com.onBit.lib_base.base
 
 import android.os.Handler
 import android.os.Looper
-import android.view.LayoutInflater
 import androidx.viewbinding.ViewBinding
 import java.lang.Integer.min
 import java.util.Timer
@@ -19,6 +18,9 @@ import java.util.TimerTask
 
 abstract class BaseSplashActivity<VB : ViewBinding> : BaseActivity<VB>() {
     var totalTime: Float = 4000.0f
+        set(time) {
+            field = time
+        }
     val intervalsTime = 100L
     var currentTime = 10
 
@@ -46,9 +48,7 @@ abstract class BaseSplashActivity<VB : ViewBinding> : BaseActivity<VB>() {
         }, totalTime.toLong())
     }
 
-    fun setTotalTime(time: Float) {
-        totalTime = time
-    }
+
 
     abstract fun onFinishTime()
 

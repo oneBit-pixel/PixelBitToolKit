@@ -50,7 +50,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.zxy.lib_base1' //groupId 随便取
-                artifactId = 'lib-base2'  //artifactId 随便取
+                artifactId = 'lib-base'  //artifactId 随便取
 //                version = '1.0.8'
             }
         }
