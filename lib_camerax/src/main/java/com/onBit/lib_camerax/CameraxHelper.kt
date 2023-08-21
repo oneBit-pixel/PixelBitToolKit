@@ -12,6 +12,8 @@ import android.view.OrientationEventListener
 import android.view.ScaleGestureDetector
 import androidx.camera.core.Camera
 import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageAnalysis
+import androidx.camera.core.ImageAnalysis.Analyzer
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
@@ -21,6 +23,8 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.blankj.utilcode.util.LogUtils
 import java.io.File
+import java.util.concurrent.Executor
+import java.util.concurrent.Executors
 
 @SuppressLint("StaticFieldLeak")
 object CameraxHelper {
@@ -34,6 +38,11 @@ object CameraxHelper {
     private val imageCapture by lazy {
         ImageCapture.Builder()
 //            .setTargetRotation(previewView!!.display.rotation)
+            .build()
+    }
+
+    private val imageAnalysis by lazy {
+        ImageAnalysis.Builder()
             .build()
     }
 
@@ -123,10 +132,26 @@ object CameraxHelper {
             context as LifecycleOwner,
             cameraSelector,
             preview,
-            imageCapture
+            imageCapture,
+            imageAnalysis
         )
+
     }
 
+
+    fun getAnalysis(): ImageAnalysis {
+        return imageAnalysis
+    }
+
+    fun setAnalysis() {
+        imageAnalysis.setAnalyzer(
+            Executors.newSingleThreadExecutor(), Analyzer { image ->
+
+
+                image.close()
+            }
+        )
+    }
 
     //切换镜头
     fun toggleCamera() {

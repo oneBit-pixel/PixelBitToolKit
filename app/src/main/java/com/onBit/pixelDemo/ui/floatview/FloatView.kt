@@ -3,7 +3,6 @@ package com.onBit.pixelDemo.ui.floatview
 import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
-import androidx.viewbinding.ViewBinding
 import com.onBit.PixelBitToolKit.databinding.LayoutViewgroupBinding
 import com.xuexiang.xfloatview.XFloatView
 
