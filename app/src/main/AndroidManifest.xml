@@ -16,13 +16,18 @@
         android:theme="@style/Theme.Wcamerax"
         tools:targetApi="31">
         <activity
-            android:name="com.onBit.pixelDemo.ui.activity.MainActivity"
-            android:exported="true">
+            android:name="com.onBit.pixelDemo.ui.activity.PickerActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.onBit.pixelDemo.ui.activity.MainActivity"
+            android:exported="true">
+
         </activity>
     </application>
 
