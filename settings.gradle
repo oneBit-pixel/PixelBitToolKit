@@ -18,5 +18,4 @@ rootProject.name = "Wcamerax"
 include ':app'
 include ':lib_camerax'
 include ':lib_base'
-include ':lib_shapeview'
 include ':lib_floatview'

@@ -18,17 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.hjq.shape.view.ShapeTextView
-        android:id="@+id/shape_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/dp_10"
-        android:text="asdfasdf"
-        app:layout_constraintBottom_toTopOf="@+id/dialog_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:shape_radius="@dimen/dp_20"
-        app:shape_solidColor="@color/black" />
+
 
     <FrameLayout
         android:id="@+id/container"

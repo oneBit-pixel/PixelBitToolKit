@@ -16,13 +16,10 @@ import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
 import android.widget.FrameLayout.LayoutParams
-import com.hjq.shape.builder.ShapeDrawableBuilder
 import com.onBit.PixelBitToolKit.databinding.ActivityMainBinding
-import com.onBit.PixelBitToolKit.databinding.LayoutViewgroupBinding
 import com.onBit.lib_base.base.BaseActivity
 import com.onBit.pixelDemo.ui.dialog.DialogDemo
 import com.onBit.pixelDemo.ui.viewGroup.TestFrameLayout
-import com.tbruyelle.rxpermissions3.RxPermissions
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding
