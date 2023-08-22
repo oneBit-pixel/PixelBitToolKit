@@ -7,7 +7,9 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.media.ExifInterface
+import android.media.Image
 import android.provider.MediaStore
+import android.util.Size
 import android.view.OrientationEventListener
 import android.view.ScaleGestureDetector
 import androidx.camera.core.Camera
@@ -43,7 +45,13 @@ object CameraxHelper {
 
     private val imageAnalysis by lazy {
         ImageAnalysis.Builder()
+            .setTargetResolution(Size(1280,720))
+            .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
             .build()
+    }
+
+    fun getCamera(): Camera? {
+        return mCamera
     }
 
     private var isFlash: Boolean = false
@@ -143,13 +151,9 @@ object CameraxHelper {
         return imageAnalysis
     }
 
-    fun setAnalysis() {
+    fun setAnalysis(listener: Analyzer) {
         imageAnalysis.setAnalyzer(
-            Executors.newSingleThreadExecutor(), Analyzer { image ->
-
-
-                image.close()
-            }
+            Executors.newSingleThreadExecutor(), listener
         )
     }
 

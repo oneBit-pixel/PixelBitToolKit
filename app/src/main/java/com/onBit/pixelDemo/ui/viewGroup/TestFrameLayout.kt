@@ -1,7 +1,9 @@
 package com.onBit.pixelDemo.ui.viewGroup
 
 import android.annotation.SuppressLint
+import android.content.ClipData
 import android.content.Context
+import android.os.Build
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.KeyEvent
@@ -63,7 +65,7 @@ class TestFrameLayout constructor(
 
         binding = LayoutViewgroupBinding.inflate(LayoutInflater.from(context), this, true)
 
-//        setOnTouchListener { v, event ->
+//        this.setOnTouchListener { v, event ->
 //            val edgeWidth = 20 // 边缘宽度，例如20像素
 //            when (event.action) {
 //                MotionEvent.ACTION_DOWN -> {
