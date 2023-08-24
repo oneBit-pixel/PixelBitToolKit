@@ -1,5 +1,7 @@
 package com.onBit.pixelDemo.ui.activity
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,7 +18,7 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityViewBinding
         get() = ActivityViewBinding::inflate
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("ClickableViewAccessibility", "Recycle")
     override fun initView() {
         super.initView()
 
@@ -33,7 +35,11 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
 
 
             textView.setOnClickListener {
+                val animator = ObjectAnimator.ofFloat(textView, "translationX", 0f, 100f)
+                val valueAnimator = ValueAnimator()
+                val objectAnimator = ObjectAnimator().animatedValue
 
+                textView.animate().start()
                 LogUtils.d("点击事件..")
             }
 

@@ -42,7 +42,8 @@
 
         <activity
             android:name="com.onBit.pixelDemo.ui.activity.ViewActivity"
-            android:exported="true">
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
