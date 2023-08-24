@@ -3,8 +3,10 @@ package com.onBit.pixelDemo.ui.activity
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -23,36 +25,29 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
         super.initView()
 
         mBinding.apply {
-
-            textView.setOnTouchListener(object : View.OnTouchListener {
-                override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-                    LogUtils.d("2134")
-                    onTouchEvent(event)
-
-                    return false
-                }
-            })
+//            container.layoutAnimation.start()
+            test1.setOnClickListener {
+                startActivity(
+                    Intent(this@ViewActivity, MainActivity::class.java)
+                )
+            }
 
 
             textView.setOnClickListener {
-                val animator = ObjectAnimator.ofFloat(textView, "translationX", 0f, 100f)
-                val valueAnimator = ValueAnimator()
-                val objectAnimator = ObjectAnimator().animatedValue
+                val dpp100 = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP, 100f, resources.displayMetrics
+                )
+                test1.animate()
+                    .x(test1.x+dpp100)
+                    .setDuration(3000L)
+                    .start()
 
-                textView.animate().start()
-                LogUtils.d("点击事件..")
-            }
-
-            test1.setOnTouchListener { v, event ->
-
-                textView.dispatchTouchEvent(event)
-              true
+                test1.clearAnimation()
             }
         }
 
 
     }
-
 
 
 }

@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.onBitPixel" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->\
+    <style name="Theme.oneBitPixel" parent="Theme.AppCompat.Light.NoActionBar">
+
 
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
         <!--设置导航栏 如果是透明色 为colorBackground 默认颜色 白色-->
-        <item name="android:navigationBarColor">#FFFFFF</item>
+        <item name="android:navigationBarColor">#FFFF</item>
         <!--这个是半透明 会有一层遮罩效果-->
         <item name="android:windowTranslucentNavigation">true</item>
         <!--整个window的背景 可以设置图片 或者颜色-->
         <item name="android:windowBackground">#FFFFFF</item>
 
-        <!--        <item name="windowNoTitle">true</item>-->
-        <!--是否为全屏 隐藏状态栏-->
-        <!--        <item name="android:windowFullscreen">true</item>-->
-
 
         <!--导航栏与内容的分割线颜色-->
         <!--        <item name="android:navigationBarDividerColor" tools:targetApi="o_mr1">@color/red</item>-->
-        <!--所有背景颜色 默认为白色-->
-        <!--        <item name="android:colorBackground">@color/black</item>-->
+
+    </style>
+
+    <style name="Theme.oneBitPixel.FullScreen" parent="Theme.oneBitPixel">
+        <!--是否为全屏 隐藏状态栏 因此顶部-->
+        <item name="android:windowFullscreen">true</item>
     </style>
 </resources>

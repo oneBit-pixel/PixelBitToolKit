@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Wcamerax"
+        android:theme="@style/Theme.oneBitPixel.FullScreen"
         tools:targetApi="31">
         <activity
             android:name="com.onBit.pixelDemo.ui.activity.CameraActivity"

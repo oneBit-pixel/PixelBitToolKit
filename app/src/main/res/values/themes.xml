@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
 
 
-    <style name="Theme.Wcamerax" parent="Theme.onBitPixel" >
+    <style name="Theme.Wcamerax" parent="Theme.oneBitPixel" >
 
     </style>
 </resources>
