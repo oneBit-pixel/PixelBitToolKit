@@ -2,15 +2,19 @@ package com.onBit.lib_base.base
 
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.palette.graphics.Palette
 import androidx.viewbinding.ViewBinding
 import com.blankj.utilcode.util.LogUtils
+import com.google.android.material.color.utilities.CorePalette
 
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
@@ -86,8 +90,21 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
             View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
                     View.SYSTEM_UI_FLAG_LAYOUT_STABLE
         }
-
-        setStatusLight((mBinding.root.background as ColorDrawable).color)
+        val background = mBinding.root.background
+        if (background is ColorDrawable) {
+            setStatusLight(
+                background.color
+            )
+        } else if (background is BitmapDrawable) {
+            val bitmap = background.bitmap
+            Palette.from(bitmap)
+                .setRegion(0, 0, bitmap.width, 100)
+                .generate { palette ->
+                    palette?.dominantSwatch?.rgb?.also { color ->
+                        setStatusLight(color)
+                    }
+                }
+        }
     }
 
     protected open fun setStatusLight(color: Int) {
