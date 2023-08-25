@@ -3,6 +3,11 @@
 
 
     <style name="Theme.Wcamerax" parent="Theme.oneBitPixel" >
+<!--        <item name="android:activityOpenEnterAnimation"> @anim/enter_animation</item>-->
+<!--        <item name="android:activityOpenExitAnimation">  @anim/exit_animation</item>-->
+
 
     </style>
+
+
 </resources>

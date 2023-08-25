@@ -3,25 +3,38 @@
 
     <style name="Theme.oneBitPixel" parent="Theme.AppCompat.Light.NoActionBar">
 
-
+        <!--保证控件再指定位置-->
+        <item name="android:fitsSystemWindows">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
-        <!--设置导航栏 如果是透明色 为colorBackground 默认颜色 白色-->
-        <item name="android:navigationBarColor">#FFFF</item>
-        <!--这个是半透明 会有一层遮罩效果-->
+        <!--顶部和底部 是否半透明透明效果-->
         <item name="android:windowTranslucentNavigation">true</item>
-        <!--整个window的背景 可以设置图片 或者颜色-->
-        <item name="android:windowBackground">#FFFFFF</item>
 
+        <!--设置导航栏 如果是透明色 为colorBackground 默认颜色 白色-->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!--整个window的背景 可以设置图片 或者颜色-->
+        <item name="android:windowBackground">#F7F7F7</item>
+
+        <!--切换activity动画-->
+        <item name="android:windowAnimationStyle">@style/MyWindowAnimation</item>
 
         <!--导航栏与内容的分割线颜色-->
         <!--        <item name="android:navigationBarDividerColor" tools:targetApi="o_mr1">@color/red</item>-->
 
     </style>
 
+    <style name="MyWindowAnimation" parent="android:Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/enter_animation</item>
+        <item name="android:activityOpenExitAnimation">@anim/exit_animation</item>
+        <item name="android:activityCloseEnterAnimation">@anim/close_enter_animation </item>
+        <item name="android:activityCloseExitAnimation"> @anim/close_exit_animation   </item>
+
+    </style>
+
     <style name="Theme.oneBitPixel.FullScreen" parent="Theme.oneBitPixel">
         <!--是否为全屏 隐藏状态栏 因此顶部-->
         <item name="android:windowFullscreen">true</item>
+
     </style>
 </resources>

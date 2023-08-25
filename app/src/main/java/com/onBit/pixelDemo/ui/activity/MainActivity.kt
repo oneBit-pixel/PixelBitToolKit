@@ -7,9 +7,11 @@ import android.graphics.Color
 import android.graphics.PixelFormat
 import android.os.Build
 import android.provider.Settings
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
 import com.onBit.PixelBitToolKit.databinding.ActivityMainBinding
 import com.onBit.lib_base.base.BaseActivity
@@ -25,6 +27,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
     private var windowManager: WindowManager? = null
     private var floatingView: View? = null
+
+
+    private val dp100 by lazy {
+        TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP, 100f, resources.displayMetrics
+        ).toInt()
+    }
 
     override fun initView() {
         super.initView()
@@ -51,7 +60,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         mBinding.apply {
             dialogBtn.setOnClickListener {
-                setFloatView()
+                finish()
             }
         }
 
