@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <!--悬浮窗权限-->
+    <!-- 悬浮窗权限 -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
-
-    <!--相机权限-->
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" /> <!-- 相机权限 -->
     <uses-permission android:name="android.permission.CAMERA" />
+
+
+    <!--android13以上 相册权限-->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <!--android13以下 相册权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+
+
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -22,33 +32,39 @@
         android:theme="@style/Theme.oneBitPixel"
         tools:targetApi="31">
         <activity
-            android:name="com.onBit.pixelDemo.ui.activity.CameraActivity"
+            android:name="com.onBit.pixelDemo.ui.activity.MediaActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
+            android:name="com.onBit.pixelDemo.ui.activity.CameraActivity"
+            android:exported="true"></activity>
+        <activity
             android:name="com.onBit.pixelDemo.ui.activity.PickerActivity"
+            android:exported="true">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name="com.onBit.pixelDemo.ui.activity.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.onBit.pixelDemo.ui.activity.ViewActivity"
             android:exported="true">
             <!--            <intent-filter>-->
             <!--                <action android:name="android.intent.action.MAIN" />-->
 
             <!--                <category android:name="android.intent.category.LAUNCHER" />-->
             <!--            </intent-filter>-->
-        </activity>
-        <activity
-            android:name="com.onBit.pixelDemo.ui.activity.MainActivity"
-            android:exported="true" />
-
-
-        <activity
-            android:name="com.onBit.pixelDemo.ui.activity.ViewActivity"
-            android:exported="true"
-            >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

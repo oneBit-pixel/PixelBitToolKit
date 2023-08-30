@@ -37,10 +37,14 @@ android {
 }
 
 dependencies {
-
+    dependencies {
+        // 权限请求框架：https://github.com/getActivity/XXPermissions
+        implementation 'com.github.getActivity:XXPermissions:18.3'
+    }
     //选择器
     implementation 'io.github.ShawnLin013:number-picker:2.4.13'
     implementation project(path: ':lib_floatview')
+    implementation project(path: ':lib_media')
 
     //权限框架 https://github.com/tbruyelle/RxPermissions
     dependencies {

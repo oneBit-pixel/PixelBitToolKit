@@ -14,7 +14,7 @@
         <!--设置导航栏 如果是透明色 为colorBackground 默认颜色 白色-->
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <!--整个window的背景 可以设置图片 或者颜色-->
-        <item name="android:windowBackground">#F7F7F7</item>
+        <item name="android:windowBackground">@color/F7F7F7</item>
 
         <!--切换activity动画-->
         <item name="android:windowAnimationStyle">@style/MyWindowAnimation</item>
@@ -37,4 +37,6 @@
         <item name="android:windowFullscreen">true</item>
 
     </style>
+
+    <color name="F7F7F7">#F7F7F7</color>
 </resources>

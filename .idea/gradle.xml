@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/lib_base" />
             <option value="$PROJECT_DIR$/lib_camerax" />
             <option value="$PROJECT_DIR$/lib_floatview" />
+            <option value="$PROJECT_DIR$/lib_media" />
           </set>
         </option>
       </GradleProjectSettings>
