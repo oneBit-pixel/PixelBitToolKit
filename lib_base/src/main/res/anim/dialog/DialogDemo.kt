@@ -1,10 +1,9 @@
 package com.onBit.pixelDemo.ui.dialog
 
 import android.content.Context
-import android.view.Gravity
 import android.view.LayoutInflater
 import com.onBit.PixelBitToolKit.databinding.DialogTestBinding
-import com.onBit.lib_base.base.BaseDialog
+import com.onBit.lib_base.base.dialog.BaseDialog
 
 class DialogDemo(context: Context) : BaseDialog<DialogTestBinding>(context) {
     override val bindingInflater: (LayoutInflater) -> DialogTestBinding = DialogTestBinding::inflate

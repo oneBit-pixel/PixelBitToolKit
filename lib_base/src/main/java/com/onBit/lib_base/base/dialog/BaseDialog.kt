@@ -1,12 +1,12 @@
-package com.onBit.lib_base.base
+package com.onBit.lib_base.base.dialog
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
+import com.onBit.lib_base.base.dialog.dao.DialogDao
 
 /**
  * 快速自定义dialog 基类
@@ -19,14 +19,13 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseDialog<VB : ViewBinding>(
     private val context: Context
-) : DefaultLifecycleObserver {
+) : DefaultLifecycleObserver, DialogDao {
 
     abstract val bindingInflater: (LayoutInflater) -> VB
 
     protected open val mBinding by lazy {
         bindingInflater.invoke(LayoutInflater.from(context))
     }
-
 
 
     protected open val dialog by lazy {
@@ -42,35 +41,13 @@ abstract class BaseDialog<VB : ViewBinding>(
         }
     }
 
-    fun showDialog() {
+    override fun showDialog() {
         dialog.apply {
             setCancelable(true)
             setCanceledOnTouchOutside(true)
             show()
 
-            window?.apply {
-                mBinding.root.measure(
-                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
-                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
-                )
-
-                val measuredWidth = mBinding.root.measuredWidth
-
-                attributes?.apply {
-                    attributes?.apply {
-                        width = measuredWidth
-                    }.also {
-                        attributes = it
-                    }
-
-                }
-
-                //取消默认背景
-                setBackgroundDrawable(null)
-            }
-
-
-
+            window?.setBackgroundDrawable(null)
 
 
             setOnCancelListener {
@@ -78,23 +55,12 @@ abstract class BaseDialog<VB : ViewBinding>(
             }
         }
 
-
-
         initView()
         initListener()
     }
 
-    fun dismissDialog() {
+    override fun dismissDialog() {
         dialog.dismiss()
-    }
-
-    protected open fun initView() {
-
-    }
-
-
-    protected open fun initListener() {
-
     }
 
     override fun onDestroy(owner: LifecycleOwner) {

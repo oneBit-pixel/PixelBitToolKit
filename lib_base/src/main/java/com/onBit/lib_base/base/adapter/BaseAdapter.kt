@@ -1,21 +1,23 @@
-package com.onBit.lib_base.base
+package com.onBit.lib_base.base.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
+import com.onBit.lib_base.base.adapter.dao.AdapterDao
 
 abstract class BaseAdapter<T, VB : ViewBinding>(
-    var items: MutableList<T>,
-    private val inflater: (LayoutInflater, ViewGroup?, Boolean) -> VB,
-//    private val binder: (VB, T, Int) -> Unit
-) : RecyclerView.Adapter<BaseAdapter.ViewHolder<VB>>() {
+) : RecyclerView.Adapter<BaseAdapter.ViewHolder<VB>>(), AdapterDao<T> {
+
+    protected abstract val bindingInflater: (LayoutInflater) -> VB
+
 
     open var listener: OnItemClickListener? = null
 
+    private val items = mutableListOf<T>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<VB> {
-        val binding = inflater.invoke(LayoutInflater.from(parent.context), parent, false)
+        val binding = bindingInflater.invoke(LayoutInflater.from(parent.context))
         return ViewHolder(binding)
     }
 
@@ -41,5 +43,11 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
 
     open fun onItemClicked(position: Int) {
         listener?.onItemClicked(position)
+    }
+
+    override fun setList(list: List<T>) {
+        this.items.clear()
+        this.items.addAll(list)
+        notifyDataSetChanged()
     }
 }
