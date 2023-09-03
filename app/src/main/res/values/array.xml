@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="strings">
+        <item>这是1</item>
+        <item>这是2</item>
+        <item>这是3</item>
+        <item>这是4</item>
+    </string-array>
+
+</resources>

@@ -1,14 +1,16 @@
 package com.onBit.lib_base.base
 
 import android.view.LayoutInflater
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseViewModelActivity<VB : ViewBinding,VM:ViewModel>(
-    binding: (LayoutInflater) -> VB,
-    viewModel:Class<VM>
-) : BaseActivity<VB>() {
+abstract class BaseViewModelActivity<VB : ViewBinding, VM : ViewModel>:
+    BaseActivity<VB>() {
+
+    abstract val viewModel: Class<VM>
+
 
     protected val mViewModel by lazy {
         ViewModelProvider(this)[viewModel]

@@ -8,7 +8,9 @@
     android:layout_marginTop="@dimen/dp_10"
     app:shape_radius="@dimen/dp_20"
     app:shape_solidColor="@color/red"
-    >
+    tools:ignore="MissingClass">
+
+
 
     <ImageView
         android:id="@+id/imageView"

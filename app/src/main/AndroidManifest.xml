@@ -25,8 +25,8 @@
         android:theme="@style/Theme.oneBitPixel"
         tools:targetApi="31">
         <activity
-            android:name="com.onBit.pixelDemo.ui.activity.RecyclewActivity"
-            android:exported="true" >
+            android:name="com.onBit.pixelDemo.ui.activity.RoomActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,8 +34,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.onBit.pixelDemo.ui.activity.MediaActivity"
+            android:name="com.onBit.pixelDemo.ui.activity.RecyclewActivity"
             android:exported="true"></activity>
+        <activity
+            android:name="com.onBit.pixelDemo.ui.activity.MediaActivity"
+            android:exported="true" />
         <activity
             android:name="com.onBit.pixelDemo.ui.activity.CameraActivity"
             android:exported="true" />
@@ -56,7 +59,11 @@
         <activity
             android:name="com.onBit.pixelDemo.ui.activity.ViewActivity"
             android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 

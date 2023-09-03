@@ -14,7 +14,6 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
 
     private val adapter by lazy {
         TestAdapter().apply {
-            setList(list)
         }
     }
 
@@ -24,7 +23,7 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
             recyclerview.adapter = adapter
 
             button2.setOnClickListener {
-                adapter.setList(list.reversed())
+//                adapter.setList(list.reversed())
             }
         }
 
