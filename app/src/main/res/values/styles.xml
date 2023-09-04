@@ -7,4 +7,19 @@
         <item name="android:windowExitAnimation">@anim/exit_animation</item>
     </style>
 
+
+    <!-- 其他样式... -->
+
+    <style name="TextAppearance.BottomNavigationView" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <!-- 你可以添加其他的文本属性，如字体、颜色等 -->
+        <item name="android:textColor">#3A3A3A</item>
+    </style>
+
+    <style name="TextAppearance.BottomNavigationView.normal" parent="TextAppearance.AppCompat.Body1">
+        <!-- 你可以添加其他的文本属性，如字体、颜色等 -->
+        <item name="android:textColor">#DEDEDE</item>
+    </style>
+
+
 </resources>

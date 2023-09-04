@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        app:showAsAction="ifRoom"
+        android:checked="true"
+        android:enabled="true"
+        android:icon="@android:drawable/stat_sys_download"
+        android:visible="true"
+        android:title="@string/home"
+        />
+    <item
+        android:id="@+id/hot"
+
+        app:showAsAction="ifRoom"
+        android:iconTint="@null"
+
+        android:icon="@drawable/selector_hot"
+        android:visible="true"
+        android:title="@string/hot" />
+
+
+
+    <item
+        android:id="@+id/fav"
+        app:showAsAction="ifRoom"
+        android:icon="@mipmap/mp_hot_normal"
+        android:visible="true"
+        android:title="@string/favorites"
+        />
+</menu>

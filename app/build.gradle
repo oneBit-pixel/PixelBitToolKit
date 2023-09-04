@@ -38,6 +38,10 @@ android {
 }
 
 dependencies {
+    //lottie 动画插件
+    dependencies {
+        implementation 'com.airbnb.android:lottie:6.1.0'
+    }
     //jetpack room
     dependencies {
         def room_version = "2.5.0"
