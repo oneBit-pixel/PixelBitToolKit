@@ -29,6 +29,19 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(mBinding.root)
 
+        setTheme()
+
+        initView()
+        initListener()
+        initEvent()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setTheme()
+    }
+
+    private fun setTheme() {
         if (isImTheme()) {
             setImTheme()
         }
@@ -36,16 +49,11 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         if (isFullScreen()) {
             setFullScreen()
         }
-
-        initView()
-        initListener()
-        initEvent()
     }
 
     private fun setFullScreen() {
         // 如果你的导航栏颜色为白色，确保导航栏上的图标和文字为深色
         val flag = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
             View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR or
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
                     View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
@@ -85,10 +93,14 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
             View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR or
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
                     View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
-                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or
+                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         } else {
             View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         }
         val background = mBinding.root.background
         if (background is ColorDrawable) {

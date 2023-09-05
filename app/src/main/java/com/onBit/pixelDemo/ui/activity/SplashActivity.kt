@@ -31,11 +31,7 @@ class SplashActivity : BaseSplashActivity<ActivitySplashBinding>() {
                     or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                     )
         }
+        
 
-        mBinding.nav.apply {
-            itemIconTintList = null //去除遮罩层 显示图片
-            itemBackground = null //去除水波效果
-            selectedItemId=R.id.hot
-        }
     }
 }

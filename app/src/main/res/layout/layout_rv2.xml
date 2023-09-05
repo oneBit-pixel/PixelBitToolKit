@@ -3,11 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <com.hjq.shape.view.ShapeTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/shape_tv"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        app:shape_solidColor="@color/black"
         android:layout_marginTop="@dimen/dp_10"
         android:textSize="@dimen/sp_20"
         app:layout_constraintLeft_toLeftOf="parent"

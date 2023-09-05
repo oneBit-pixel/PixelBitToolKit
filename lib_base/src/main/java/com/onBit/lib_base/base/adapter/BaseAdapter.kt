@@ -9,7 +9,7 @@ import com.onBit.lib_base.base.adapter.dao.AdapterDao
 abstract class BaseAdapter<T, VB : ViewBinding>(
 ) : RecyclerView.Adapter<BaseAdapter.ViewHolder<VB>>(), AdapterDao<T> {
 
-    protected abstract val bindingInflater: (LayoutInflater) -> VB
+    protected abstract val bindingInflater: (LayoutInflater, ViewGroup, Boolean) -> VB
 
 
     open var listener: OnItemClickListener? = null
@@ -17,7 +17,8 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
     private val items = mutableListOf<T>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<VB> {
-        val binding = bindingInflater.invoke(LayoutInflater.from(parent.context))
+        val binding = bindingInflater.invoke(LayoutInflater.from(parent.context), parent, false)
+
         return ViewHolder(binding)
     }
 

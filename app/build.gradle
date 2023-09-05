@@ -42,25 +42,7 @@ dependencies {
     dependencies {
         implementation 'com.airbnb.android:lottie:6.1.0'
     }
-    //jetpack room
-    dependencies {
-        def room_version = "2.5.0"
 
-        api "androidx.room:room-runtime:$room_version"
-
-        //java注解
-        annotationProcessor "androidx.room:room-compiler:$room_version"
-
-        //kotlin 注解
-        ksp "androidx.room:room-compiler:$room_version"
-
-        // optional - Test helpers
-        testApi "androidx.room:room-testing:$room_version"
-
-        // optional - Paging 3 Integration
-        //数据分页
-        api "androidx.room:room-paging:$room_version"
-    }
 
     implementation project(path: ':lib_room')
 

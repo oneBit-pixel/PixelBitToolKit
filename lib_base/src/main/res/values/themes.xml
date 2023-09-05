@@ -25,10 +25,10 @@
     </style>
 
     <style name="MyWindowAnimation" parent="android:Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">@anim/enter_animation</item>
-        <item name="android:activityOpenExitAnimation">@anim/exit_animation</item>
-        <item name="android:activityCloseEnterAnimation">@anim/close_enter_animation </item>
-        <item name="android:activityCloseExitAnimation"> @anim/close_exit_animation   </item>
+        <item name="android:activityOpenEnterAnimation">@anim/enter_left_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/close_left_right</item>
+        <item name="android:activityCloseEnterAnimation">@anim/enter_right_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/close_right_left</item>
 
     </style>
 

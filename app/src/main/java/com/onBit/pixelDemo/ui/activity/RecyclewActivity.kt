@@ -1,6 +1,10 @@
 package com.onBit.pixelDemo.ui.activity
 
+import android.content.Intent
 import android.view.LayoutInflater
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
 import com.onBit.lib_base.base.BaseActivity
 import com.onBit.pixelDemo.ui.adapter.TestAdapter
@@ -13,17 +17,18 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
 
 
     private val adapter by lazy {
-        TestAdapter().apply {
-        }
+        TestAdapter()
     }
+
+
 
     override fun initView() {
         super.initView()
         mBinding.apply {
-            recyclerview.adapter = adapter
-
-            button2.setOnClickListener {
-//                adapter.setList(list.reversed())
+            button3.setOnClickListener {
+                startActivity(
+                    Intent(this@RecyclewActivity,MainActivity::class.java)
+                )
             }
         }
 

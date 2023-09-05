@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp_60"
-    android:layout_marginHorizontal="@dimen/dp_20"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
     android:layout_marginTop="@dimen/dp_10"
-    app:shape_radius="@dimen/dp_20"
     app:shape_solidColor="@color/red"
+    app:shape_radius="@dimen/dp_20"
+    android:layout_marginHorizontal="@dimen/dp_20"
     tools:ignore="MissingClass">
-
-
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -32,4 +31,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
 </com.hjq.shape.layout.ShapeConstraintLayout>
