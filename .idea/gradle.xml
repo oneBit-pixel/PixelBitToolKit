@@ -17,6 +17,8 @@
             <option value="$PROJECT_DIR$/lib_floatview" />
             <option value="$PROJECT_DIR$/lib_media" />
             <option value="$PROJECT_DIR$/lib_room" />
+            <option value="$PROJECT_DIR$/lib_view" />
+            <option value="$PROJECT_DIR$/powerspinner" />
           </set>
         </option>
       </GradleProjectSettings>

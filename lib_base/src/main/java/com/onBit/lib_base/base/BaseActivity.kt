@@ -1,6 +1,7 @@
 package com.onBit.lib_base.base
 
 import android.content.res.ColorStateList
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.ColorDrawable
@@ -79,6 +80,18 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
     protected open fun isFullScreen(): Boolean = false
 
 
+    //是否隐藏导航栏
+    protected open fun isHideNavigation(): Boolean = true
+
+    @Suppress("DEPRECATION")
+    private fun setHideNavigation() {
+
+        val currentFlag = window.decorView.systemUiVisibility
+        val newFlags =
+            currentFlag or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        window.decorView.systemUiVisibility = newFlags
+    }
+
     //沉浸式主题
     private fun setImTheme() {
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
@@ -93,15 +106,15 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
             View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR or
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
                     View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
-                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or
-                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
-                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         } else {
             View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
-                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
-                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
         }
+        if (isHideNavigation()) {
+            setHideNavigation()
+        }
+
         val background = mBinding.root.background
         if (background is ColorDrawable) {
             setStatusLight(
@@ -109,14 +122,21 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
             )
         } else if (background is BitmapDrawable) {
             val bitmap = background.bitmap
-            Palette.from(bitmap)
-                .setRegion(0, 0, bitmap.width, 100)
-                .generate { palette ->
-                    palette?.dominantSwatch?.rgb?.also { color ->
-                        setStatusLight(color)
-                    }
-                }
+            setBitmapColor(bitmap)
+            //这里bitmap不能被回收，否则会出错
+//            bitmap.recycle()
         }
+    }
+
+    //从bitmap中提取主色 设置到状态栏上
+    protected open fun setBitmapColor(bitmap: Bitmap) {
+        Palette.from(bitmap)
+            .setRegion(0, 0, bitmap.width, 100)
+            .generate { palette ->
+                palette?.dominantSwatch?.rgb?.also { color ->
+                    setStatusLight(color)
+                }
+            }
     }
 
     protected open fun setStatusLight(color: Int) {

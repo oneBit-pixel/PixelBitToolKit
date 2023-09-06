@@ -4,4 +4,5 @@
         <attr name="android:layout_width" />
         <attr name="android:layout_height" />
     </declare-styleable>
+
 </resources>
