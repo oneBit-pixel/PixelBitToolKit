@@ -34,6 +34,7 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
     abstract fun onBind(binding: VB, item: T, position: Int)
 
 
+
     fun setOnItemClickListener(listener: OnItemClickListener) {
         this.listener = listener
     }

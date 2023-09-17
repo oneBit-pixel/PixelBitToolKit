@@ -40,6 +40,7 @@ android {
 dependencies {
     implementation project(path: ':lib_view')
     implementation project(path: ':powerspinner')
+    implementation project(path: ':study_design')
     //lottie 动画插件
     dependencies {
         implementation 'com.airbnb.android:lottie:6.1.0'

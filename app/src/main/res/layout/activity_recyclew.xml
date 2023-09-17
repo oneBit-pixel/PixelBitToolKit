@@ -7,38 +7,16 @@
     android:background="@color/white"
     tools:context="com.onBit.pixelDemo.ui.activity.RecyclewActivity">
 
-    <com.skydoves.powerspinner.PowerSpinnerView
-        android:id="@+id/spinner"
-        android:layout_width="@dimen/dp_200"
-        android:layout_height="wrap_content"
-        android:background="@color/red"
-        android:gravity="center"
-        app:spinner_preference_name="这是1"
-        android:padding="10dp"
-        android:textColor="@color/black"
-        android:textSize="14.5sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:spinner_arrow_gravity="end"
-        app:spinner_arrow_padding="8dp"
-        app:spinner_arrow_show="true"
-        app:spinner_divider_color="@color/black"
-        app:spinner_divider_show="true"
-        app:spinner_divider_size="0.4dp"
-        app:spinner_item_array="@array/strings"
-        app:spinner_item_height="46dp"
-        app:spinner_popup_animation="dropdown"
-        app:spinner_popup_background="@color/white"
-        app:spinner_popup_elevation="14dp" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
