@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.oneBit.lib_shapeview",
+    "module": "lib-shapeView",
+    "version": "unspecified",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "lib-shapeView-unspecified.aar",
+          "url": "lib-shapeView-unspecified.aar",
+          "size": 61815,
+          "sha512": "8c16a7b442f0c09535907f7c9e7dd8ddc7fd2e74e578d4facb1d583969451ba1551c5c4f1056abae8c9765b78d7f3e774c4a8e37b3a6794d5e0797d44ffb786d",
+          "sha256": "4fb5bc807087c8536101c6410e320f58553d4650a6a5186b8d2daddce5e3bd38",
+          "sha1": "8febff9c4531af5baef18bea3bcaceffa2cc303c",
+          "md5": "b89312bd04cf104b79201ce0f4fbc7f7"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.6.1"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "androidx.constraintlayout",
+          "module": "constraintlayout",
+          "version": {
+            "requires": "2.1.4"
+          }
+        },
+        {
+          "group": "Wcamerax",
+          "module": "lib_shapedrawable",
+          "version": {
+            "requires": "unspecified"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "lib-shapeView-unspecified.aar",
+          "url": "lib-shapeView-unspecified.aar",
+          "size": 61815,
+          "sha512": "8c16a7b442f0c09535907f7c9e7dd8ddc7fd2e74e578d4facb1d583969451ba1551c5c4f1056abae8c9765b78d7f3e774c4a8e37b3a6794d5e0797d44ffb786d",
+          "sha256": "4fb5bc807087c8536101c6410e320f58553d4650a6a5186b8d2daddce5e3bd38",
+          "sha1": "8febff9c4531af5baef18bea3bcaceffa2cc303c",
+          "md5": "b89312bd04cf104b79201ce0f4fbc7f7"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "lib-shapeView-unspecified-sources.jar",
+          "url": "lib-shapeView-unspecified-sources.jar",
+          "size": 39825,
+          "sha512": "bbc215ffe0e6958426531a45eee3f84b185dcf7fa07b1f7216ac62f3d0e9e711197da5e4908b17bd551a69b63620d414fee1a26ea6645598d725da5b407700fa",
+          "sha256": "7ed82fdc3781f2a7f997c569a0cb508a85bd6a5bd97cf07b11a821669f07a43f",
+          "sha1": "ae43ee7e2a63033d82b6b8faae3d5d37ac604b60",
+          "md5": "fa0ed93b3966866823c472e60a01aa54"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "lib-shapeView-unspecified-javadoc.jar",
+          "url": "lib-shapeView-unspecified-javadoc.jar",
+          "size": 648372,
+          "sha512": "23af96891545bd9d443830f71ad64a99cff0ddb0d49944580ceacce6c1ad0209180db6d339c2ae9fa3cc23bf9b9e61fb9a7e95f141c51f1584c6fa9a9a22c643",
+          "sha256": "5a05bfb786eff12036aeb3e152a92a7a20a204a81940856d07f8debb9a64bfd2",
+          "sha1": "0f2cd3933307369d5a2112b1c851e47674617518",
+          "md5": "f1c55b7b3e3b1e3c81996b4c4f7d89dd"
+        }
+      ]
+    }
+  ]
+}

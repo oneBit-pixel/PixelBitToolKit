@@ -1,0 +1,1525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Android Project\PixelBitToolKit\lib_shapeview\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Android Project\PixelBitToolKit\lib_shapeview\src\main\res"><file name="shape_view_placeholder" path="D:\Android Project\PixelBitToolKit\lib_shapeview\src\main\res\drawable\shape_view_placeholder.xml" qualifiers="" type="drawable"/><file path="D:\Android Project\PixelBitToolKit\lib_shapeview\src\main\res\values\attrs.xml" qualifiers=""><attr name="shape_type">
+        
+        <enum name="rectangle" value="0"/>
+        
+        <enum name="oval" value="1"/>
+        
+        <enum name="line" value="2"/>
+        
+        <enum name="ring" value="3"/>
+    </attr><attr format="dimension" name="shape_width"/><attr format="dimension" name="shape_height"/><attr format="dimension" name="shape_radius"/><attr format="dimension" name="shape_radiusInTopLeft"/><attr format="dimension" name="shape_radiusInTopRight"/><attr format="dimension" name="shape_radiusInBottomLeft"/><attr format="dimension" name="shape_radiusInBottomRight"/><attr format="color" name="shape_solidColor"/><attr format="color" name="shape_solidPressedColor"/><attr format="color" name="shape_solidCheckedColor"/><attr format="color" name="shape_solidDisabledColor"/><attr format="color" name="shape_solidFocusedColor"/><attr format="color" name="shape_solidSelectedColor"/><attr format="color" name="shape_solidGradientStartColor"/><attr format="color" name="shape_solidGradientCenterColor"/><attr format="color" name="shape_solidGradientEndColor"/><attr name="shape_solidGradientOrientation">
+        
+        <enum name="leftToRight" value="0"/>
+        
+        <enum name="rightToLeft" value="180"/>
+        
+        <enum name="bottomToTop" value="90"/>
+        
+        <enum name="topToBottom" value="270"/>
+
+        
+        <enum name="topLeftToBottomRight" value="315"/>
+        
+        <enum name="bottomLeftToTopRight" value="45"/>
+        
+        <enum name="topRightToBottomLeft" value="225"/>
+        
+        <enum name="bottomRightToTopLeft" value="135"/>
+    </attr><attr name="shape_solidGradientType">
+        
+        <enum name="linear" value="0"/>
+        
+        <enum name="radial" value="1"/>
+        
+        <enum name="sweep" value="2"/>
+    </attr><attr format="float|fraction" name="shape_solidGradientCenterX"/><attr format="float|fraction" name="shape_solidGradientCenterY"/><attr format="float|fraction|dimension" name="shape_solidGradientRadius"/><attr format="color" name="shape_strokeColor"/><attr format="color" name="shape_strokePressedColor"/><attr format="color" name="shape_strokeCheckedColor"/><attr format="color" name="shape_strokeDisabledColor"/><attr format="color" name="shape_strokeFocusedColor"/><attr format="color" name="shape_strokeSelectedColor"/><attr format="color" name="shape_strokeGradientStartColor"/><attr format="color" name="shape_strokeGradientCenterColor"/><attr format="color" name="shape_strokeGradientColor"/><attr name="shape_strokeGradientOrientation">
+        
+        <enum name="leftToRight" value="0"/>
+        
+        <enum name="rightToLeft" value="180"/>
+        
+        <enum name="bottomToTop" value="90"/>
+        
+        <enum name="topToBottom" value="270"/>
+
+        
+        <enum name="topLeftToBottomRight" value="315"/>
+        
+        <enum name="bottomLeftToTopRight" value="45"/>
+        
+        <enum name="topRightToBottomLeft" value="225"/>
+        
+        <enum name="bottomRightToTopLeft" value="135"/>
+    </attr><attr format="dimension" name="shape_strokeSize"/><attr format="dimension" name="shape_strokeDashSize"/><attr format="dimension" name="shape_strokeDashGap"/><attr format="dimension" name="shape_shadowSize"/><attr format="color" name="shape_shadowColor"/><attr format="dimension" name="shape_shadowOffsetX"/><attr format="dimension" name="shape_shadowOffsetY"/><attr format="dimension" name="shape_ringInnerRadiusSize"/><attr format="float" name="shape_ringInnerRadiusRatio"/><attr format="dimension" name="shape_ringThicknessSize"/><attr format="float" name="shape_ringThicknessRatio"/><attr name="shape_lineGravity">
+        <flag name="top" value="0x30"/>
+        <flag name="bottom" value="0x50"/>
+        <flag name="left" value="0x03"/>
+        <flag name="right" value="0x05"/>
+        <flag name="start" value="0x00800003"/>
+        <flag name="end" value="0x00800005"/>
+        <flag name="center" value="0x11"/>
+    </attr><attr format="color" name="shape_textColor"/><attr format="color" name="shape_textPressedColor"/><attr format="color" name="shape_textCheckedColor"/><attr format="color" name="shape_textDisabledColor"/><attr format="color" name="shape_textFocusedColor"/><attr format="color" name="shape_textSelectedColor"/><attr format="color" name="shape_textStartColor"/><attr format="color" name="shape_textCenterColor"/><attr format="color" name="shape_textEndColor"/><attr name="shape_textGradientOrientation">
+        
+        <enum name="horizontal" value="0"/>
+        
+        <enum name="vertical" value="1"/>
+    </attr><attr format="color" name="shape_textStrokeColor"/><attr format="dimension" name="shape_textStrokeSize"/><attr format="reference" name="shape_buttonDrawable"/><attr format="reference" name="shape_buttonPressedDrawable"/><attr format="reference" name="shape_buttonCheckedDrawable"/><attr format="reference" name="shape_buttonDisabledDrawable"/><attr format="reference" name="shape_buttonFocusedDrawable"/><attr format="reference" name="shape_buttonSelectedDrawable"/><declare-styleable name="ShapeTextView">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+
+        <attr name="shape_textColor"/>
+        <attr name="shape_textPressedColor"/>
+        <attr name="shape_textDisabledColor"/>
+        <attr name="shape_textFocusedColor"/>
+        <attr name="shape_textSelectedColor"/>
+
+        <attr name="shape_textStartColor"/>
+        <attr name="shape_textCenterColor"/>
+        <attr name="shape_textEndColor"/>
+        <attr name="shape_textGradientOrientation"/>
+
+        <attr name="shape_textStrokeColor"/>
+        <attr name="shape_textStrokeSize"/>
+    </declare-styleable><declare-styleable name="ShapeButton">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+
+        <attr name="shape_textColor"/>
+        <attr name="shape_textPressedColor"/>
+        <attr name="shape_textDisabledColor"/>
+        <attr name="shape_textFocusedColor"/>
+        <attr name="shape_textSelectedColor"/>
+
+        <attr name="shape_textStartColor"/>
+        <attr name="shape_textCenterColor"/>
+        <attr name="shape_textEndColor"/>
+        <attr name="shape_textGradientOrientation"/>
+
+        <attr name="shape_textStrokeColor"/>
+        <attr name="shape_textStrokeSize"/>
+    </declare-styleable><declare-styleable name="ShapeRadioButton">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidCheckedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeCheckedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+
+        <attr name="shape_textColor"/>
+        <attr name="shape_textPressedColor"/>
+        <attr name="shape_textCheckedColor"/>
+        <attr name="shape_textDisabledColor"/>
+        <attr name="shape_textFocusedColor"/>
+        <attr name="shape_textSelectedColor"/>
+
+        <attr name="shape_textStartColor"/>
+        <attr name="shape_textCenterColor"/>
+        <attr name="shape_textEndColor"/>
+        <attr name="shape_textGradientOrientation"/>
+
+        <attr name="shape_textStrokeColor"/>
+        <attr name="shape_textStrokeSize"/>
+
+        <attr name="shape_buttonDrawable"/>
+        <attr name="shape_buttonPressedDrawable"/>
+        <attr name="shape_buttonCheckedDrawable"/>
+        <attr name="shape_buttonDisabledDrawable"/>
+        <attr name="shape_buttonFocusedDrawable"/>
+        <attr name="shape_buttonSelectedDrawable"/>
+    </declare-styleable><declare-styleable name="ShapeCheckBox">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidCheckedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeCheckedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+
+        <attr name="shape_textColor"/>
+        <attr name="shape_textPressedColor"/>
+        <attr name="shape_textCheckedColor"/>
+        <attr name="shape_textDisabledColor"/>
+        <attr name="shape_textFocusedColor"/>
+        <attr name="shape_textSelectedColor"/>
+
+        <attr name="shape_textStartColor"/>
+        <attr name="shape_textCenterColor"/>
+        <attr name="shape_textEndColor"/>
+        <attr name="shape_textGradientOrientation"/>
+
+        <attr name="shape_textStrokeColor"/>
+        <attr name="shape_textStrokeSize"/>
+
+        <attr name="shape_buttonDrawable"/>
+        <attr name="shape_buttonPressedDrawable"/>
+        <attr name="shape_buttonCheckedDrawable"/>
+        <attr name="shape_buttonDisabledDrawable"/>
+        <attr name="shape_buttonFocusedDrawable"/>
+        <attr name="shape_buttonSelectedDrawable"/>
+    </declare-styleable><declare-styleable name="ShapeEditText">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+
+        <attr name="shape_textColor"/>
+        <attr name="shape_textPressedColor"/>
+        <attr name="shape_textDisabledColor"/>
+        <attr name="shape_textFocusedColor"/>
+        <attr name="shape_textSelectedColor"/>
+
+        <attr name="shape_textStartColor"/>
+        <attr name="shape_textCenterColor"/>
+        <attr name="shape_textEndColor"/>
+        <attr name="shape_textGradientOrientation"/>
+
+        <attr name="shape_textStrokeColor"/>
+        <attr name="shape_textStrokeSize"/>
+    </declare-styleable><declare-styleable name="ShapeImageView">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeView">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeLinearLayout">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeFrameLayout">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+        
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+        
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeRelativeLayout">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+        
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+        
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeConstraintLayout">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+        
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+        
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeRecyclerView">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+        
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+        
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeRadioGroup">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+        
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+        
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable></file><file path="D:\Android Project\PixelBitToolKit\lib_shapeview\src\main\res\values\style.xml" qualifiers=""><style name="ShapeCheckBoxStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="shape_buttonDrawable">@drawable/shape_view_placeholder</item>
+    </style><style name="ShapeRadioButtonStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="shape_buttonDrawable">@drawable/shape_view_placeholder</item>
+    </style></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="release$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Android Project\PixelBitToolKit\lib_shapeview\src\release\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="release" generated-set="release$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Android Project\PixelBitToolKit\lib_shapeview\src\release\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Android Project\PixelBitToolKit\lib_shapeview\build\generated\res\resValues\release"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Android Project\PixelBitToolKit\lib_shapeview\build\generated\res\resValues\release"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="ShapeCheckBox">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidCheckedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeCheckedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+
+        <attr name="shape_textColor"/>
+        <attr name="shape_textPressedColor"/>
+        <attr name="shape_textCheckedColor"/>
+        <attr name="shape_textDisabledColor"/>
+        <attr name="shape_textFocusedColor"/>
+        <attr name="shape_textSelectedColor"/>
+
+        <attr name="shape_textStartColor"/>
+        <attr name="shape_textCenterColor"/>
+        <attr name="shape_textEndColor"/>
+        <attr name="shape_textGradientOrientation"/>
+
+        <attr name="shape_textStrokeColor"/>
+        <attr name="shape_textStrokeSize"/>
+
+        <attr name="shape_buttonDrawable"/>
+        <attr name="shape_buttonPressedDrawable"/>
+        <attr name="shape_buttonCheckedDrawable"/>
+        <attr name="shape_buttonDisabledDrawable"/>
+        <attr name="shape_buttonFocusedDrawable"/>
+        <attr name="shape_buttonSelectedDrawable"/>
+    </declare-styleable><declare-styleable name="ShapeImageView">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeTextView">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+
+        <attr name="shape_textColor"/>
+        <attr name="shape_textPressedColor"/>
+        <attr name="shape_textDisabledColor"/>
+        <attr name="shape_textFocusedColor"/>
+        <attr name="shape_textSelectedColor"/>
+
+        <attr name="shape_textStartColor"/>
+        <attr name="shape_textCenterColor"/>
+        <attr name="shape_textEndColor"/>
+        <attr name="shape_textGradientOrientation"/>
+
+        <attr name="shape_textStrokeColor"/>
+        <attr name="shape_textStrokeSize"/>
+    </declare-styleable><declare-styleable name="ShapeRadioButton">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidCheckedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeCheckedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+
+        <attr name="shape_textColor"/>
+        <attr name="shape_textPressedColor"/>
+        <attr name="shape_textCheckedColor"/>
+        <attr name="shape_textDisabledColor"/>
+        <attr name="shape_textFocusedColor"/>
+        <attr name="shape_textSelectedColor"/>
+
+        <attr name="shape_textStartColor"/>
+        <attr name="shape_textCenterColor"/>
+        <attr name="shape_textEndColor"/>
+        <attr name="shape_textGradientOrientation"/>
+
+        <attr name="shape_textStrokeColor"/>
+        <attr name="shape_textStrokeSize"/>
+
+        <attr name="shape_buttonDrawable"/>
+        <attr name="shape_buttonPressedDrawable"/>
+        <attr name="shape_buttonCheckedDrawable"/>
+        <attr name="shape_buttonDisabledDrawable"/>
+        <attr name="shape_buttonFocusedDrawable"/>
+        <attr name="shape_buttonSelectedDrawable"/>
+    </declare-styleable><declare-styleable name="ShapeConstraintLayout">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+        
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+        
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeRadioGroup">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+        
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+        
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeLinearLayout">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeRecyclerView">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+        
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+        
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeFrameLayout">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+        
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+        
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeRelativeLayout">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+        
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+        
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeButton">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+
+        <attr name="shape_textColor"/>
+        <attr name="shape_textPressedColor"/>
+        <attr name="shape_textDisabledColor"/>
+        <attr name="shape_textFocusedColor"/>
+        <attr name="shape_textSelectedColor"/>
+
+        <attr name="shape_textStartColor"/>
+        <attr name="shape_textCenterColor"/>
+        <attr name="shape_textEndColor"/>
+        <attr name="shape_textGradientOrientation"/>
+
+        <attr name="shape_textStrokeColor"/>
+        <attr name="shape_textStrokeSize"/>
+    </declare-styleable><declare-styleable name="ShapeView">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+    </declare-styleable><declare-styleable name="ShapeEditText">
+        <attr name="shape_type"/>
+        <attr name="shape_width"/>
+        <attr name="shape_height"/>
+
+        <attr name="shape_radius"/>
+        <attr name="shape_radiusInTopLeft"/>
+        <attr name="shape_radiusInTopRight"/>
+        <attr name="shape_radiusInBottomLeft"/>
+        <attr name="shape_radiusInBottomRight"/>
+
+        <attr name="shape_solidColor"/>
+        <attr name="shape_solidPressedColor"/>
+        <attr name="shape_solidDisabledColor"/>
+        <attr name="shape_solidFocusedColor"/>
+        <attr name="shape_solidSelectedColor"/>
+        <attr name="shape_solidGradientStartColor"/>
+        <attr name="shape_solidGradientCenterColor"/>
+        <attr name="shape_solidGradientEndColor"/>
+        <attr name="shape_solidGradientOrientation"/>
+        <attr name="shape_solidGradientType"/>
+        <attr name="shape_solidGradientCenterX"/>
+        <attr name="shape_solidGradientCenterY"/>
+        <attr name="shape_solidGradientRadius"/>
+
+        <attr name="shape_strokeColor"/>
+        <attr name="shape_strokePressedColor"/>
+        <attr name="shape_strokeDisabledColor"/>
+        <attr name="shape_strokeFocusedColor"/>
+        <attr name="shape_strokeSelectedColor"/>
+        <attr name="shape_strokeGradientStartColor"/>
+        <attr name="shape_strokeGradientCenterColor"/>
+        <attr name="shape_strokeGradientColor"/>
+        <attr name="shape_strokeGradientOrientation"/>
+        <attr name="shape_strokeSize"/>
+        <attr name="shape_strokeDashSize"/>
+        <attr name="shape_strokeDashGap"/>
+
+        <attr name="shape_shadowSize"/>
+        <attr name="shape_shadowColor"/>
+        <attr name="shape_shadowOffsetX"/>
+        <attr name="shape_shadowOffsetY"/>
+
+        <attr name="shape_ringInnerRadiusRatio"/>
+        <attr name="shape_ringInnerRadiusSize"/>
+        <attr name="shape_ringThicknessRatio"/>
+        <attr name="shape_ringThicknessSize"/>
+
+        <attr name="shape_lineGravity"/>
+
+        <attr name="shape_textColor"/>
+        <attr name="shape_textPressedColor"/>
+        <attr name="shape_textDisabledColor"/>
+        <attr name="shape_textFocusedColor"/>
+        <attr name="shape_textSelectedColor"/>
+
+        <attr name="shape_textStartColor"/>
+        <attr name="shape_textCenterColor"/>
+        <attr name="shape_textEndColor"/>
+        <attr name="shape_textGradientOrientation"/>
+
+        <attr name="shape_textStrokeColor"/>
+        <attr name="shape_textStrokeSize"/>
+    </declare-styleable></configuration></mergedItems></merger>
