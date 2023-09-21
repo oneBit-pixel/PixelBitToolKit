@@ -132,11 +132,11 @@
         {
           "name": "lib-shapeView-unspecified-javadoc.jar",
           "url": "lib-shapeView-unspecified-javadoc.jar",
-          "size": 648372,
-          "sha512": "23af96891545bd9d443830f71ad64a99cff0ddb0d49944580ceacce6c1ad0209180db6d339c2ae9fa3cc23bf9b9e61fb9a7e95f141c51f1584c6fa9a9a22c643",
-          "sha256": "5a05bfb786eff12036aeb3e152a92a7a20a204a81940856d07f8debb9a64bfd2",
-          "sha1": "0f2cd3933307369d5a2112b1c851e47674617518",
-          "md5": "f1c55b7b3e3b1e3c81996b4c4f7d89dd"
+          "size": 654740,
+          "sha512": "fd629be5ecd0fdbf4c2f2400b7f3418d7cb9dbfcebfcb78dab904bf9feac400654b1f3e804f17eda878f3ae6309112dbc1825b5fbd5a431c3824b54e825fa518",
+          "sha256": "aad479a94f76c3d0727980edc66b046409af5fd55e2d447814d24786161a988a",
+          "sha1": "bc669323e8d70425c0ced1e22d980c08ab4fdccd",
+          "md5": "a597d0b0c4b38a2d2853532b09863793"
         }
       ]
     }
