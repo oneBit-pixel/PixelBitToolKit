@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 30
     namespace 'com.onepixel.shapedrawable'
+    compileSdk 33
 
     defaultConfig {
         minSdkVersion 16

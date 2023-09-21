@@ -5,9 +5,9 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
 
     namespace 'com.onepixel.shapeview'
+    compileSdk 33
 
     defaultConfig {
         minSdkVersion 17
