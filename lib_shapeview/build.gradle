@@ -9,13 +9,13 @@ android {
     namespace 'com.onepixel.shapeview'
     compileSdk 33
 
-    publishing {
-        singleVariant('release') {
-            withSourcesJar()
-            withJavadocJar()
-        }
-        // ...
-    }
+//    publishing {
+//        singleVariant('release') {
+//            withSourcesJar()
+//            withJavadocJar()
+//        }
+//        // ...
+//    }
 
     defaultConfig {
         minSdkVersion 17
@@ -45,23 +45,20 @@ android {
 
 }
 
-dependencies {
-    // ShapeDrawable：https://github.com/getActivity/ShapeDrawable
-//    implementation 'com.github.getActivity:ShapeDrawable:3.0'
-}
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.oneBit.lib_shapeview' //groupId 随便取
-                artifactId = 'lib-shapeView'  //artifactId 随便取
-//                version = '1.0.8'
-            }
-        }
-    }
-}
+
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//                groupId = 'com.oneBit.lib_shapeview' //groupId 随便取
+//                artifactId = 'lib-shapeView'  //artifactId 随便取
+////                version = '1.0.8'
+//            }
+//        }
+//    }
+//}
 
 //afterEvaluate {
 //    // 排除 BuildConfig.class

@@ -50,6 +50,7 @@ public class AudioGet {
             MediaStore.Audio.Media.DATA,
             MediaStore.Audio.Media.DURATION,
             MediaStore.Audio.Media.BUCKET_ID,
+
     };
 
     /**Returns an Arraylist of {@link AudioContent} */

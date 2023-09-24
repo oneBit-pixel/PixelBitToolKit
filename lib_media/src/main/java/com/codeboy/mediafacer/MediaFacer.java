@@ -19,6 +19,10 @@ public class MediaFacer {
         return AudioGet.getInstance(contx);
     }
 
+    public static DownloadGet withDownLoadGet(Context contx){
+        return DownloadGet.getInstance(contx);
+    }
+
     public static void Initialize(){
 
     }
