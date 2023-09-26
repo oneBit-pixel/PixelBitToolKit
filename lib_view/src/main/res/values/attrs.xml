@@ -2,13 +2,25 @@
 <resources>
     <declare-styleable name="PixelSpinner">
         <attr name="pop_direction" format="enum">
-            <enum name="up" value="0"/>
-            <enum name="down" value="1"/>
-            <enum name="left" value="2"/>
-            <enum name="right" value="3"/>
+            <enum name="up" value="0" />
+            <enum name="down" value="1" />
+            <enum name="left" value="2" />
+            <enum name="right" value="3" />
         </attr>
 
-        <attr name="pop_width" format="dimension"/>
-        <attr name="pop_height" format="dimension"/>
+        <attr name="pop_width" format="dimension" />
+        <attr name="pop_height" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="EdgeView">
+        <!--种类
+            1.IMAGE 插图模式
+            2.LINE 直线模式
+        -->
+        <attr name="edge_type" format="enum">
+            <enum name="IMAGE" />
+            <enum name="LINE" />
+        </attr>
+        <attr name="edge_src" format="reference" />
     </declare-styleable>
 </resources>

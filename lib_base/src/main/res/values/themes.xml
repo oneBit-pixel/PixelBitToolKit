@@ -4,7 +4,7 @@
     <style name="Theme.oneBitPixel" parent="Theme.AppCompat.Light.NoActionBar">
 
         <!--保证控件再指定位置-->
-        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:fitsSystemWindows">false</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 

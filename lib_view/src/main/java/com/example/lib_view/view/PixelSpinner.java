@@ -16,7 +16,7 @@ import com.example.lib_view.databinding.LayoutSpinnerBinding;
 public class PixelSpinner extends FrameLayout {
 
     public PixelSpinner(@NonNull Context context) {
-        this(context, null);
+        super(context);
     }
 
     public PixelSpinner(@NonNull Context context, @Nullable AttributeSet attrs) {

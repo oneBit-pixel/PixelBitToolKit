@@ -41,11 +41,7 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
     override fun initView() {
         super.initView()
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            startActivity(
-                Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION)
-            )
-        }
+
 
         mBinding.button3.setOnClickListener {
             student.setData("写作业...$num")

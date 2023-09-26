@@ -8,6 +8,7 @@
     tools:context="com.onBit.pixelDemo.ui.activity.RecyclewActivity">
 
 
+
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
