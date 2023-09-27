@@ -18,8 +18,8 @@
             2.LINE 直线模式
         -->
         <attr name="edge_type" format="enum">
-            <enum name="IMAGE" />
-            <enum name="LINE" />
+            <enum name="IMAGE" value="0"/>
+            <enum name="LINE" value="1"/>
         </attr>
         <attr name="edge_src" format="reference" />
     </declare-styleable>

@@ -31,42 +31,6 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         get() = ActivityRecyclewBinding::inflate
 
 
-    private val student by lazy {
-        Student()
-    }
 
-    var num = 1
-
-    @SuppressLint("CheckResult")
-    override fun initView() {
-        super.initView()
-
-
-
-        mBinding.button3.setOnClickListener {
-            student.setData("写作业...$num")
-            num += 1
-        }
-
-        mBinding.button.setOnClickListener {
-            val allDownloadGet = DownloadGet.getInstance(this)
-                .allDownloadGet
-            LogUtils.d("allDownloadGet==>${allDownloadGet.isEmpty()}")
-            allDownloadGet.forEach {
-                LogUtils.d("文件路径==>${it.filePath}==>文件名==>${it.fileName}==>文件类型==>${it.fileType}")
-            }
-        }
-    }
-
-
-    override fun initListener() {
-        super.initListener()
-        val teacher = Teacher("teacher1")
-        student.addObserver(teacher)
-        student.addObserver { o, arg ->
-            val arg1 = arg as String
-            println("$arg")
-        }
-    }
 
 }
