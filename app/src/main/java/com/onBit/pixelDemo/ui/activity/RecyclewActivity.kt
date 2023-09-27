@@ -30,7 +30,9 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityRecyclewBinding
         get() = ActivityRecyclewBinding::inflate
 
-
+    override fun isFullScreen(): Boolean {
+        return true
+    }
 
 
 }

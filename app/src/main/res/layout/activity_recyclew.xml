@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
     android:background="@color/black"
     tools:context="com.onBit.pixelDemo.ui.activity.RecyclewActivity">
 
     <com.example.lib_view.edgeView.EdgeView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:edge_src="@drawable/mp_hourglass"
         app:edge_type="IMAGE"
         />
 

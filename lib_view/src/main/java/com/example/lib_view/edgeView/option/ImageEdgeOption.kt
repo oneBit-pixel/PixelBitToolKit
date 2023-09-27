@@ -22,7 +22,7 @@ class ImageEdgeOption : EdgeOption() {
 
         var totalSize = edgeView.width + edgeView.height
 
-        val width = 50
+        val width = 100
         val height = 100
 
         // 设置图片间隔（根据需要调整）
@@ -59,7 +59,24 @@ class ImageEdgeOption : EdgeOption() {
                 nextHeight += spacing + height
             } while (nextHeight < edgeView.height)
 
+            nextWith = spacing + width
 
+            //绘制底部
+            do {
+                it.setBounds(nextWith + spacing, edgeView.height-height, nextWith + width, edgeView.height-spacing)
+                it.draw(canvas)
+                nextWith += width + spacing
+                LogUtils.d("nextWith > edgeView.width==>${edgeView.width}")
+            } while (nextWith < edgeView.width)
+
+
+            nextHeight = spacing + height
+            //绘制左边
+            do {
+                it.setBounds(spacing, nextHeight, spacing + width, nextHeight + height)
+                it.draw(canvas)
+                nextHeight += height + spacing
+            } while (nextHeight < edgeView.height)
         }
     }
 
