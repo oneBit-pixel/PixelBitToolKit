@@ -4,16 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="false"
     android:background="@color/black"
+    android:fitsSystemWindows="false"
     tools:context="com.onBit.pixelDemo.ui.activity.RecyclewActivity">
 
-    <com.example.lib_view.edgeView.EdgeView
+        <com.example.lib_view.edgeView.EdgeView
+            android:id="@+id/edge_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:edge_src="@drawable/mp_hourglass"
+            app:edge_type="IMAGE"
+            />
+
+<!--    <com.example.lib_view.view.LedView-->
+<!--        android:id="@+id/ledview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.5" />-->
+
+    <FrameLayout
+        android:id="@+id/framelayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:edge_src="@drawable/mp_hourglass"
-        app:edge_type="IMAGE"
-        />
 
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

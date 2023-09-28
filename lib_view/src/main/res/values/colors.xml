@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="defaultLedCenterBg">#FF242A37</color>
+    <color name="ledGradient2Color1left">#FFFEBD01</color>
+    <color name="ledGradient2Color1right">#FFFF5500</color>
+
+</resources>

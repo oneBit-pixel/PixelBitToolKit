@@ -6,7 +6,29 @@ import com.example.lib_view.R
 abstract class EdgeOption : IEdgeOption {
 
 
-    private val colors = mutableListOf(Color.RED)
+    protected val colors = mutableListOf(Color.RED)
+
+    //间距
+    protected var topMargin = 0f
+    protected var leftMargin = 0f
+    protected var rightMargin = 0f
+    protected var bottomMargin = 0f
+
+    //图标之间的距离
+    protected var spacing = 0f
+
+    //圆角
+    protected var cornerTopLeft = 0f
+    protected var cornerTopRight = 0f
+    protected var cornerBottomLeft = 0f
+    protected var cornerBottomRight = 0f
+
+    //中间高度 (距离对应边的距离)
+    protected var topMiddle = 0f
+    protected var leftMiddle = 0f
+    protected var rightMiddle = 0f
+    protected var bottomMiddle = 0f
+
 
     var resourceDrawable: Int = R.drawable.mp_hourglass
         set(value) {
