@@ -8,27 +8,32 @@ abstract class EdgeOption : IEdgeOption {
 
     protected val colors = mutableListOf(Color.RED)
 
+    //图片宽高
+    protected var drawableWidth = 50
+    protected var drawableHeight = 100
+
     //间距
-    protected var topMargin = 0f
-    protected var leftMargin = 0f
-    protected var rightMargin = 0f
-    protected var bottomMargin = 0f
+    protected var topMargin = 0
+    protected var leftMargin = 0
+    protected var rightMargin = 0
+    protected var bottomMargin = 0
 
     //图标之间的距离
-    protected var spacing = 0f
+    protected var spacing = 0
 
     //圆角
-    protected var cornerTopLeft = 0f
-    protected var cornerTopRight = 0f
-    protected var cornerBottomLeft = 0f
-    protected var cornerBottomRight = 0f
+    protected var cornerTopLeft = 0
+    protected var cornerTopRight = 0
+    protected var cornerBottomLeft = 0
+    protected var cornerBottomRight = 0
 
     //中间高度 (距离对应边的距离)
-    protected var topMiddle = 0f
-    protected var leftMiddle = 0f
-    protected var rightMiddle = 0f
-    protected var bottomMiddle = 0f
+    protected var topMiddle = 0
+    protected var leftMiddle = 0
+    protected var rightMiddle = 0
+    protected var bottomMiddle = 0
 
+    //
 
     var resourceDrawable: Int = R.drawable.mp_hourglass
         set(value) {
