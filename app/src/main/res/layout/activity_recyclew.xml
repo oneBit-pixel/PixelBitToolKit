@@ -4,35 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/black"
-    android:fitsSystemWindows="false"
     tools:context="com.onBit.pixelDemo.ui.activity.RecyclewActivity">
 
-        <com.example.lib_view.edgeView.EdgeView
-            android:id="@+id/edge_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:edge_src="@drawable/mp_hourglass"
-            app:edge_type="IMAGE"
-            />
-
-<!--    <com.example.lib_view.view.LedView-->
-<!--        android:id="@+id/ledview"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.5" />-->
-
-    <FrameLayout
-        android:id="@+id/framelayout"
-        android:layout_width="match_parent"
+    <RadioGroup
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_60"
+            android:button="@null"
+            android:text="RadioButton"
+            android:textColor="@color/text_color" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_60"
+            android:button="@android:color/transparent"
+            android:text="RadioButton"
+            android:textColor="@color/text_color" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_60"
+            android:button="@android:color/transparent"
+            android:text="RadioButton"
+            android:textColor="@color/text_color" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_60"
+            android:button="@android:color/transparent"
+            android:text="RadioButton"
+            android:textColor="@color/text_color" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_60"
+            android:button="@null"
+            android:text="RadioButton"
+            android:textColor="@color/text_color" />
+
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
