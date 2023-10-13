@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace 'com.onBit.PixelBitToolKit'
-    compileSdk 33
+    compileSdk 34
 
     buildFeatures {
         viewBinding = true
@@ -15,7 +15,7 @@ android {
     defaultConfig {
         applicationId "com.onBit.PixelBitToolKit"
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -38,11 +38,21 @@ android {
 }
 
 dependencies {
-
+    //xui
+    //    allprojects {
+    //        repositories {
+    //            maven { url "https://jitpack.io" }
+    //        }
+    //    }
+    dependencies {
+        //androidx project
+        implementation("com.github.xuexiangjys:XUI:1.2.1")
+    }
     implementation project(path: ':lib_view')
     implementation project(path: ':powerspinner')
     implementation project(path: ':study_design')
     api project(path: ':lib_shapeview')
+    implementation project(path: ':lib_edgeLight')
 
     //lottie 动画插件
     dependencies {
@@ -53,7 +63,7 @@ dependencies {
     implementation project(path: ':lib_room')
 
     //内存泄漏检查
-    dependencies{
+    dependencies {
         debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.12'
     }
 
@@ -67,11 +77,11 @@ dependencies {
 
     //权限框架 https://github.com/tbruyelle/RxPermissions
     dependencies {
-        implementation ("io.reactivex.rxjava3:rxjava:3.1.4")
-        implementation ("com.github.tbruyelle:rxpermissions:0.12")
+        implementation("io.reactivex.rxjava3:rxjava:3.1.4")
+        implementation("com.github.tbruyelle:rxpermissions:0.12")
     }
     // 日志工具
-    implementation ("com.blankj:utilcodex:1.31.1")
+    implementation("com.blankj:utilcodex:1.31.1")
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'

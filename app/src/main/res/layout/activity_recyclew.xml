@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="@color/black"
     tools:context="com.onBit.pixelDemo.ui.activity.RecyclewActivity">
 
@@ -12,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -54,4 +54,21 @@
 
     </RadioGroup>
 
+    <com.xuexiang.xui.widget.button.switchbutton.SwitchButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:swb_backDrawable="@drawable/selected_swb"
+        app:swb_backRadius="@dimen/dp_20"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.example.lib_edgelight.view.EdgeBorderLightView
+        android:id="@+id/edgeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

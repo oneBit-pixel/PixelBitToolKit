@@ -26,6 +26,9 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         return true
     }
 
+    override fun isHideNavigation(): Boolean {
+        return true
+    }
     private val adapter by lazy {
         object : FragmentStateAdapter(this) {
             override fun getItemCount(): Int {
@@ -42,7 +45,20 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
     override fun initView() {
         super.initView()
 
-
+        mBinding.edgeView.apply {
+            changeBorder(0,0)
+            changeSize(50)
+            val intArray = IntArray(7)
+            intArray[0]=Color.YELLOW
+            intArray[1]=Color.RED
+            intArray[2]=Color.GREEN
+            intArray[3]=Color.BLUE
+            intArray[4]=Color.RED
+            intArray[5]=Color.GREEN
+            intArray[6]=Color.BLUE
+            changeColor(intArray)
+            changeSpeed(20)
+        }
 
 
     }
