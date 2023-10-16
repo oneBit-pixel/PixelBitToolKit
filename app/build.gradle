@@ -50,7 +50,7 @@ dependencies {
     }
     implementation project(path: ':lib_view')
     implementation project(path: ':powerspinner')
-    implementation project(path: ':study_design')
+    implementation project(path: ':study_project')
     api project(path: ':lib_shapeview')
     implementation project(path: ':lib_edgeLight')
 

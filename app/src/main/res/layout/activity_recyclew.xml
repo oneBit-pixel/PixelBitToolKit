@@ -4,71 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context="com.onBit.pixelDemo.ui.activity.RecyclewActivity">
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.AppCompatRadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp_60"
-            android:button="@null"
-            android:text="RadioButton"
-            android:textColor="@color/text_color" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp_60"
-            android:button="@android:color/transparent"
-            android:text="RadioButton"
-            android:textColor="@color/text_color" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp_60"
-            android:button="@android:color/transparent"
-            android:text="RadioButton"
-            android:textColor="@color/text_color" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp_60"
-            android:button="@android:color/transparent"
-            android:text="RadioButton"
-            android:textColor="@color/text_color" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp_60"
-            android:button="@null"
-            android:text="RadioButton"
-            android:textColor="@color/text_color" />
-
-
-    </RadioGroup>
-
-    <com.xuexiang.xui.widget.button.switchbutton.SwitchButton
+    <ProgressBar
+        android:id="@+id/progressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:progress="20"
+        android:indeterminateDrawable="@drawable/shape_loading_progress"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:swb_backDrawable="@drawable/selected_swb"
-        app:swb_backRadius="@dimen/dp_20"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.example.lib_edgelight.view.EdgeBorderLightView
-        android:id="@+id/edgeView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
 
-        android:visibility="visible" />
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressbar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackColor="@color/white" />
 </androidx.constraintlayout.widget.ConstraintLayout>
