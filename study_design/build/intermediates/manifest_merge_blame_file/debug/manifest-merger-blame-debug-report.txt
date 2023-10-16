@@ -1,0 +1,13 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.study_design" > <!-- <application -->
+4    <!-- android:allowBackup="true" -->
+5    <!-- android:icon="@mipmap/ic_launcher" -->
+6    <!-- android:label="@string/app_name" -->
+7    <!-- android:roundIcon="@mipmap/ic_launcher_round" -->
+8    <!-- android:supportsRtl="true" -->
+9    <!-- android:theme="@style/Theme.Wcamerax" /> -->
+10    <uses-sdk android:minSdkVersion="21" />
+10-->D:\AndroidProject\PixelBitToolKit\study_design\src\main\AndroidManifest.xml
+11
+12</manifest>
