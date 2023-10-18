@@ -7,4 +7,20 @@
         <item name="android:windowExitAnimation">@anim/exit_animation</item>
     </style>
 
+    <!--从下方弹出-->
+    <style name="DialogBottomPopup" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_up_show</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_down_hide</item>
+    </style>
+
+    <!--从上方弹出-->
+    <style name="DialogTopPopup" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_down_show</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_up_hide</item>
+    </style>
+
+    <!--圆角背景dialog-->
+    <style name="WhiteRoundDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@drawable/dialog_white_bg</item>
+    </style>
 </resources>

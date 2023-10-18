@@ -1,17 +1,25 @@
 package com.onBit.pixelDemo.ui.activity
 
+import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Shader
 import android.graphics.drawable.LayerDrawable
 import android.graphics.drawable.ShapeDrawable
+import android.net.Uri
+import android.provider.Settings
 import android.view.LayoutInflater
+import android.widget.PopupWindow
 import androidx.camera.core.processing.SurfaceProcessorNode.In
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.onBit.PixelBitToolKit.R
 import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
 import com.onBit.lib_base.base.BaseActivity
+import com.onBit.pixelDemo.ui.floatview.FloatView
 import com.onBit.pixelDemo.ui.fragment.MyFragment
 
 
@@ -23,6 +31,7 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         return true
     }
 
+    private val floatView by lazy { FloatView(this) }
     override fun isHideNavigation(): Boolean {
         return true
     }
@@ -44,37 +53,23 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         num: Int,
         test: (Int) -> Boolean
     ): Int {
-            if (test(1)) {
+        if (test(1)) {
 
-            }
+        }
         return 1
     }
 
-    fun test2(int:Int):Boolean{
+    fun test2(int: Int): Boolean {
         return false
     }
 
     override fun initView() {
         super.initView()
 
-        a(2){
-            it.equals(2)
-        }
 
-//        mBinding.edgeView.apply {
-//            changeBorder(0,0)
-//            changeSize(50)
-//            val intArray = IntArray(7)
-//            intArray[0]=Color.YELLOW
-//            intArray[1]=Color.RED
-//            intArray[2]=Color.GREEN
-//            intArray[3]=Color.BLUE
-//            intArray[4]=Color.RED
-//            intArray[5]=Color.GREEN
-//            intArray[6]=Color.BLUE
-//            changeColor(intArray)
-//            changeSpeed(20)
-//        }
+       PopupWindow(this).apply {
+           animationStyle
+       }
 
 
     }
@@ -95,6 +90,4 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         }
         return null
     }
-
-
 }

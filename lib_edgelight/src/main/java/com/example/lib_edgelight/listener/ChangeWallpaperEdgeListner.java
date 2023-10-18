@@ -158,15 +158,11 @@ public class ChangeWallpaperEdgeListner {
         } else if (str2 != null) {
             if (new File(str2).exists()) {
                 ((RequestBuilder) Glide.with(this.context).asBitmap().load(str2).override(this.width, this.height)).into(new CustomTarget<Bitmap>() {
-                    
 
-                    @Override 
+
+                    @Override
                     public void onLoadCleared(Drawable drawable) {
                     }
-
-
-
-
 
 
                     public void onResourceReady(Bitmap bitmap, Transition<? super Bitmap> transition) {
@@ -186,6 +182,10 @@ public class ChangeWallpaperEdgeListner {
         }
     }
 
+    public void setBitmap(Bitmap bitmap) {
+        this.animate.changeShape("str2", bitmap);
+    }
+
     public void lisenerChangeType(String str) {
         String str2;
         if (str.equals(Const.Action_DemoLiveWallpaper)) {
@@ -194,10 +194,10 @@ public class ChangeWallpaperEdgeListner {
             str2 = MySharePreferencesEdge.getString(MySharePreferencesEdge.FINISH_SHAPE, this.context);
         }
         //类型判断
-        if (str2!=null){
+        if (str2 != null) {
             if (str2.equals(Const.LINE)) {
                 //线性
-            }else {
+            } else {
                 //图形
             }
         }

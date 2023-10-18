@@ -132,6 +132,7 @@ public abstract class XFloatView<VB extends ViewBinding> implements OnTouchListe
     private void initFloatViewLayoutParams() {
         // 获取WindowManagerImpl.CompatModeWrapper
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+
         mWmParams = getFloatViewLayoutParams();
         mStatusBarHeight = Utils.getStatusBarHeight();
     }
@@ -308,6 +309,7 @@ public abstract class XFloatView<VB extends ViewBinding> implements OnTouchListe
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
+        System.out.println("21341234");
         switch (event.getAction()) {
             // 手指按下时记录必要的数据,纵坐标的值都减去状态栏的高度
             case MotionEvent.ACTION_DOWN:

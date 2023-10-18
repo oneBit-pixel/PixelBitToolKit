@@ -104,6 +104,10 @@ public class EdgeBorderLightView extends View {
         this.changeWallpaper.lisenerChangeType(str);
     }
 
+    public void setBitmap(Bitmap bitmap) {
+        this.changeWallpaper.setBitmap(bitmap);
+    }
+
     public void changeCustomTemplate(int i, int i2, int i3, int[] iArr) {
         this.animate.changeColor(iArr);
         this.animate.changeSpeed((float) i);
@@ -118,7 +122,7 @@ public class EdgeBorderLightView extends View {
         this.animate.changeSize(i2);
         new DecodeEdgeResource(getContext(), str, new DecodeEdgeResource.CallBack() {
 
-            @Override 
+            @Override
             public void decodeDone(Bitmap bitmap) {
                 EdgeBorderLightView.this.animate.changeShape(str, bitmap);
             }
@@ -156,7 +160,7 @@ public class EdgeBorderLightView extends View {
     public void changeType(final String str) {
         new DecodeEdgeResource(getContext(), str, new DecodeEdgeResource.CallBack() {
 
-            @Override 
+            @Override
             public void decodeDone(Bitmap bitmap) {
                 EdgeBorderLightView.this.animate.changeShape(str, bitmap);
             }
@@ -180,7 +184,7 @@ public class EdgeBorderLightView extends View {
             if (new File(str2).exists()) {
                 ((RequestBuilder) Glide.with(getContext()).asBitmap().load(str2).override(i2, i3)).into(new CustomTarget<Bitmap>() {
 
-                    @Override 
+                    @Override
                     public void onLoadCleared(Drawable drawable) {
                     }
 
