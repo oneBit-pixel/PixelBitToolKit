@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.shape.view.ShapeTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/dp_10"
+    android:paddingVertical="@dimen/dp_2"
+    android:textColor="@color/white"
+    android:textSize="@dimen/sp_10"
+    app:shape_radius="@dimen/dp_5"
+    app:shape_solidSelectedColor="@color/red"
+    app:shape_solidColor="#1E1F35"
+    tools:text="Default" />
+

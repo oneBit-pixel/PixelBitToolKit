@@ -5,4 +5,9 @@
     <string name="hot">Hot</string>
     <string name="favorites">Favorites</string>
     <string name="home">Home</string>
+    <string name="default1">Default</string>
+    <string name="emoji">Emoji</string>
+    <string name="animal">Animal</string>
+    <string name="cool">Cool</string>
+    <string name="nature">Nature</string>
 </resources>

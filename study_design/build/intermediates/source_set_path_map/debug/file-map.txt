@@ -1,0 +1,31 @@
+com.example.study_design-jetified-viewpager2-1.0.0-0 D:\Android Gradle\caches\transforms-3\015a9c7b3504b614cf5d1bba8bf95569\transformed\jetified-viewpager2-1.0.0\res
+com.example.study_design-material-1.9.0-1 D:\Android Gradle\caches\transforms-3\065ac9c4158725a8d941297cc95cdc2c\transformed\material-1.9.0\res
+com.example.study_design-jetified-emoji2-views-helper-1.2.0-2 D:\Android Gradle\caches\transforms-3\0a20dfdbe2e0d671c3ce3bc86c973a77\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.example.study_design-lifecycle-livedata-core-2.5.1-3 D:\Android Gradle\caches\transforms-3\15ace1e8e5fdef13b41a5632e9dd7999\transformed\lifecycle-livedata-core-2.5.1\res
+com.example.study_design-jetified-emoji2-1.2.0-4 D:\Android Gradle\caches\transforms-3\2296b90e267f3340c4e0fc14a8233eb4\transformed\jetified-emoji2-1.2.0\res
+com.example.study_design-core-1.9.0-5 D:\Android Gradle\caches\transforms-3\3caff9679ad8ddeeaa094ae633756ccc\transformed\core-1.9.0\res
+com.example.study_design-cardview-1.0.0-6 D:\Android Gradle\caches\transforms-3\4a83bcaeab128f941c14592f421a3e61\transformed\cardview-1.0.0\res
+com.example.study_design-lifecycle-runtime-2.5.1-7 D:\Android Gradle\caches\transforms-3\4d79226d3551ac794e141ddcb0c2189b\transformed\lifecycle-runtime-2.5.1\res
+com.example.study_design-jetified-lifecycle-process-2.4.1-8 D:\Android Gradle\caches\transforms-3\5759efe75d37490cbfa970c0d5444610\transformed\jetified-lifecycle-process-2.4.1\res
+com.example.study_design-jetified-savedstate-1.2.0-9 D:\Android Gradle\caches\transforms-3\833ed98aba396b21642afe24082e38b4\transformed\jetified-savedstate-1.2.0\res
+com.example.study_design-transition-1.2.0-10 D:\Android Gradle\caches\transforms-3\88a9108159476ee9f16c7e968cd964d1\transformed\transition-1.2.0\res
+com.example.study_design-coordinatorlayout-1.1.0-11 D:\Android Gradle\caches\transforms-3\8d896ce4f38e8d08793830b796c5d34f\transformed\coordinatorlayout-1.1.0\res
+com.example.study_design-jetified-annotation-experimental-1.3.0-12 D:\Android Gradle\caches\transforms-3\a0aac7b6999ef44b8619739adb722e02\transformed\jetified-annotation-experimental-1.3.0\res
+com.example.study_design-constraintlayout-2.0.1-13 D:\Android Gradle\caches\transforms-3\b1259a3b94a06e450be198e8118315c2\transformed\constraintlayout-2.0.1\res
+com.example.study_design-jetified-appcompat-resources-1.6.1-14 D:\Android Gradle\caches\transforms-3\b28879b8afe53f7e044a6f3e72e660d7\transformed\jetified-appcompat-resources-1.6.1\res
+com.example.study_design-fragment-1.3.6-15 D:\Android Gradle\caches\transforms-3\bde338f1eee11daca6d5d21b7db1ed8f\transformed\fragment-1.3.6\res
+com.example.study_design-jetified-lifecycle-viewmodel-savedstate-2.5.1-16 D:\Android Gradle\caches\transforms-3\c25484f9669966d15b695eece5891ded\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\res
+com.example.study_design-recyclerview-1.1.0-17 D:\Android Gradle\caches\transforms-3\d1efe4bb981a86f44368effd9baf2996\transformed\recyclerview-1.1.0\res
+com.example.study_design-appcompat-1.6.1-18 D:\Android Gradle\caches\transforms-3\d275b49b70f7e96b627c788e98e437ab\transformed\appcompat-1.6.1\res
+com.example.study_design-drawerlayout-1.1.1-19 D:\Android Gradle\caches\transforms-3\dd4404a4dc643f2248a27d31cd619dff\transformed\drawerlayout-1.1.1\res
+com.example.study_design-jetified-startup-runtime-1.1.1-20 D:\Android Gradle\caches\transforms-3\de34497c37b1361dee327b9754611ee5\transformed\jetified-startup-runtime-1.1.1\res
+com.example.study_design-lifecycle-viewmodel-2.5.1-21 D:\Android Gradle\caches\transforms-3\ebdbda69b67ab0c062b6ecb067d25f31\transformed\lifecycle-viewmodel-2.5.1\res
+com.example.study_design-jetified-core-ktx-1.9.0-22 D:\Android Gradle\caches\transforms-3\f82249e2bcc95ccdbf9e617c162914a4\transformed\jetified-core-ktx-1.9.0\res
+com.example.study_design-jetified-activity-1.6.0-23 D:\Android Gradle\caches\transforms-3\fe65ee49a2b094547a20e3a41b7a845f\transformed\jetified-activity-1.6.0\res
+com.example.study_design-pngs-24 D:\AndroidProject\PixelBitToolKit\study_design\build\generated\res\pngs\debug
+com.example.study_design-resValues-25 D:\AndroidProject\PixelBitToolKit\study_design\build\generated\res\resValues\debug
+com.example.study_design-packageDebugResources-26 D:\AndroidProject\PixelBitToolKit\study_design\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.study_design-packageDebugResources-27 D:\AndroidProject\PixelBitToolKit\study_design\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.study_design-merged_res-28 D:\AndroidProject\PixelBitToolKit\study_design\build\intermediates\merged_res\debug
+com.example.study_design-debug-29 D:\AndroidProject\PixelBitToolKit\study_design\src\debug\res
+com.example.study_design-main-30 D:\AndroidProject\PixelBitToolKit\study_design\src\main\res
