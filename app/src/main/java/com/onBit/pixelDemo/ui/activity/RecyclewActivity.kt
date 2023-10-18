@@ -31,63 +31,33 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         return true
     }
 
-    private val floatView by lazy { FloatView(this) }
-    override fun isHideNavigation(): Boolean {
-        return true
-    }
-
-    private val adapter by lazy {
-        object : FragmentStateAdapter(this) {
-            override fun getItemCount(): Int {
-                return 10
-            }
-
-            override fun createFragment(position: Int): Fragment {
-                return MyFragment(position)
-            }
-
-        }
-    }
-
-    fun a(
-        num: Int,
-        test: (Int) -> Boolean
-    ): Int {
-        if (test(1)) {
-
-        }
-        return 1
-    }
-
+    private val a by lazy(LazyThreadSafetyMode.PUBLICATION) {  }
     fun test2(int: Int): Boolean {
         return false
     }
 
     override fun initView() {
         super.initView()
-
-
-       PopupWindow(this).apply {
-           animationStyle
-       }
-
-
-    }
-
-
-    fun drawableToBitmap(drawableId: Int): Bitmap? {
-        val drawable = ContextCompat.getDrawable(this, drawableId)
-        if (drawable != null) {
-            val bitmap = Bitmap.createBitmap(
-                drawable.intrinsicWidth,
-                drawable.intrinsicHeight,
-                Bitmap.Config.ARGB_8888
-            )
-            val canvas = Canvas(bitmap)
-            drawable.setBounds(0, 0, canvas.width, canvas.height)
-            drawable.draw(canvas)
-            return bitmap
+        for (c in 'a'..'e') {
+            println("c==>$c")
         }
-        return null
+        "abcdefg".filter { c ->
+            c in 'a'..'d'
+        }
     }
+
+    infix fun says(name: String) {
+        println("1 says:$name")
+    }
+
+}
+
+class Person(val name: String) {
+    infix fun says(message: String) {
+        println("$name says: $message")
+    }
+}
+
+class A {
+
 }
