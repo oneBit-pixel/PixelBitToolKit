@@ -21,7 +21,8 @@
 
         <!--导航栏与内容的分割线颜色-->
         <!--        <item name="android:navigationBarDividerColor" tools:targetApi="o_mr1">@color/red</item>-->
-
+        <!--控件隐藏时有渐隐动画-->
+        <item name="android:animateLayoutChanges">true</item>
     </style>
 
     <style name="MyWindowAnimation" parent="android:Animation.Activity">

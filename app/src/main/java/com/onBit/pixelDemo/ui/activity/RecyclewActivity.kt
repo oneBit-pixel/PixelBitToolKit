@@ -1,5 +1,7 @@
 package com.onBit.pixelDemo.ui.activity
 
+import android.animation.AnimatorInflater
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -14,6 +16,7 @@ import android.view.LayoutInflater
 import android.widget.PopupWindow
 import androidx.camera.core.processing.SurfaceProcessorNode.In
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.onBit.PixelBitToolKit.R
@@ -36,27 +39,21 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         return false
     }
 
+    @SuppressLint("ResourceType")
     override fun initView() {
         super.initView()
-        for (c in 'a'..'e') {
-            println("c==>$c")
+        val fadeInAnimation = AnimatorInflater.loadAnimator(this, com.xuexiang.xui.R.animator.fragment_fade_enter)
+        val fadeOutAnimation = AnimatorInflater.loadAnimator(this, com.xuexiang.xui.R.animator.fragment_close_exit)
+        mBinding.button2.setOnClickListener {
+            mBinding.button.isVisible = !mBinding.button.isVisible
         }
-        "abcdefg".filter { c ->
-            c in 'a'..'d'
         }
     }
 
-    infix fun says(name: String) {
-        println("1 says:$name")
-    }
 
-}
 
-class Person(val name: String) {
-    infix fun says(message: String) {
-        println("$name says: $message")
-    }
-}
+
+
 
 class A {
 
