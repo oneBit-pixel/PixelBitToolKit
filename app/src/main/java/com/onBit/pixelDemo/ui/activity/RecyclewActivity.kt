@@ -11,6 +11,8 @@ import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
 import com.onBit.PixelBitToolKit.databinding.LayoutRvBinding
 import com.onBit.lib_base.base.BaseActivity
 import com.onBit.lib_base.base.utils.PopUpWindowTools
+import com.onBit.lib_base.base.utils.PopUpWindowTools.showAsDropByLeft
+import com.onBit.lib_base.base.utils.PopUpWindowTools.showAsDropByRight
 import com.onBit.lib_base.base.utils.PopUpWindowTools.showAsUp
 
 
@@ -40,7 +42,7 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
     override fun initView() {
         super.initView()
         mBinding.button2.setOnClickListener {
-            popupWindow.showAsUp(mBinding.button2)
+            popupWindow.showAsDropByLeft(mBinding.button2)
         }
     }
 

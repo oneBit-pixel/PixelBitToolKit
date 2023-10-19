@@ -9,7 +9,6 @@ object PopUpWindowTools {
     fun buildCustomPopUpWindow(
         context: Activity,
         customView: View,
-        alpha: Float = 0.6f,
         cancelAble: Boolean = true
     ): PopupWindow {
         val popupWindow = PopupWindow(context)
@@ -27,8 +26,13 @@ object PopUpWindowTools {
     /**
      * popUnWindow 扩展
      * 展示在控件上方
+     *
      */
-    fun PopupWindow.showAsUp(view: View, isAlpha: Boolean = true, alpha: Float = 0.6f) {
+    fun PopupWindow.showAsUp(
+        view: View,
+        isAlpha: Boolean = true,
+        alpha: Float = 0.6f,
+    ) {
         //测量大小
         contentView.measure(
             View.MeasureSpec.UNSPECIFIED,
@@ -36,9 +40,8 @@ object PopUpWindowTools {
         )
         val location = intArrayOf(0, 0)
         view.getLocationOnScreen(location)
-
         if (isAlpha) {
-            WindowUtils.setAlpha(view.context, 0.6f)
+            WindowUtils.setAlpha(view.context, alpha)
         }
         showAtLocation(
             view,
@@ -48,11 +51,58 @@ object PopUpWindowTools {
         )
     }
 
+    /**
+     * 显示在控件底部 右边对其
+     */
+    fun PopupWindow.showAsDropByRight(
+        view: View,
+        isAlpha: Boolean = true,
+        alpha: Float = 0.6f,
+    ) {
+        //测量大小
+        contentView.measure(
+            View.MeasureSpec.UNSPECIFIED,
+            View.MeasureSpec.UNSPECIFIED
+        )
+        val location = intArrayOf(0, 0)
+        view.getLocationOnScreen(location)
+        if (isAlpha) {
+            WindowUtils.setAlpha(view.context, alpha)
+        }
+        showAtLocation(
+            view,
+            Gravity.NO_GRAVITY,
+            location[0] - contentView.measuredWidth,
+            location[1] + view.measuredHeight
+        )
+    }
 
+    fun PopupWindow.showAsDropByLeft(
+        view: View,
+        isAlpha: Boolean = true,
+        alpha: Float = 0.6f,
+    ) {
+        //测量大小
+        contentView.measure(
+            View.MeasureSpec.UNSPECIFIED,
+            View.MeasureSpec.UNSPECIFIED
+        )
+        val location = intArrayOf(0, 0)
+        view.getLocationOnScreen(location)
+        if (isAlpha) {
+            WindowUtils.setAlpha(view.context, alpha)
+        }
+        showAtLocation(
+            view,
+            Gravity.NO_GRAVITY,
+            location[0],
+            location[1] + view.measuredHeight
+        )
+    }
 
     //恢复
     private fun restore(context: Activity) {
-        WindowUtils.setAlpha(context, 0.6f)
+        WindowUtils.setAlpha(context, 1f)
     }
 
 }
