@@ -59,11 +59,14 @@ afterEvaluate {
 dependencies {
     //viewmodel中的 life
     api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
-
+    dependencies {
+        // 日志调试框架：https://github.com/getActivity/Logcat
+        //android.enableJetifier = true
+        debugImplementation 'com.github.getActivity:Logcat:11.8'
+    }
     //shapeView
     dependencies {
         api project(path: ':lib_shapeview')
-
 //        //表示将第三方库迁移到 AndroidX
 //        //android.enableJetifier = true
 //        // Shape 框架：https://github.com/getActivity/ShapeView
@@ -74,7 +77,7 @@ dependencies {
     implementation 'androidx.palette:palette-ktx:1.0.0'
 
     // 日志工具
-    implementation ("com.blankj:utilcodex:1.31.1")
+    api ("com.blankj:utilcodex:1.31.1")
 
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
