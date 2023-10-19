@@ -1,10 +1,8 @@
 package com.onBit.lib_base.base.window.dao
 
-import android.view.View
+interface PopWindowDao {
 
-interface WindowDao {
-
-    fun show(view: View, xoff: Int = 0, yoff: Int = 0)
+    fun showAsDrop()
     fun setCancelable(b: Boolean)
 
     fun setAnimationStyle(animate: Int)

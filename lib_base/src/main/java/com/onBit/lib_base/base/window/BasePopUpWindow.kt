@@ -1,21 +1,17 @@
 package com.onBit.lib_base.base.window
 
-import android.app.Activity
 import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.PopupWindow
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
-import com.onBit.lib_base.R
-import com.onBit.lib_base.base.window.dao.WindowDao
+import com.onBit.lib_base.base.window.dao.PopWindowDao
 
 abstract class BasePopUpWindow<VB : ViewBinding>(
     private val context: Context
-) : DefaultLifecycleObserver, WindowDao {
+) : DefaultLifecycleObserver, PopWindowDao {
 
     abstract val bindingInflater: (LayoutInflater) -> VB
 
@@ -42,17 +38,9 @@ abstract class BasePopUpWindow<VB : ViewBinding>(
     }
 
 
-    override fun show(view: View, xoff: Int, yoff: Int) {
-        popupWindow.apply {
-            setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            animationStyle = animation
-            popupWindow.isFocusable = isCancelAble
-            showAsDropDown(view, xoff, yoff)
-        }
-
-        initView()
-        initListener()
+    override fun showAsDrop() {
     }
+
 
     override fun setAnimationStyle(animate: Int) {
         this.animation = animate

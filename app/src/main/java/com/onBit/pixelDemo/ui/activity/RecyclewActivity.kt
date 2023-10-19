@@ -1,29 +1,17 @@
 package com.onBit.pixelDemo.ui.activity
 
-import android.animation.AnimatorInflater
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Shader
-import android.graphics.drawable.LayerDrawable
-import android.graphics.drawable.ShapeDrawable
-import android.net.Uri
-import android.provider.Settings
+import android.view.Gravity
 import android.view.LayoutInflater
-import android.widget.PopupWindow
-import androidx.camera.core.processing.SurfaceProcessorNode.In
-import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
-import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.onBit.PixelBitToolKit.R
+import android.view.View
+import android.widget.PopupMenu
+import com.blankj.utilcode.util.BarUtils
+import com.blankj.utilcode.util.LogUtils
 import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
+import com.onBit.PixelBitToolKit.databinding.LayoutRvBinding
 import com.onBit.lib_base.base.BaseActivity
-import com.onBit.pixelDemo.ui.floatview.FloatView
-import com.onBit.pixelDemo.ui.fragment.MyFragment
+import com.onBit.lib_base.base.utils.PopUpWindowTools
+import com.onBit.lib_base.base.utils.PopUpWindowTools.showAsUp
 
 
 class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
@@ -34,27 +22,28 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         return true
     }
 
-    private val a by lazy(LazyThreadSafetyMode.PUBLICATION) {  }
+    private val a by lazy(LazyThreadSafetyMode.PUBLICATION) { }
     fun test2(int: Int): Boolean {
         return false
     }
 
+    private val myMenu by lazy { PopupMenu(this, mBinding.button2) }
+    private val popupWindow by lazy {
+        PopUpWindowTools.buildCustomPopUpWindow(
+            this@RecyclewActivity,
+            LayoutRvBinding.inflate(layoutInflater).root
+        )
+    }
+
+
     @SuppressLint("ResourceType")
     override fun initView() {
         super.initView()
-        val fadeInAnimation = AnimatorInflater.loadAnimator(this, com.xuexiang.xui.R.animator.fragment_fade_enter)
-        val fadeOutAnimation = AnimatorInflater.loadAnimator(this, com.xuexiang.xui.R.animator.fragment_close_exit)
         mBinding.button2.setOnClickListener {
-            mBinding.button.isVisible = !mBinding.button.isVisible
-        }
+            popupWindow.showAsUp(mBinding.button2)
         }
     }
 
 
-
-
-
-
-class A {
-
 }
+
