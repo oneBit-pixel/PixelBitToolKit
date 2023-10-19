@@ -45,3 +45,27 @@ open class Animal : CanEat {
  * 委托:实现多继承
  **/
 class Bird(flyer: Flyer, animal: Animal) : CanFly by flyer, CanEat by animal
+
+ class ABC {
+    object BCD{
+
+    }
+}
+
+data class Birds(val weight: Int, val age: Int, val name: String) {
+    var sex = 1
+    var a = 1
+    operator fun component4(): Int {
+        return 3
+    }
+    operator fun component5():Int{
+        return 5
+    }
+    constructor(weight: Int, age: Int, name: String, sex: Int) : this(weight, age, name) {
+        this.sex = sex
+    }
+
+    constructor(weight: Int, age: Int, name: String, sex: Int, a: Int) : this(weight, age, name) {
+        this.a = a
+    }
+}
