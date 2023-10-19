@@ -2,6 +2,9 @@ package com.onBit.pixelDemo
 
 import com.example.studyProject.studyDesign.observer.Student
 import com.example.studyProject.studyKotlin.ABCD
+import com.example.studyProject.studyKotlin.Animal
+import com.example.studyProject.studyKotlin.Bird
+import com.example.studyProject.studyKotlin.Flyer
 import com.example.studyProject.studyKotlin.Lambda
 import org.junit.Test
 
@@ -19,6 +22,8 @@ class ExampleUnitTest {
     }
     @Test
     fun test1(){
-       Lambda.test()
+        val bird = Bird(Flyer(), Animal())
+        bird.eat()
+        bird.fly()
     }
 }

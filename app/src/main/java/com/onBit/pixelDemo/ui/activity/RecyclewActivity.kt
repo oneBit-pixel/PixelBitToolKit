@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.PopupMenu
 import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.LogUtils
+import com.example.studyProject.studyKotlin.Mule
 import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
 import com.onBit.PixelBitToolKit.databinding.LayoutRvBinding
 import com.onBit.lib_base.base.BaseActivity
@@ -24,26 +25,11 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         return true
     }
 
-    private val a by lazy(LazyThreadSafetyMode.PUBLICATION) { }
-    fun test2(int: Int): Boolean {
-        return false
-    }
-
-    private val myMenu by lazy { PopupMenu(this, mBinding.button2) }
-    private val popupWindow by lazy {
-        PopUpWindowTools.buildCustomPopUpWindow(
-            this@RecyclewActivity,
-            LayoutRvBinding.inflate(layoutInflater).root
-        )
-    }
-
 
     @SuppressLint("ResourceType")
     override fun initView() {
         super.initView()
-        mBinding.button2.setOnClickListener {
-            popupWindow.showAsDropByLeft(mBinding.button2)
-        }
+        Mule().DonkeyC().doSomeThing()
     }
 
 
