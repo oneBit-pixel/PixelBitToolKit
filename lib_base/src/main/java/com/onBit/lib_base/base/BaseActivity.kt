@@ -1,6 +1,5 @@
 package com.onBit.lib_base.base
 
-import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
@@ -14,8 +13,10 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.palette.graphics.Palette
 import androidx.viewbinding.ViewBinding
-import com.blankj.utilcode.util.LogUtils
-import com.google.android.material.color.utilities.CorePalette
+import com.blankj.utilcode.util.BarUtils
+import com.blankj.utilcode.util.ColorUtils
+import com.blankj.utilcode.util.ScreenUtils
+import com.onBit.lib_base.base.utils.ColorUtilsEx
 
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
@@ -29,9 +30,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(mBinding.root)
-
         setTheme()
-
         initView()
         initListener()
         initEvent()
@@ -42,123 +41,54 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         setTheme()
     }
 
-    private fun setTheme() {
-        if (isImTheme()) {
-            setImTheme()
-        }
+    protected open fun setTheme() {
+        BarUtils.setNavBarVisibility(this, !isHideNavigation())
+        BarUtils.setStatusBarVisibility(this, !isHideStatusBar())
+        setFullScreen(isFullScreen())
+    }
 
-        if (isFullScreen()) {
-            setFullScreen()
+
+    protected open fun setStatusByBg(background: Drawable) {
+        if (background is BitmapDrawable) {
+            setBitmapColor(background.bitmap)
+        } else if (background is ColorDrawable) {
+            setStatusColor(background.color)
+            setStatusLight(background.color)
         }
     }
 
-    private fun setFullScreen() {
-        // 如果你的导航栏颜色为白色，确保导航栏上的图标和文字为深色
-        val flag = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR or
-                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
-                    View.SYSTEM_UI_FLAG_FULLSCREEN or
-                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
-                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
 
-
+    protected open fun setFullScreen(fullScreen: Boolean) {
+        if (fullScreen) {
+            ScreenUtils.setFullScreen(this)
         } else {
-
-            View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
-                    View.SYSTEM_UI_FLAG_FULLSCREEN or
-                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
-                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+            ScreenUtils.setNonFullScreen(this)
         }
-        window.decorView.systemUiVisibility = flag
-
-
     }
+
+    protected open fun isHideStatusBar(): Boolean = false
 
     //沉浸式主题
     protected open fun isFullScreen(): Boolean = false
 
-
     //是否隐藏导航栏
-    protected open fun isHideNavigation(): Boolean = true
-
-    @Suppress("DEPRECATION")
-    private fun setHideNavigation() {
-
-        val currentFlag = window.decorView.systemUiVisibility
-        val newFlags =
-            currentFlag or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-        window.decorView.systemUiVisibility = newFlags
-    }
-
-    //沉浸式主题
-    private fun setImTheme() {
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
-        //默认黑色 可以后面自己改
-        window.navigationBarColor = Color.TRANSPARENT
-        window.statusBarColor = Color.TRANSPARENT
+    protected open fun isHideNavigation(): Boolean = false
 
 
-        // 如果你的导航栏颜色为白色，确保导航栏上的图标和文字为深色
-        window.decorView.systemUiVisibility = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR or
-                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
-                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        } else {
-            View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-        }
-        if (isHideNavigation()) {
-            setHideNavigation()
-        }
-
-        val background = mBinding.root.background
-        if (background is ColorDrawable) {
-            setStatusLight(
-                background.color
-            )
-        } else if (background is BitmapDrawable) {
-            val bitmap = background.bitmap
-            setBitmapColor(bitmap)
-            //这里bitmap不能被回收，否则会出错
-//            bitmap.recycle()
-        }
+    private fun setStatusColor(color: Int) {
+        BarUtils.setStatusBarColor(this, color)
     }
 
     //从bitmap中提取主色 设置到状态栏上
     protected open fun setBitmapColor(bitmap: Bitmap) {
-        Palette.from(bitmap)
-            .setRegion(0, 0, bitmap.width, 100)
-            .generate { palette ->
-                palette?.dominantSwatch?.rgb?.also { color ->
-                    setStatusLight(color)
-                }
-            }
+        ColorUtilsEx.getColorFromBitmap(bitmap) { color ->
+            setStatusColor(color)
+            setStatusLight(color)
+        }
     }
 
     protected open fun setStatusLight(color: Int) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            val flags = window.decorView.systemUiVisibility
-            window.decorView.systemUiVisibility = if (isColorDark(color)) {
-                //如果是深色则去掉 高亮
-                flags and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
-            } else {
-                //如果不是深色 则添加高亮
-                flags or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-            }
-        }
-
-    }
-
-
-    protected open fun isColorDark(color: Int): Boolean {
-        val darkness =
-            1 - (0.299 * Color.red(color) + 0.587 * Color.green(color) + 0.114 * Color.blue(color)) / 255
-
-        return darkness >= 0.5
+        BarUtils.setStatusBarLightMode(this, ColorUtils.isLightColor(color))
     }
 
 

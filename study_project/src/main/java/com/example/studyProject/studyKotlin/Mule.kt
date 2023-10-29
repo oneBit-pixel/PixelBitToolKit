@@ -20,6 +20,20 @@ class Mule {
 
 }
 
+class CovariantList<out T> {
+        fun get(index: @UnsafeVariance T): Int {
+        return 1
+    }
+
+    fun<T> getADB(){
+
+    }
+}
+
+inline fun <reified T> getType(): Class<T> {
+    return T::class.java
+}
+
 interface CanFly {
     fun fly()
 }

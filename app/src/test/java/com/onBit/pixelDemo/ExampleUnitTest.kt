@@ -22,12 +22,28 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
     }
-    @Test
-    fun test1(){
-        val birds = Birds(123, 321, "123",123)
-        val (_, _, _, sex,a) = birds // 使用解构声明
-        println("Sex: $a")
 
+    @Test
+    fun test1() {
+        Computer("")
+    }
+
+    interface Computer {
+        val cpu: String
+        companion object{
+            operator fun invoke(type: String): Computer {
+                return when (type) {
+                    "" -> {PC("ccc")}
+                    else -> {PC("")}
+                }
+            }
+        }
+    }
+
+    class PC(override val cpu: String) : Computer
+
+    object ComputerFactory {
 
     }
+
 }

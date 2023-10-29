@@ -9,7 +9,7 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
         <!--顶部和底部 是否半透明透明效果-->
-        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
 
         <!--设置导航栏 如果是透明色 为colorBackground 默认颜色 白色-->
         <item name="android:navigationBarColor">@android:color/transparent</item>
@@ -22,7 +22,7 @@
         <!--导航栏与内容的分割线颜色-->
         <!--        <item name="android:navigationBarDividerColor" tools:targetApi="o_mr1">@color/red</item>-->
         <!--控件隐藏时有渐隐动画-->
-        <item name="android:animateLayoutChanges">true</item>
+<!--        <item name="android:animateLayoutChanges">true</item>-->
     </style>
 
     <style name="MyWindowAnimation" parent="android:Animation.Activity">

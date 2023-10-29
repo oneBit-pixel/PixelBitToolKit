@@ -30,6 +30,7 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
     override fun initView() {
         super.initView()
         Mule().DonkeyC().doSomeThing()
+
     }
 
 
