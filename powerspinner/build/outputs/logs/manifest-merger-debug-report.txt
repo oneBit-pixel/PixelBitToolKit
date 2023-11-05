@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml:17:1-14
-INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml:17:1-14
-INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml:17:1-14
+ADDED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml:17:1-14
+INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml:17:1-14
+INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml:17:1-14
 	package
-		INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml:17:1-14
-		INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+		INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+		ADDED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml:17:1-14
+		INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml:17:1-14
+		ADDED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml:17:1-14
 uses-sdk
-INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
-INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
-INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
-INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
-		INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+		INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+		ADDED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+		INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
-		INJECTED from D:\AndroidProject\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+		INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+		ADDED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+		INJECTED from D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
