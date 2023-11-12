@@ -1,8 +1,11 @@
 package com.onBit.pixelDemo.ui.activity
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import androidx.activity.viewModels
+import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.LogUtils
+import com.blankj.utilcode.util.ScreenUtils
 import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
 import com.onBit.lib_base.base.BaseActivity
 import com.onBit.pixelDemo.hit.entry.MyEntryPoint
@@ -41,9 +44,6 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityRecyclewBinding
         get() = ActivityRecyclewBinding::inflate
 
-    override fun isFullScreen(): Boolean {
-        return true
-    }
 
     fun doSomeThing() {
 
@@ -56,6 +56,12 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         woman2.sex()
         man.sex()
         woman.sex()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        BarUtils.setStatusBarColor(this,Color.TRANSPARENT)
+        BarUtils.transparentNavBar(this)
     }
 }
 
