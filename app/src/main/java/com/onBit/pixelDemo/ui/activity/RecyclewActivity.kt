@@ -2,12 +2,17 @@ package com.onBit.pixelDemo.ui.activity
 
 import android.graphics.Color
 import android.view.LayoutInflater
+import android.widget.ImageView
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ScreenUtils
+import com.bumptech.glide.Glide
+import com.onBit.PixelBitToolKit.R
 import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
 import com.onBit.lib_base.base.BaseActivity
+import com.onBit.lib_base.base.init.appContext
 import com.onBit.pixelDemo.hit.entry.MyEntryPoint
 import com.onBit.pixelDemo.hit.module.Human
 import com.onBit.pixelDemo.hit.module.ManType
@@ -16,6 +21,9 @@ import com.onBit.pixelDemo.hit.module.WomanType
 import com.onBit.pixelDemo.viewmodel.MViewModel
 import dagger.hilt.EntryPoints
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import javax.inject.Inject
 
@@ -56,11 +64,23 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         woman2.sex()
         man.sex()
         woman.sex()
+        lifecycleScope.launch(Dispatchers.IO) {
+            val bitmap = Glide.with(this@RecyclewActivity)
+                .asBitmap()
+                .load(R.mipmap.sun_100px)
+                .submit()
+                .get()
+            withContext(Dispatchers.Main){
+                bitmap?.let {
+                    mBinding.edgeView.setBitmap(it)
+                }
+            }
+        }
     }
 
     override fun onResume() {
         super.onResume()
-        BarUtils.setStatusBarColor(this,Color.TRANSPARENT)
+        BarUtils.setStatusBarColor(this, Color.TRANSPARENT)
         BarUtils.transparentNavBar(this)
     }
 }

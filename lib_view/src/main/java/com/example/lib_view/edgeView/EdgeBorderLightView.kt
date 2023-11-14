@@ -1,6 +1,7 @@
 package com.example.lib_view.edgeView
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.util.AttributeSet
 import android.view.View
@@ -24,6 +25,10 @@ class EdgeBorderLightView @JvmOverloads constructor(
         super.onDraw(canvas)
         animate.onDraw(canvas)
         postInvalidateDelayed(30)
+    }
+
+    fun setBitmap(bitmap: Bitmap) {
+        animate.setBitmap(bitmap)
     }
 
 }
