@@ -64,17 +64,20 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         woman2.sex()
         man.sex()
         woman.sex()
-        lifecycleScope.launch(Dispatchers.IO) {
-            val bitmap = Glide.with(this@RecyclewActivity)
-                .asBitmap()
-                .load(R.mipmap.sun_100px)
-                .submit()
-                .get()
-            withContext(Dispatchers.Main){
-                bitmap?.let {
-                    mBinding.edgeView.setBitmap(it)
-                }
-            }
+//        lifecycleScope.launch(Dispatchers.IO) {
+//            val bitmap = Glide.with(this@RecyclewActivity)
+//                .asBitmap()
+//                .load(R.mipmap.sun_100px)
+//                .submit()
+//                .get()
+//            withContext(Dispatchers.Main){
+//                bitmap?.let {
+//                    mBinding.edgeView.setBitmap(it)
+//                }
+//            }
+//        }
+        mBinding.apply {
+
         }
     }
 
