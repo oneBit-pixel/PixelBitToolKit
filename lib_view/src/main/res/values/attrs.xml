@@ -18,8 +18,8 @@
             2.LINE 直线模式
         -->
         <attr name="edge_type" format="enum">
-            <enum name="IMAGE" value="0"/>
-            <enum name="LINE" value="1"/>
+            <enum name="IMAGE" value="0" />
+            <enum name="LINE" value="1" />
         </attr>
         <attr name="edge_src" format="reference" />
     </declare-styleable>
@@ -37,5 +37,11 @@
         <attr name="inner_border_width" format="dimension" />
         <attr name="inner_border_color" format="color" />
         <attr name="mask_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleDiskView">
+        <!--平均分每个盘的大小-->
+        <attr name="cd_number" format="integer" />
+        <attr name="cd_colors" format="reference" />
     </declare-styleable>
 </resources>
