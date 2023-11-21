@@ -83,12 +83,23 @@ class CircleDiskView @JvmOverloads constructor(
             centerY + radius  // 下边界
         )
 
-        val startAngle = 0f // 起始角度
-        val sweepAngle = 360f // 扫描角度，这里是完整的圆
+        val sweepAngle = 360f / numberOfCircles // 扫描角度，这里是完整的圆
+        val startAngle = -sweepAngle - 90f // 起始角度
 
         val useCenter = true // 是否使用圆心
-
-        canvas.drawArc(rectF, startAngle, sweepAngle, useCenter, paint)
+        canvas.save()
+        paint.apply {
+        }
+        for (i in 0..numberOfCircles) {
+            canvas.drawArc(rectF, startAngle, sweepAngle, useCenter, paint)
+            if (i%2!=0){
+                paint.style=Paint.Style.FILL_AND_STROKE
+            }else{
+                paint.style=Paint.Style.STROKE
+            }
+            canvas.rotate(sweepAngle*i, centerX.toFloat(), centerY.toFloat())
+        }
+        canvas.restore()
     }
 
 
