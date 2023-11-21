@@ -43,5 +43,6 @@
         <!--平均分每个盘的大小-->
         <attr name="cd_number" format="integer" />
         <attr name="cd_colors" format="reference" />
+        <attr name="android:src" format="reference" />
     </declare-styleable>
 </resources>

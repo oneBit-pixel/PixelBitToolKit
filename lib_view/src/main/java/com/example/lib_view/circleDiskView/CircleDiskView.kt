@@ -3,21 +3,19 @@ package com.example.lib_view.circleDiskView
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Color
-import android.graphics.Matrix
 import android.graphics.Paint
 import android.graphics.Path
 import android.graphics.RectF
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
-import android.view.animation.AccelerateInterpolator
-import android.view.animation.DecelerateInterpolator
 import com.example.lib_view.R
-import kotlin.math.cos
 import kotlin.math.min
-import kotlin.math.sin
 
 @SuppressLint("Recycle")
 class CircleDiskView @JvmOverloads constructor(
@@ -36,6 +34,21 @@ class CircleDiskView @JvmOverloads constructor(
             invalidate()
         }
 
+    var imgBitmap: Bitmap? = null
+        set(value) {
+            field = value
+            invalidate()
+        }
+
+    var imageSrc = 0
+        set(value) {
+            field = value
+            if (value != 0) {
+                imgBitmap = BitmapFactory.decodeResource(resources, value)
+            }
+        }
+    lateinit var bitmapRectF: RectF
+
     init {
         context.obtainStyledAttributes(attr, R.styleable.CircleDiskView).apply {
             numberOfCircles = getInt(R.styleable.CircleDiskView_cd_number, DEFAULT_NUMBER)
@@ -45,6 +58,7 @@ class CircleDiskView @JvmOverloads constructor(
                     colors.recycle()
                 }
             }
+            imageSrc = getResourceId(R.styleable.CircleDiskView_android_src, 0)
             recycle()
         }
     }
@@ -72,10 +86,28 @@ class CircleDiskView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        val centerX = width / 2
-        val centerY = height / 2
+        val centerX = width / 2f
+        val centerY = height / 2f
         val radius = (min(centerX, centerY) - 20).toFloat() // 半径
 
+        //这个旋转
+        drawArc(centerX, radius, centerY, canvas)
+
+    }
+
+
+
+    private fun isTouchPointInsideBitmap(x: Float, y: Float): Boolean {
+        return bitmapRectF.contains(x, y)
+    }
+
+
+    private fun drawArc(
+        centerX: Float,
+        radius: Float,
+        centerY: Float,
+        canvas: Canvas
+    ) {
         val rectF = RectF(
             centerX - radius, // 左边界
             centerY - radius, // 上边界
@@ -83,7 +115,7 @@ class CircleDiskView @JvmOverloads constructor(
             centerY + radius  // 下边界
         )
 
-        val sweepAngle = 360f / numberOfCircles // 扫描角度，这里是完整的圆
+        val sweepAngle = 360f / numberOfCircles // 扫描角度
         val startAngle = -sweepAngle - 90f // 起始角度
 
         val useCenter = true // 是否使用圆心
@@ -92,12 +124,12 @@ class CircleDiskView @JvmOverloads constructor(
         }
         for (i in 0..numberOfCircles) {
             canvas.drawArc(rectF, startAngle, sweepAngle, useCenter, paint)
-            if (i%2!=0){
-                paint.style=Paint.Style.FILL_AND_STROKE
-            }else{
-                paint.style=Paint.Style.STROKE
+            if (i % 2 != 0) {
+                paint.style = Paint.Style.FILL_AND_STROKE
+            } else {
+                paint.style = Paint.Style.STROKE
             }
-            canvas.rotate(sweepAngle*i, centerX.toFloat(), centerY.toFloat())
+            canvas.rotate(sweepAngle * i, centerX.toFloat(), centerY.toFloat())
         }
         canvas.restore()
     }
