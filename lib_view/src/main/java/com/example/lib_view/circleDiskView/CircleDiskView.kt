@@ -14,6 +14,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
+import com.blankj.utilcode.util.LogUtils
 import com.example.lib_view.R
 import kotlin.math.min
 
@@ -48,14 +49,18 @@ class CircleDiskView @JvmOverloads constructor(
             }
         }
     lateinit var bitmapRectF: RectF
+    val mColors = mutableListOf<Int>()
 
     init {
         context.obtainStyledAttributes(attr, R.styleable.CircleDiskView).apply {
             numberOfCircles = getInt(R.styleable.CircleDiskView_cd_number, DEFAULT_NUMBER)
             getResourceId(R.styleable.CircleDiskView_cd_colors, 0).let {
                 if (it != 0) {
-                    val colors = resources.obtainTypedArray(it)
-                    colors.recycle()
+                    val colors = resources.getStringArray(it)
+                    val map = colors.map { colorString ->
+                        Color.parseColor(colorString)
+                    }
+                    mColors.addAll(map)
                 }
             }
             imageSrc = getResourceId(R.styleable.CircleDiskView_android_src, 0)
@@ -70,7 +75,7 @@ class CircleDiskView @JvmOverloads constructor(
             this.apply {
                 color = Color.RED
                 style = Paint.Style.STROKE
-                strokeWidth = 20f
+                strokeWidth = 2f
                 strokeCap = Paint.Cap.ROUND
             }
         }
@@ -96,7 +101,6 @@ class CircleDiskView @JvmOverloads constructor(
     }
 
 
-
     private fun isTouchPointInsideBitmap(x: Float, y: Float): Boolean {
         return bitmapRectF.contains(x, y)
     }
@@ -112,24 +116,26 @@ class CircleDiskView @JvmOverloads constructor(
             centerX - radius, // 左边界
             centerY - radius, // 上边界
             centerX + radius, // 右边界
-            centerY + radius  // 下边界
+            centerY + radius   // 下边界
         )
 
         val sweepAngle = 360f / numberOfCircles // 扫描角度
         val startAngle = -sweepAngle - 90f // 起始角度
 
-        val useCenter = true // 是否使用圆心
         canvas.save()
         paint.apply {
+            style = Paint.Style.FILL_AND_STROKE
         }
         for (i in 0..numberOfCircles) {
-            canvas.drawArc(rectF, startAngle, sweepAngle, useCenter, paint)
-            if (i % 2 != 0) {
-                paint.style = Paint.Style.FILL_AND_STROKE
-            } else {
-                paint.style = Paint.Style.STROKE
-            }
-            canvas.rotate(sweepAngle * i, centerX.toFloat(), centerY.toFloat())
+            paint.color = mColors[i % mColors.size]
+            path.reset()
+            path.arcTo(rectF, startAngle, sweepAngle, true)
+            path.lineTo(centerX, centerY)
+            path.close()
+            canvas.drawPath(path, paint)
+            paint.color = Color.WHITE
+            canvas.drawTextOnPath(i.toString(),path,20f,20f,paint)
+            canvas.rotate(sweepAngle * i, centerX, centerY)
         }
         canvas.restore()
     }
