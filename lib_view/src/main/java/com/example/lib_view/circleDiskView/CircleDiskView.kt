@@ -134,6 +134,7 @@ class CircleDiskView @JvmOverloads constructor(
             path.arcTo(rectF, startAngle, sweepAngle, true)
             path.lineTo(centerX, centerY)
             path.close()
+            //绘制扇形
             canvas.drawPath(path, paint)
             paint.apply {
                 color = Color.WHITE
@@ -142,11 +143,21 @@ class CircleDiskView @JvmOverloads constructor(
             }
             val text = "这是第${i}扇形"
             val measureText = paint.measureText(text)
+            //绘制文字
             canvas.drawTextOnPath(
                 text, path,
                 ((sweepAngle / 360f) * Math.PI * radius - (measureText / 2)).toFloat(),
                 centerY - radius, paint
             )
+            //绘制图片
+            val bitmap = BitmapFactory.decodeResource(resources,R.mipmap.mp_1) // 替换为你的图片资源
+            val bitmapWidth = bitmap.width
+            val bitmapHeight = bitmap.height
+            val x = (radius - bitmapWidth) / 2
+            val y = radius/2 // 调整图片与文本之间的垂直间距
+            val rectF1 = RectF(0f, 0f, 20f, 20f)
+            canvas.drawBitmap(bitmap, null,rectF1, null)
+
             canvas.rotate(sweepAngle * i, centerX, centerY)
         }
         canvas.restore()
