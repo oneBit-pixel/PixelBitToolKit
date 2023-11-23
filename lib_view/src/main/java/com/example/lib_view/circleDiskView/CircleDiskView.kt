@@ -17,6 +17,7 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import com.blankj.utilcode.util.LogUtils
 import com.example.lib_view.R
 import kotlin.math.min
+import kotlin.math.sin
 
 @SuppressLint("Recycle")
 class CircleDiskView @JvmOverloads constructor(
@@ -123,18 +124,29 @@ class CircleDiskView @JvmOverloads constructor(
         val startAngle = -sweepAngle - 90f // 起始角度
 
         canvas.save()
-        paint.apply {
-            style = Paint.Style.FILL_AND_STROKE
-        }
         for (i in 0..numberOfCircles) {
-            paint.color = mColors[i % mColors.size]
+            paint.apply {
+                color = mColors[i % mColors.size]
+                strokeWidth = 1f
+                style = Paint.Style.FILL_AND_STROKE
+            }
             path.reset()
             path.arcTo(rectF, startAngle, sweepAngle, true)
             path.lineTo(centerX, centerY)
             path.close()
             canvas.drawPath(path, paint)
-            paint.color = Color.WHITE
-            canvas.drawTextOnPath(i.toString(),path,20f,20f,paint)
+            paint.apply {
+                color = Color.WHITE
+                textSize = 20f
+                style = Paint.Style.STROKE
+            }
+            val text = "这是第${i}扇形"
+            val measureText = paint.measureText(text)
+            canvas.drawTextOnPath(
+                text, path,
+                ((sweepAngle / 360f) * Math.PI * radius - (measureText / 2)).toFloat(),
+                centerY - radius, paint
+            )
             canvas.rotate(sweepAngle * i, centerX, centerY)
         }
         canvas.restore()
