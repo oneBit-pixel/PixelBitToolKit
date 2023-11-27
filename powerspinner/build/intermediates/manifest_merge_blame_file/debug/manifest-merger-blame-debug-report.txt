@@ -18,6 +18,6 @@
 18    package="com.onePixel.spinner" >
 19
 20    <uses-sdk android:minSdkVersion="17" />
-20-->D:\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
+20-->D:\work\Android\Android Project\PixelBitToolKit\powerspinner\src\main\AndroidManifest.xml
 21
 22</manifest>
