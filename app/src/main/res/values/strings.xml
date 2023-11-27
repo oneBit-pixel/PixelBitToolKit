@@ -10,4 +10,6 @@
     <string name="animal">Animal</string>
     <string name="cool">Cool</string>
     <string name="nature">Nature</string>
+    <string name="service_label">我的自定义键盘</string>
+
 </resources>
