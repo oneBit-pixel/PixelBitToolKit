@@ -14,8 +14,10 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
+import com.blankj.utilcode.util.LogUtils
 import com.example.lib_view.R
 import kotlin.math.min
+import kotlin.math.sin
 
 @SuppressLint("Recycle")
 class CircleDiskView @JvmOverloads constructor(
@@ -48,14 +50,18 @@ class CircleDiskView @JvmOverloads constructor(
             }
         }
     lateinit var bitmapRectF: RectF
+    val mColors = mutableListOf<Int>()
 
     init {
         context.obtainStyledAttributes(attr, R.styleable.CircleDiskView).apply {
             numberOfCircles = getInt(R.styleable.CircleDiskView_cd_number, DEFAULT_NUMBER)
             getResourceId(R.styleable.CircleDiskView_cd_colors, 0).let {
                 if (it != 0) {
-                    val colors = resources.obtainTypedArray(it)
-                    colors.recycle()
+                    val colors = resources.getStringArray(it)
+                    val map = colors.map { colorString ->
+                        Color.parseColor(colorString)
+                    }
+                    mColors.addAll(map)
                 }
             }
             imageSrc = getResourceId(R.styleable.CircleDiskView_android_src, 0)
@@ -70,7 +76,7 @@ class CircleDiskView @JvmOverloads constructor(
             this.apply {
                 color = Color.RED
                 style = Paint.Style.STROKE
-                strokeWidth = 20f
+                strokeWidth = 2f
                 strokeCap = Paint.Cap.ROUND
             }
         }
@@ -96,7 +102,6 @@ class CircleDiskView @JvmOverloads constructor(
     }
 
 
-
     private fun isTouchPointInsideBitmap(x: Float, y: Float): Boolean {
         return bitmapRectF.contains(x, y)
     }
@@ -112,24 +117,48 @@ class CircleDiskView @JvmOverloads constructor(
             centerX - radius, // 左边界
             centerY - radius, // 上边界
             centerX + radius, // 右边界
-            centerY + radius  // 下边界
+            centerY + radius   // 下边界
         )
 
         val sweepAngle = 360f / numberOfCircles // 扫描角度
         val startAngle = -sweepAngle - 90f // 起始角度
 
-        val useCenter = true // 是否使用圆心
         canvas.save()
-        paint.apply {
-        }
         for (i in 0..numberOfCircles) {
-            canvas.drawArc(rectF, startAngle, sweepAngle, useCenter, paint)
-            if (i % 2 != 0) {
-                paint.style = Paint.Style.FILL_AND_STROKE
-            } else {
-                paint.style = Paint.Style.STROKE
+            paint.apply {
+                color = mColors[i % mColors.size]
+                strokeWidth = 1f
+                style = Paint.Style.FILL_AND_STROKE
             }
-            canvas.rotate(sweepAngle * i, centerX.toFloat(), centerY.toFloat())
+            path.reset()
+            path.arcTo(rectF, startAngle, sweepAngle, true)
+            path.lineTo(centerX, centerY)
+            path.close()
+            //绘制扇形
+            canvas.drawPath(path, paint)
+            paint.apply {
+                color = Color.WHITE
+                textSize = 20f
+                style = Paint.Style.STROKE
+            }
+            val text = "这是第${i}扇形"
+            val measureText = paint.measureText(text)
+            //绘制文字
+            canvas.drawTextOnPath(
+                text, path,
+                ((sweepAngle / 360f) * Math.PI * radius - (measureText / 2)).toFloat(),
+                centerY - radius, paint
+            )
+            //绘制图片
+            val bitmap = BitmapFactory.decodeResource(resources,R.mipmap.mp_1) // 替换为你的图片资源
+            val bitmapWidth = bitmap.width
+            val bitmapHeight = bitmap.height
+            val x = (radius - bitmapWidth) / 2
+            val y = radius/2 // 调整图片与文本之间的垂直间距
+            val rectF1 = RectF(0f, 0f, 20f, 20f)
+            canvas.drawBitmap(bitmap, null,rectF1, null)
+
+            canvas.rotate(sweepAngle * i, centerX, centerY)
         }
         canvas.restore()
     }

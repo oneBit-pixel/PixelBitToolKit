@@ -8,11 +8,18 @@
 
   <com.example.lib_view.circleDiskView.CircleDiskView
       android:id="@+id/callMeasure"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
+      android:layout_width="@dimen/dp_300"
+      android:layout_height="@dimen/dp_300"
+
       android:src="@mipmap/mp_1"
+      app:cd_colors="@array/colors"
       app:cd_number="8"
-     />
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
