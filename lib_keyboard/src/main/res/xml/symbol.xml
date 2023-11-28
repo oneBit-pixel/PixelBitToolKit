@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyHeight="@dimen/dp_62"
+    android:keyWidth="9%p"
+    android:horizontalGap="1%p"
+    android:verticalGap="0px">
+
+    <Row android:rowEdgeFlags="top">
+        <Key
+            android:codes="43"
+            android:keyEdgeFlags="left"
+            android:keyLabel="+" />
+        <Key
+            android:codes="215"
+            android:keyLabel="×" />
+        <Key
+            android:codes="247"
+            android:keyLabel="÷" />
+        <Key
+            android:codes="61"
+            android:keyLabel="=" />
+        <Key
+            android:codes="60"
+            android:keyLabel="&lt;" />
+        <Key
+            android:codes="62"
+            android:keyLabel="&gt;" />
+        <Key
+            android:codes="123"
+            android:keyLabel="{" />
+        <Key
+            android:codes="125"
+            android:keyLabel="}" />
+        <Key
+            android:codes="91"
+            android:keyLabel="[" />
+        <Key
+            android:codes="93"
+            android:keyEdgeFlags="right"
+            android:keyLabel="]" />
+    </Row>
+    <Row>
+        <Key
+            android:codes="163"
+            android:keyEdgeFlags="left"
+            android:keyLabel="£" />
+        <Key
+            android:codes="8364"
+            android:keyLabel="€" />
+        <Key
+            android:codes="165"
+            android:keyLabel="¥" />
+        <Key
+            android:codes="8361"
+            android:keyLabel="₩" />
+        <Key
+            android:codes="37"
+            android:keyLabel="%" />
+        <Key
+            android:codes="126"
+            android:keyLabel="~" />
+        <Key
+            android:codes="96"
+            android:keyLabel="`" />
+        <Key
+            android:codes="180"
+            android:keyLabel="´" />
+        <Key
+            android:codes="8226"
+            android:keyLabel="•" />
+        <Key
+            android:codes="10003"
+            android:keyEdgeFlags="right"
+            android:keyLabel="✓" />
+    </Row>
+    <Row>
+        <Key
+            android:keyWidth="13%p"
+            android:codes="-101"
+            android:keyEdgeFlags="left"
+            android:isModifier="true"
+            android:isSticky="true"
+            android:keyLabel="2/2" />
+        <Key
+            android:codes="95"
+            android:keyLabel="_" />
+        <Key
+            android:codes="92"
+            android:keyLabel="\\" />
+        <Key
+            android:codes="124"
+            android:keyLabel="|" />
+        <Key
+            android:codes="171"
+            android:keyLabel="«" />
+        <Key
+            android:codes="187"
+            android:keyLabel="»" />
+        <Key
+            android:codes="191"
+            android:keyLabel="¿" />
+        <Key
+            android:codes="161"
+            android:keyLabel="¡" />
+        <Key
+            android:keyWidth="13%p"
+            android:codes="-5"
+            android:keyEdgeFlags="right"
+            android:isRepeatable="true"
+            android:keyIcon="@drawable/ic_keyboard_backspace_white" />
+    </Row>
+    <Row android:rowEdgeFlags="bottom">
+        <Key
+            android:keyWidth="14%p"
+            android:codes="-102"
+            android:keyEdgeFlags="left"
+            android:keyLabel="ABC" />
+        <Key
+            android:keyWidth="12%p"
+            android:codes="44"
+            android:keyLabel="," />
+        <Key
+            android:keyWidth="48%p"
+            android:codes="32"
+            android:isRepeatable="true"
+            android:keyIcon="@drawable/ic_keyboard_space" />
+        <Key
+            android:keyWidth="12%p"
+            android:codes="46"
+            android:keyLabel="." />
+        <Key
+            android:keyWidth="14%p"
+            android:codes="10"
+            android:keyEdgeFlags="right"
+            android:keyIcon="@drawable/ic_keyboard_return" />
+    </Row>
+
+</Keyboard>

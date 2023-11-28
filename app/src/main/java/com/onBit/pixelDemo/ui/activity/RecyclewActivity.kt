@@ -3,6 +3,7 @@ package com.onBit.pixelDemo.ui.activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.provider.Settings
 import android.view.LayoutInflater
@@ -73,25 +74,26 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
             it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             it.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-        }.also { intent->
-            (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.let { manager->
+        }.also { intent ->
+            (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.let { manager ->
                 manager.inputMethodList.firstOrNull { it.packageName == packageName }
             }?.let {
                 it.id
             }?.also {
                 intent.putExtra(":settings:fragment_args_key", it)
-                intent.putExtra(":settings:show_fragment_args", Bundle().apply { putString(":settings:fragment_args_key", it) })
+                intent.putExtra(
+                    ":settings:show_fragment_args",
+                    Bundle().apply { putString(":settings:fragment_args_key", it) })
             }
         })
         mBinding.apply {
-            callMeasure.setOnClickListener {
-                (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.apply {
-                    showInputMethodPicker()
-                }
-            }
+            textView.setTypeface(Typeface.createFromAsset(assets,"AlexBrush-Regular.ttf"))
+//            callMeasure.setOnClickListener {
+//                (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.apply {
+//                    showInputMethodPicker()
+//                }
+//            }
         }
-
-
     }
 
     override fun onResume() {

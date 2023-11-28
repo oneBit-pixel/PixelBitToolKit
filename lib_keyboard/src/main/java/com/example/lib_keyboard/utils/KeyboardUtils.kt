@@ -1,0 +1,58 @@
+package com.example.lib_keyboard.utils
+
+import android.inputmethodservice.Keyboard
+import android.text.TextUtils
+
+object KeyboardUtils {
+    //表情
+    const val CODE_EMOJI = -100
+    //数字键盘切换
+    const val CODE_TYPE_NUM = -101
+    //字母
+    const val CODE_TYPE_QWERTY = -102
+    //符号
+    const val CODE_TYPE_SYMBOL = -103
+    //切换输入法
+    const val CODE_TYPE_SWITCH_INPUT = -105
+    //space
+    const val CODE_SPACE = 32
+
+    fun switchUpperOrLowerCase(isUpper: Boolean, keyboard: Keyboard) {
+        val keyList = keyboard.keys
+        if (isUpper) { // 大写切换小写
+            for (key in keyList) {
+                val label = key.label
+                if (!TextUtils.isEmpty(label) && key.codes[0] != CODE_SPACE && key.codes[0] != Keyboard.KEYCODE_DONE) {
+                    val str = label.toString()
+                    if (key.label != null && isLetter(str)) {
+                        key.label = str.toLowerCase()
+                        key.codes[0] = key.codes[0] + 32
+                    }
+                } else if (key.sticky && key.codes[0] == Keyboard.KEYCODE_SHIFT) {
+                    key.pressed = false
+                }
+            }
+        } else { // 小写切换大写
+            for (key in keyList) {
+                val label = key.label
+                if (!TextUtils.isEmpty(label) && key.codes[0] != CODE_SPACE && key.codes[0] != Keyboard.KEYCODE_DONE) {
+                    val str = label.toString()
+                    if (key.label != null && isLetter(str)) {
+                        key.label = str.toUpperCase()
+                        key.codes[0] = key.codes[0] - 32
+                    }
+                } else if (key.sticky && key.codes[0] == Keyboard.KEYCODE_SHIFT) {
+                    key.pressed = true
+                }
+            }
+        }
+    }
+
+    private fun isLetter(str: String): Boolean {
+        if (!TextUtils.isEmpty(str)) {
+            val c = str[0]
+            return c in 'a'..'z' || c in 'A'..'Z'
+        }
+        return false
+    }
+}
