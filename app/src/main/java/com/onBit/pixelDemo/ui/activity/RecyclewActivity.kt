@@ -14,6 +14,7 @@ import com.blankj.utilcode.util.LogUtils
 import com.codeboy.mediafacer.MediaFacer
 import com.codeboy.mediafacer.mediaGet.FileGet
 import com.codeboy.mediafacer.mediaGet.PictureGet
+import com.codeboy.mediafacer.mediaGet.base.IMediaContent
 import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
 import com.onBit.lib_base.base.BaseActivity
 import com.onBit.pixelDemo.hit.module.Human
@@ -114,15 +115,14 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
 
         mBinding.textView.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO) {
-
                 val contents = MediaFacer.withDocContex(this@RecyclewActivity)
-                    .getAllDocContent(*FileGet.DOCUMENT_MIME_TYPE)
-                contents.filter {
-                    it.fileName.endsWith("pdf", ignoreCase = true)
+                    .getAllDocContent(*FileGet.DOCUMENT_MIME_TYPE) as List<IMediaContent>
+
+                contents.map {
+                    LogUtils.d(it.toString())
                 }
             }
         }
-
 
     }
 
