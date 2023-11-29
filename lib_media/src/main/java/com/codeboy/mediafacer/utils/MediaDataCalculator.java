@@ -1,4 +1,4 @@
-package com.codeboy.mediafacer;
+package com.codeboy.mediafacer.utils;
 
 import java.text.DecimalFormat;
 

@@ -85,19 +85,13 @@ class CustomKeyboard @JvmOverloads constructor(context: Context, attrs: Attribut
                         CustomTypefaceSpan(mTypeface),
                         0,
                         input.length,
-                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        17
                     )
                 }
-                spannableString.getSpans(0,spannableString.length,CharacterStyle::class.java).forEach {
-                    span->
-                    val start = spannableString.getSpanStart(span)
-                    val end = spannableString.getSpanEnd(span)
-                    val flags = spannableString.getSpanFlags(span)
 
-                    spannableString.setSpan(span,start,end,)
-                }
                 ic.commitText(spannableString,1)
             }
+
         }
     }
 

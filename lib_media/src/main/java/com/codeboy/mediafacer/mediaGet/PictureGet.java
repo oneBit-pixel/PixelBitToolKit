@@ -1,4 +1,4 @@
-package com.codeboy.mediafacer;
+package com.codeboy.mediafacer.mediaGet;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -23,7 +23,7 @@ public class PictureGet {
         pictureContext = context.getApplicationContext();
     }
 
-    static PictureGet getInstance(Context context){
+    public static PictureGet getInstance(Context context){
         if(pictureGet == null){
             pictureGet = new PictureGet(context);
         }

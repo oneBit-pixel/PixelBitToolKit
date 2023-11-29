@@ -1,4 +1,4 @@
-package com.codeboy.mediafacer;
+package com.codeboy.mediafacer.mediaGet;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -20,7 +20,7 @@ public class VideoGet {
         videoContext = contx.getApplicationContext();
     }
 
-    static VideoGet getInstance(Context contx){
+    public static VideoGet getInstance(Context contx){
         if(videoGet == null){
             videoGet = new VideoGet(contx);
         }

@@ -1,4 +1,4 @@
-package com.codeboy.mediafacer;
+package com.codeboy.mediafacer.mediaGet;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -29,7 +29,7 @@ public class AudioGet {
         AudioContext = context.getApplicationContext();
     }
 
-    static AudioGet getInstance(Context context){
+    public static AudioGet getInstance(Context context){
         if(audioGet == null){
             audioGet = new AudioGet(context);
         }

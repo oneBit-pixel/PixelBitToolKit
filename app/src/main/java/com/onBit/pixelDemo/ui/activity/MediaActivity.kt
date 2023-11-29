@@ -1,15 +1,11 @@
 package com.onBit.pixelDemo.ui.activity
 
 import android.Manifest
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.view.LayoutInflater
 import com.blankj.utilcode.util.LogUtils
 import com.codeboy.mediafacer.MediaFacer
-import com.codeboy.mediafacer.PictureGet
+import com.codeboy.mediafacer.mediaGet.PictureGet
 import com.hjq.permissions.XXPermissions
-import com.onBit.PixelBitToolKit.R
 import com.onBit.PixelBitToolKit.databinding.ActivityMediaBinding
 import com.onBit.lib_base.base.BaseActivity
 
@@ -40,6 +36,7 @@ class MediaActivity : BaseActivity<ActivityMediaBinding>() {
                 }else{
                     val allAlbums = MediaFacer.withPictureContex(this@MediaActivity)
                         .getAllPictureContents(PictureGet.externalContentUri)
+
 
                     LogUtils.d("allAblums==>${allAlbums.toString()}")
                 }
