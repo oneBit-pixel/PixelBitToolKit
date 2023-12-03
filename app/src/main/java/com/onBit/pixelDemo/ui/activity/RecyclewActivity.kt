@@ -1,36 +1,46 @@
 package com.onBit.pixelDemo.ui.activity
 
-import android.content.Intent
+import android.animation.ValueAnimator
 import android.graphics.Color
-import android.net.Uri
 import android.os.Build
-import android.os.Environment
-import android.provider.Settings
 import android.view.LayoutInflater
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.ConcatAdapter
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.BarUtils
-import com.blankj.utilcode.util.LogUtils
-import com.codeboy.mediafacer.MediaFacer
-import com.codeboy.mediafacer.mediaGet.FileGet
-import com.codeboy.mediafacer.mediaGet.PictureGet
-import com.codeboy.mediafacer.mediaGet.base.IMediaContent
+import com.chad.library.adapter4.BaseQuickAdapter
+import com.chad.library.adapter4.QuickAdapterHelper
+import com.chad.library.adapter4.dragswipe.QuickDragAndSwipe
+import com.chad.library.adapter4.dragswipe.listener.OnItemDragListener
+import com.chad.library.adapter4.dragswipe.setItemDragListener
+import com.chad.library.adapter4.dragswipe.setItemSwipeListener
+import com.chad.library.adapter4.viewholder.QuickViewHolder
 import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
+import com.onBit.PixelBitToolKit.databinding.LayoutDialogBinding
 import com.onBit.lib_base.base.BaseActivity
 import com.onBit.pixelDemo.hit.module.Human
 import com.onBit.pixelDemo.hit.module.ManType
 import com.onBit.pixelDemo.hit.module.WomanType
+import com.onBit.pixelDemo.ui.adapter.AppAdapter
+import com.onBit.pixelDemo.ui.adapter.BottomAdapter
 import com.onBit.pixelDemo.viewmodel.MViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
-import java.io.File
 import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
+class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(), OnItemDragListener,
+    BaseQuickAdapter.OnItemLongClickListener<AppUtils.AppInfo> {
 
 
     val viewModel: MViewModel by viewModels()
@@ -50,6 +60,10 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
     @WomanType
     lateinit var woman2: Human
 
+    private val appAdapter by lazy { AppAdapter().apply {
+
+    } }
+
     override val bindingInflater: (LayoutInflater) -> ActivityRecyclewBinding
         get() = ActivityRecyclewBinding::inflate
 
@@ -59,77 +73,90 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
 
     }
 
+    val quickDragAndSwipe by lazy {
+        QuickDragAndSwipe()
+    }
+
+    val helper by lazy {
+        QuickAdapterHelper.Builder(appAdapter)
+            .build()
+    }
+
     override fun initView() {
         super.initView()
-        viewModel.say()
-        woman2.sex()
-        man.sex()
-        woman.sex()
-//        lifecycleScope.launch(Dispatchers.IO) {
-//            val bitmap = Glide.with(this@RecyclewActivity)
-//                .asBitmap()
-//                .load(R.mipmap.sun_100px)
-//                .submit()
-//                .get()
-//            withContext(Dispatchers.Main){
-//                bitmap?.let {
-//                    mBinding.edgeView.setBitmap(it)
-//                }
-//            }
-//        }
-
-//        startActivity(Intent(Settings.ACTION_INPUT_METHOD_SETTINGS).also {
-//            it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-//            it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-//            it.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-//        }.also { intent ->
-//            (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.let { manager ->
-//                manager.inputMethodList.firstOrNull { it.packageName == packageName }
-//            }?.let {
-//                it.id
-//            }?.also {
-//                intent.putExtra(":settings:fragment_args_key", it)
-//                intent.putExtra(
-//                    ":settings:show_fragment_args",
-//                    Bundle().apply { putString(":settings:fragment_args_key", it) })
-//            }
-//        })
-//        mBinding.apply {
-//            textView.setTypeface(Typeface.createFromAsset(assets,"AlexBrush-Regular.ttf"))
-////            callMeasure.setOnClickListener {
-////                (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.apply {
-////                    showInputMethodPicker()
-////                }
-////            }
-//        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            if (!Environment.isExternalStorageManager()) {
-                val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
-                val uri = Uri.fromParts("package", packageName, null)
-                intent.data = uri
-                startActivity(intent)
-            }
+        mBinding.apply {
+            recyclerview.adapter = appAdapter
+            recyclerview.layoutManager=LinearLayoutManager(this@RecyclewActivity)
         }
 
 
+        quickDragAndSwipe.apply {
+            attachToRecyclerView(mBinding.recyclerview)
+            setDataCallback(appAdapter)
+        }
+            .setDragMoveFlags(ItemTouchHelper.UP or ItemTouchHelper.DOWN)//可进行上下拖动，交换位置。 ItemTouchHelper.LEFT 允许向左拖动，ItemTouchHelper.RIGHT 允许向右拖动
+            .setSwipeMoveFlags(ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT);//可进行左右滑动删除
 
-        mBinding.textView.setOnClickListener {
-            lifecycleScope.launch(Dispatchers.IO) {
-                val contents = MediaFacer.withDocContex(this@RecyclewActivity)
-                    .getAllDocContent(*FileGet.DOCUMENT_MIME_TYPE) as List<IMediaContent>
+        appAdapter.setOnItemLongClickListener(this)
 
-                contents.map {
-                    LogUtils.d(it.toString())
+
+    }
+
+    override fun initEvent() {
+        super.initEvent()
+        lifecycleScope.launch(Dispatchers.IO) {
+            withContext(Dispatchers.Main) {
+                appAdapter.isStateViewEnable = true
+                appAdapter.setStateViewLayout(
+                    this@RecyclewActivity,
+                    com.onBit.PixelBitToolKit.R.layout.layout_dialog
+                )
+            }
+            val appsInfo = AppUtils.getAppsInfo()
+            delay(3000)
+            withContext(Dispatchers.Main) {
+                viewModel.say()
+                appAdapter.submitList(appsInfo)
+                helper.apply {
+                    addBeforeAdapter(BottomAdapter())
+                    addAfterAdapter(BottomAdapter())
+                    addBeforeAdapter(1, BottomAdapter())
                 }
+
             }
         }
-
     }
 
     override fun onResume() {
         super.onResume()
         BarUtils.setStatusBarColor(this, Color.TRANSPARENT)
         BarUtils.transparentNavBar(this)
+    }
+
+    override fun onItemDragStart(viewHolder: RecyclerView.ViewHolder?, pos: Int) {
+
+    }
+
+    override fun onItemDragMoving(
+        source: RecyclerView.ViewHolder,
+        from: Int,
+        target: RecyclerView.ViewHolder,
+        to: Int
+    ) {
+
+    }
+
+    override fun onItemDragEnd(viewHolder: RecyclerView.ViewHolder, pos: Int) {
+
+    }
+
+    override fun onLongClick(
+        adapter: BaseQuickAdapter<AppUtils.AppInfo, *>,
+        view: View,
+        position: Int
+    ): Boolean {
+        quickDragAndSwipe.startDrag(position)
+        return false
     }
 }
 

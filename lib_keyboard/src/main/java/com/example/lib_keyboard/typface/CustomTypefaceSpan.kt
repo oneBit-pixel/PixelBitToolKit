@@ -21,4 +21,5 @@ class CustomTypefaceSpan(private val newTypeface: Typeface, family: String="") :
 
     }
 
+
 }

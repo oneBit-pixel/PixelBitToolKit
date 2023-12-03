@@ -3,23 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
     tools:context="com.onBit.pixelDemo.ui.activity.RecyclewActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="@dimen/dp_100"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="asdf"
-        android:textColor="@color/black"
-        android:textSize="@dimen/sp_20"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/adapter_app_info"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
