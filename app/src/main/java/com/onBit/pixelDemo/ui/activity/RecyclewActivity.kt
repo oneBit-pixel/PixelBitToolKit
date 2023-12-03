@@ -60,9 +60,11 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(), OnItemDragList
     @WomanType
     lateinit var woman2: Human
 
-    private val appAdapter by lazy { AppAdapter().apply {
+    private val appAdapter by lazy {
+        AppAdapter().apply {
 
-    } }
+        }
+    }
 
     override val bindingInflater: (LayoutInflater) -> ActivityRecyclewBinding
         get() = ActivityRecyclewBinding::inflate
@@ -86,9 +88,9 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(), OnItemDragList
         super.initView()
         mBinding.apply {
             recyclerview.adapter = appAdapter
-            recyclerview.layoutManager=LinearLayoutManager(this@RecyclewActivity)
+            recyclerview.layoutManager = LinearLayoutManager(this@RecyclewActivity)
         }
-
+        mBinding.swipLayout.isEnabled = false
 
         quickDragAndSwipe.apply {
             attachToRecyclerView(mBinding.recyclerview)
@@ -115,6 +117,7 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(), OnItemDragList
             val appsInfo = AppUtils.getAppsInfo()
             delay(3000)
             withContext(Dispatchers.Main) {
+                mBinding.swipLayout.isEnabled=true
                 viewModel.say()
                 appAdapter.submitList(appsInfo)
                 helper.apply {
