@@ -7,18 +7,25 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.Config
 import androidx.recyclerview.widget.ConcatAdapter
+import androidx.recyclerview.widget.ConcatAdapter.Config
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.BarUtils
+import com.blankj.utilcode.util.LogUtils
+import com.blankj.utilcode.util.ToastUtils
 import com.chad.library.adapter4.BaseQuickAdapter
 import com.chad.library.adapter4.QuickAdapterHelper
 import com.chad.library.adapter4.dragswipe.QuickDragAndSwipe
 import com.chad.library.adapter4.dragswipe.listener.OnItemDragListener
 import com.chad.library.adapter4.dragswipe.setItemDragListener
 import com.chad.library.adapter4.dragswipe.setItemSwipeListener
+import com.chad.library.adapter4.loadState.LoadState
+import com.chad.library.adapter4.loadState.leading.LeadingLoadStateAdapter
+import com.chad.library.adapter4.loadState.trailing.TrailingLoadStateAdapter
 import com.chad.library.adapter4.viewholder.QuickViewHolder
 import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
 import com.onBit.PixelBitToolKit.databinding.LayoutDialogBinding
@@ -39,95 +46,101 @@ import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(), OnItemDragListener,
-    BaseQuickAdapter.OnItemLongClickListener<AppUtils.AppInfo> {
+class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
 
 
     val viewModel: MViewModel by viewModels()
 
-    @Inject
-    lateinit var retrofit: Retrofit
-
-    @Inject
-    @ManType
-    lateinit var man: Human
-
-    @Inject
-    @WomanType
-    lateinit var woman: Human
-
-    @Inject
-    @WomanType
-    lateinit var woman2: Human
 
     private val appAdapter by lazy {
-        AppAdapter().apply {
+        AppAdapter()
+    }
 
-        }
+    private val adapterHelper by lazy {
+        QuickAdapterHelper.Builder(appAdapter)
+            .setLeadingLoadStateAdapter(object : LeadingLoadStateAdapter.OnLeadingListener {
+                override fun onLoad() {
+                    viewModel.requestData()
+                    LogUtils.d("上滑加载更多")
+                }
+
+                override fun isAllowLoading(): Boolean {
+                    return true
+                }
+
+            })
+            .setTrailingLoadStateAdapter(object : TrailingLoadStateAdapter.OnTrailingListener {
+                override fun onFailRetry() {
+
+                }
+
+                override fun onLoad() {
+                    LogUtils.d("底部加载更多")
+                    viewModel.requestData()
+                }
+
+            })
+            .build()
     }
 
     override val bindingInflater: (LayoutInflater) -> ActivityRecyclewBinding
         get() = ActivityRecyclewBinding::inflate
 
 
-    fun doSomeThing() {
-
-
-    }
-
-    val quickDragAndSwipe by lazy {
-        QuickDragAndSwipe()
-    }
-
-    val helper by lazy {
-        QuickAdapterHelper.Builder(appAdapter)
-            .build()
-    }
-
     override fun initView() {
         super.initView()
         mBinding.apply {
-            recyclerview.adapter = appAdapter
+            recyclerview.adapter = adapterHelper.adapter
             recyclerview.layoutManager = LinearLayoutManager(this@RecyclewActivity)
         }
-        mBinding.swipLayout.isEnabled = false
 
-        quickDragAndSwipe.apply {
+        QuickDragAndSwipe().apply {
             attachToRecyclerView(mBinding.recyclerview)
             setDataCallback(appAdapter)
+            setDragMoveFlags(ItemTouchHelper.UP or ItemTouchHelper.DOWN)//可进行上下拖动，交换位置。 ItemTouchHelper.LEFT 允许向左拖动，ItemTouchHelper.RIGHT 允许向右拖动
+            setSwipeMoveFlags(ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT);//可进行左右滑动删除
         }
-            .setDragMoveFlags(ItemTouchHelper.UP or ItemTouchHelper.DOWN)//可进行上下拖动，交换位置。 ItemTouchHelper.LEFT 允许向左拖动，ItemTouchHelper.RIGHT 允许向右拖动
-            .setSwipeMoveFlags(ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT);//可进行左右滑动删除
-
-        appAdapter.setOnItemLongClickListener(this)
-
-
+        appAdapter.stateView
     }
 
     override fun initEvent() {
         super.initEvent()
-        lifecycleScope.launch(Dispatchers.IO) {
-            withContext(Dispatchers.Main) {
-                appAdapter.isStateViewEnable = true
-                appAdapter.setStateViewLayout(
-                    this@RecyclewActivity,
-                    com.onBit.PixelBitToolKit.R.layout.layout_dialog
-                )
-            }
-            val appsInfo = AppUtils.getAppsInfo()
-            delay(3000)
-            withContext(Dispatchers.Main) {
-                mBinding.swipLayout.isEnabled=true
-                viewModel.say()
-                appAdapter.submitList(appsInfo)
-                helper.apply {
-                    addBeforeAdapter(BottomAdapter())
-                    addAfterAdapter(BottomAdapter())
-                    addBeforeAdapter(1, BottomAdapter())
+        viewModel.requestData()
+        adapterHelper.trailingLoadState = LoadState.NotLoading(false)
+        adapterHelper.leadingLoadState = LoadState.NotLoading(false)
+    }
+
+    override fun initListener() {
+        super.initListener()
+        mBinding.apply {
+//            swipLayout.setOnRefreshListener {
+//                viewModel.requestData()
+//            }
+        }
+        viewModel.appInfo.observe(this) {
+            appAdapter.submitList(it)
+//            mBinding.swipLayout.isRefreshing = false
+            mBinding.text.text = it.size.toString()
+            when (adapterHelper.leadingLoadState) {
+                is LoadState.Error -> {
+                    ToastUtils.showLong("Error")
                 }
 
+                LoadState.Loading -> {
+                    ToastUtils.showLong("Loading")
+                }
+
+                LoadState.None -> {
+                    LogUtils.d("None")
+                }
+
+                is LoadState.NotLoading -> {
+                    LogUtils.d("NotLoading")
+                }
             }
+//            adapterHelper.trailingLoadState=LoadState.NotLoading(true)
         }
+
     }
 
     override fun onResume() {
@@ -136,30 +149,6 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(), OnItemDragList
         BarUtils.transparentNavBar(this)
     }
 
-    override fun onItemDragStart(viewHolder: RecyclerView.ViewHolder?, pos: Int) {
 
-    }
-
-    override fun onItemDragMoving(
-        source: RecyclerView.ViewHolder,
-        from: Int,
-        target: RecyclerView.ViewHolder,
-        to: Int
-    ) {
-
-    }
-
-    override fun onItemDragEnd(viewHolder: RecyclerView.ViewHolder, pos: Int) {
-
-    }
-
-    override fun onLongClick(
-        adapter: BaseQuickAdapter<AppUtils.AppInfo, *>,
-        view: View,
-        position: Int
-    ): Boolean {
-        quickDragAndSwipe.startDrag(position)
-        return false
-    }
 }
 

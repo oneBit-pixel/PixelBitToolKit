@@ -22,6 +22,8 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
         return ViewHolder(binding)
     }
 
+
+
     override fun getItemCount(): Int = items.size
 
 
@@ -29,6 +31,15 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
 
     override fun onBindViewHolder(holder: ViewHolder<VB>, position: Int) {
         onBind(holder.binding, items[position], position)
+    }
+
+    override fun onBindViewHolder(
+        holder: ViewHolder<VB>,
+        position: Int,
+        payloads: MutableList<Any>
+    ) {
+        super.onBindViewHolder(holder, position, payloads)
+
     }
 
     abstract fun onBind(binding: VB, item: T, position: Int)
