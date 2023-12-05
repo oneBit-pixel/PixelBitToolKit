@@ -2,6 +2,7 @@ package com.onBit.lib_base.base
 
 import android.app.Application
 import com.onBit.lib_base.base.init.appContext
+import kotlinx.coroutines.flow.flow
 
 abstract class BaseApplication : Application() {
 
@@ -13,7 +14,7 @@ abstract class BaseApplication : Application() {
 
     override fun onTerminate() {
         super.onTerminate()
-        //进程结束
+
 
     }
 
