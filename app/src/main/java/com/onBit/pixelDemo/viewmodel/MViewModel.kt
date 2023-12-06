@@ -24,6 +24,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import kotlin.concurrent.thread
 
 
 @HiltViewModel
@@ -38,7 +39,9 @@ class MViewModel @Inject constructor(
     @Inject
     lateinit var scope: User
     fun say() {
-        man.sex()
+        thread {
+
+        }
     }
 
 
