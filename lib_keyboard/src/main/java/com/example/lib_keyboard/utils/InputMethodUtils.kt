@@ -3,7 +3,6 @@ package com.example.lib_keyboard.utils
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.os.Bundle
 import android.provider.Settings
 import android.view.inputmethod.InputMethodManager

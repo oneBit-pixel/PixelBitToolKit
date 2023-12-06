@@ -25,7 +25,7 @@ class CustomKeyboard @JvmOverloads constructor(context: Context, attrs: Attribut
 
     private val keyboardNum by lazy { Keyboard(context, R.xml.num) }
 
-    private val keyboardLetter by lazy { Keyboard(context, R.xml.keyboard_qwer) }
+    private val keyboardLetter by lazy { Keyboard(context, R.xml.keyboard_2_small) }
 
     private val keyboardSymbol by lazy { Keyboard(context, R.xml.symbol) }
 
@@ -79,17 +79,11 @@ class CustomKeyboard @JvmOverloads constructor(context: Context, attrs: Attribut
             KeyboardUtils.CODE_TYPE_SYMBOL -> keyboard = keyboardSymbol
             else -> {
                 //todo：设置字体
-                val input = primaryCode.toChar().toString()
-                val spannableString = SpannableString(input).apply {
-                    setSpan(
-                        CustomTypefaceSpan(mTypeface),
-                        0,
-                        input.length,
-                        17
-                    )
+                keyboard.keys.map {
+                    if (it.codes.contains(primaryCode)) {
+                        ic.commitText(it.label,1)
+                    }
                 }
-
-                ic.commitText(spannableString,1)
             }
 
         }

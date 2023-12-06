@@ -32,6 +32,7 @@ import com.chad.library.adapter4.loadState.leading.LeadingLoadStateAdapter
 import com.chad.library.adapter4.loadState.trailing.TrailingLoadStateAdapter
 import com.chad.library.adapter4.viewholder.QuickViewHolder
 import com.example.lib_keyboard.service.KeyboardService
+import com.example.lib_keyboard.utils.InputMethodUtils
 import com.example.lib_keyboard.utils.KeyboardUtils
 import com.onBit.PixelBitToolKit.R
 import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
@@ -110,7 +111,11 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(),
             setSwipeMoveFlags(ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT);//可进行左右滑动删除
         }
         appAdapter.stateView
-        viewModel.request()
+
+        LogUtils.d("是否启用键盘==>${InputMethodUtils.isEnabled(this)}")
+        LogUtils.d("是否为默认键盘${InputMethodUtils.isDefault(this)}")
+
+        InputMethodUtils.enableInputMethod(this)
     }
 
     override fun initEvent() {
