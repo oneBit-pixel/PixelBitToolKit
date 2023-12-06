@@ -68,25 +68,7 @@ object KeyboardUtils {
         return false
     }
 
-    //设置默认键盘
-    fun setDefault(context: Context) {
-        context.startActivity(Intent(Settings.ACTION_INPUT_METHOD_SETTINGS).also {
-            it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            it.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-        }.also { intent ->
-            (context.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.let { manager ->
-                manager.inputMethodList.firstOrNull { it.packageName == context.packageName }
-            }?.let {
-                it.id
-            }?.also {
-                intent.putExtra(":settings:fragment_args_key", it)
-                intent.putExtra(
-                    ":settings:show_fragment_args",
-                    Bundle().apply { putString(":settings:fragment_args_key", it) })
-            }
-        })
-    }
+
 
     fun showKeyboard(context: Context){
         (context.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.apply {

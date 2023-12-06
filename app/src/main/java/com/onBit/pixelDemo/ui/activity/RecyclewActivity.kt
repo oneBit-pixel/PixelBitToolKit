@@ -1,10 +1,14 @@
 package com.onBit.pixelDemo.ui.activity
 
 import android.animation.ValueAnimator
+import android.content.ComponentName
+import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.Config
@@ -27,6 +31,9 @@ import com.chad.library.adapter4.loadState.LoadState
 import com.chad.library.adapter4.loadState.leading.LeadingLoadStateAdapter
 import com.chad.library.adapter4.loadState.trailing.TrailingLoadStateAdapter
 import com.chad.library.adapter4.viewholder.QuickViewHolder
+import com.example.lib_keyboard.service.KeyboardService
+import com.example.lib_keyboard.utils.KeyboardUtils
+import com.onBit.PixelBitToolKit.R
 import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
 import com.onBit.PixelBitToolKit.databinding.LayoutDialogBinding
 import com.onBit.lib_base.base.BaseActivity
@@ -46,7 +53,8 @@ import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
+class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(),
+    BaseQuickAdapter.OnItemClickListener<AppUtils.AppInfo> {
 
 
     val viewModel: MViewModel by viewModels()
@@ -92,6 +100,7 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         mBinding.apply {
             recyclerview.adapter = adapterHelper.adapter
             recyclerview.layoutManager = LinearLayoutManager(this@RecyclewActivity)
+            appAdapter.setOnItemClickListener(this@RecyclewActivity)
         }
 
         QuickDragAndSwipe().apply {
@@ -147,6 +156,27 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>() {
         super.onResume()
         BarUtils.setStatusBarColor(this, Color.TRANSPARENT)
         BarUtils.transparentNavBar(this)
+    }
+
+    override fun onClick(
+        adapter: BaseQuickAdapter<AppUtils.AppInfo, *>,
+        view: View,
+        position: Int
+    ) {
+        LogUtils.d("点击事件")
+        val intent = Intent()
+        intent.action="com.example.CHANGE_KEYBOARD_STYLE"
+        intent.setComponent(ComponentName(packageName,"com.example.lib_keyboard.boardCast.KeyBoardReceiver"))
+        sendBroadcast(intent)
+
+
+        (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.let {
+            manager->
+            manager.inputMethodList.forEach {
+
+            }
+        }
+
     }
 
 

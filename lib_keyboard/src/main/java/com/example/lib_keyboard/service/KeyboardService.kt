@@ -1,8 +1,10 @@
 package com.example.lib_keyboard.service
 
 import android.annotation.SuppressLint
+import android.content.IntentFilter
 import android.inputmethodservice.InputMethodService
 import android.view.View
+import com.blankj.utilcode.util.LogUtils
 import com.example.lib_keyboard.databinding.LayoutKeyboardBinding
 
 class KeyboardService : InputMethodService() {
@@ -13,21 +15,21 @@ class KeyboardService : InputMethodService() {
     }
 
 
+    @SuppressLint("UnspecifiedRegisterReceiverFlag")
+    override fun onCreate() {
+        super.onCreate()
+
+    }
+
     @SuppressLint("MissingInflatedId")
     override fun onCreateInputView(): View {
         return mBinding.root
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+    }
 
 
-//    override fun onKey(primaryCode: Int, keyCodes: IntArray) {
-//        val ic = currentInputConnection
-//        val styleSpan = StyleSpan(Typeface.ITALIC)
-//        val spannableString = SpannableString("1234").apply {
-//            setSpan(StyleSpan(Typeface.ITALIC), 0, 4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-//            setSpan(ForegroundColorSpan(Color.RED),0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-//        }
-//        ic.commitText(spannableString,1)
-//    }
 
 }
