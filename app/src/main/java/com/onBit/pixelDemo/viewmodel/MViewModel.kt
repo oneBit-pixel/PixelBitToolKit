@@ -2,6 +2,7 @@ package com.onBit.pixelDemo.viewmodel
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,12 +13,14 @@ import com.blankj.utilcode.util.AppUtils.AppInfo
 import com.blankj.utilcode.util.LogUtils
 import com.example.studyProject.studyKotlin.Mule
 import com.example.studyProject.studyKotlin.getType
+import com.onBit.lib_base.base.extension.toFlowAsync
 import com.onBit.pixelDemo.hit.module.Man
 import com.onBit.pixelDemo.model.User
 import com.onBit.pixelDemo.utls.ImageProcessing
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -29,7 +32,7 @@ class MViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _appsInfo = MutableLiveData<List<AppInfo>>(emptyList())
-    val appInfo:LiveData<List<AppInfo>> = _appsInfo
+    val appInfo: LiveData<List<AppInfo>> = _appsInfo
 
 
     @Inject
@@ -39,7 +42,22 @@ class MViewModel @Inject constructor(
     }
 
 
-    fun requestData(){
+    fun request() {
+        viewModelScope.launch {
+            man.request().collect {
+                it.onSuccess {
+                    LogUtils.d("success==>${it}")
+                }
+                val appInfo1 = appInfo.value!![1]
+                appInfo.value?.getOrElse(1){
+
+                }
+            }
+        }
+    }
+
+
+    fun requestData() {
         viewModelScope.launch(Dispatchers.IO) {
             delay(2000)
             val appsInfo = AppUtils.getAppsInfo()

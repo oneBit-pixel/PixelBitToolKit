@@ -110,6 +110,7 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(),
             setSwipeMoveFlags(ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT);//可进行左右滑动删除
         }
         appAdapter.stateView
+        viewModel.request()
     }
 
     override fun initEvent() {
