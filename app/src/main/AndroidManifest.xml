@@ -39,6 +39,11 @@
         android:theme="@style/Theme.oneBitPixel"
         tools:targetApi="31">
         <activity
+            android:name="com.onBit.pixelDemo.ui.activity.ThreadActivity"
+            android:exported="true" >
+
+        </activity>
+        <activity
             android:name="com.onBit.pixelDemo.ui.activity.ChartActivity"
             android:exported="true" >
             <intent-filter>
@@ -47,6 +52,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+
         <activity
             android:name="com.onBit.pixelDemo.ui.activity.SplashActivity"
             android:exported="true">
