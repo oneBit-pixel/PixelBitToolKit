@@ -30,4 +30,26 @@
     </style>
 
 
+    <!--popUnMenu 样式-->
+    <style name="PopupMenuStyle" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@color/red</item>
+    </style>
+
+    <style name="PopupMenuTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="textAppearanceSmallPopupMenu">@style/PopupMenuTextStyle</item>
+        <item name="textAppearanceLargePopupMenu">@style/PopupMenuTextStyle</item>
+        <item name="android:dropDownListViewStyle">@style/PopupMenuDivier</item>
+    </style>
+
+    <style name="PopupMenuTextStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="PopupMenuDivier">
+        <item name="android:divider">@color/white</item>
+        <item name="android:dividerHeight">@dimen/dp_1</item>
+    </style>
 </resources>

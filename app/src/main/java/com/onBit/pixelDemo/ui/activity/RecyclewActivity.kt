@@ -1,22 +1,18 @@
 package com.onBit.pixelDemo.ui.activity
 
-import android.animation.ValueAnimator
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.os.Build
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.viewModels
-import androidx.lifecycle.lifecycleScope
-import androidx.paging.Config
-import androidx.recyclerview.widget.ConcatAdapter
-import androidx.recyclerview.widget.ConcatAdapter.Config
+import androidx.appcompat.view.ContextThemeWrapper
+import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.LogUtils
@@ -24,38 +20,22 @@ import com.blankj.utilcode.util.ToastUtils
 import com.chad.library.adapter4.BaseQuickAdapter
 import com.chad.library.adapter4.QuickAdapterHelper
 import com.chad.library.adapter4.dragswipe.QuickDragAndSwipe
-import com.chad.library.adapter4.dragswipe.listener.OnItemDragListener
-import com.chad.library.adapter4.dragswipe.setItemDragListener
-import com.chad.library.adapter4.dragswipe.setItemSwipeListener
 import com.chad.library.adapter4.loadState.LoadState
 import com.chad.library.adapter4.loadState.leading.LeadingLoadStateAdapter
 import com.chad.library.adapter4.loadState.trailing.TrailingLoadStateAdapter
-import com.chad.library.adapter4.viewholder.QuickViewHolder
-import com.example.lib_keyboard.service.KeyboardService
 import com.example.lib_keyboard.utils.InputMethodUtils
-import com.example.lib_keyboard.utils.KeyboardUtils
 import com.onBit.PixelBitToolKit.R
 import com.onBit.PixelBitToolKit.databinding.ActivityRecyclewBinding
-import com.onBit.PixelBitToolKit.databinding.LayoutDialogBinding
 import com.onBit.lib_base.base.BaseActivity
-import com.onBit.pixelDemo.hit.module.Human
-import com.onBit.pixelDemo.hit.module.ManType
-import com.onBit.pixelDemo.hit.module.WomanType
 import com.onBit.pixelDemo.ui.adapter.AppAdapter
-import com.onBit.pixelDemo.ui.adapter.BottomAdapter
 import com.onBit.pixelDemo.viewmodel.MViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import retrofit2.Retrofit
-import javax.inject.Inject
 
 
 @AndroidEntryPoint
 class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(),
-    BaseQuickAdapter.OnItemClickListener<AppUtils.AppInfo> {
+    BaseQuickAdapter.OnItemClickListener<AppUtils.AppInfo>,
+    BaseQuickAdapter.OnItemChildClickListener<AppUtils.AppInfo> {
 
 
     val viewModel: MViewModel by viewModels()
@@ -112,10 +92,6 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(),
         }
         appAdapter.stateView
 
-        LogUtils.d("是否启用键盘==>${InputMethodUtils.isEnabled(this)}")
-        LogUtils.d("是否为默认键盘${InputMethodUtils.isDefault(this)}")
-
-        InputMethodUtils.enableInputMethod(this)
     }
 
     override fun initEvent() {
@@ -156,6 +132,8 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(),
 //            adapterHelper.trailingLoadState=LoadState.NotLoading(true)
         }
 
+        appAdapter.addOnItemChildClickListener(R.id.button123,this)
+
     }
 
     override fun onResume() {
@@ -183,6 +161,20 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(),
             }
         }
 
+    }
+
+
+
+    override fun onItemClick(
+        adapter: BaseQuickAdapter<AppUtils.AppInfo, *>,
+        view: View,
+        position: Int
+    ) {
+        val themeWrapper = ContextThemeWrapper(this, R.style.PopupMenuTheme)
+        PopupMenu(themeWrapper,view,Gravity.RIGHT,0,R.style.PopupMenuStyle ).apply {
+            menuInflater.inflate(R.menu.bottom,this.menu)
+
+        }.show()
     }
 
 

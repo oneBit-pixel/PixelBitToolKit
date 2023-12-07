@@ -5,4 +5,7 @@
         <attr name="android:layout_height" />
     </declare-styleable>
 
+    <attr name="PopUpMenuAttr" >
+
+    </attr>
 </resources>

@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 
+
 abstract class BaseViewModelActivity<VB : ViewBinding, VM : ViewModel>:
     BaseActivity<VB>() {
 

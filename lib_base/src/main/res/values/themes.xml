@@ -23,6 +23,7 @@
         <!--        <item name="android:navigationBarDividerColor" tools:targetApi="o_mr1">@color/red</item>-->
         <!--控件隐藏时有渐隐动画-->
 <!--        <item name="android:animateLayoutChanges">true</item>-->
+        <item name="android:popupBackground">@color/red</item>
     </style>
 
     <style name="MyWindowAnimation" parent="android:Animation.Activity">

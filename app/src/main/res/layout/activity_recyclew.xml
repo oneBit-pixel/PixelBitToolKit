@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone"
         android:elevation="1dp"
-        android:background="@color/red"
+        android:background="@color/xui_btn_blue_normal_color"
         android:gravity="center"
         />
 

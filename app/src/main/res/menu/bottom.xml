@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
     <item
         android:id="@+id/home"
         android:checked="true"
@@ -15,8 +16,6 @@
         android:icon="@drawable/selector_hot"
         android:visible="true"
         android:title="@string/hot" />
-
-
 
     <item
         android:id="@+id/fav"

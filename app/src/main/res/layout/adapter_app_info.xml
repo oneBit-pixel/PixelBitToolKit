@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp_60"
     android:layout_marginTop="@dimen/dp_10"
+    android:id="@+id/app_container"
     android:background="@color/black">
 
     <ImageView
@@ -22,11 +23,22 @@
         android:id="@+id/app_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_24"
         android:text="TextView"
         android:textColor="@color/white"
-        android:layout_marginLeft="@dimen/dp_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/app_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/button123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_20"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
 

@@ -45,43 +45,40 @@ android {
 }
 
 dependencies {
-    implementation ("com.github.bumptech.glide:glide:4.12.0")
-    implementation project(path: ':lib_keyboard')
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation 'com.google.ar.sceneform:filament-android:1.17.1'
-    //hit
+    //ui
     dependencies {
-        implementation 'com.google.dagger:hilt-android:2.48.1'
-        kapt 'com.google.dagger:hilt-compiler:2.48.1'
-    }
-    dependencies {
-        implementation "io.github.cymchad:BaseRecyclerViewAdapterHelper4:4.1.1"
+        //MPAndroidChart 图标库
+        implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
-        implementation  'io.github.scwang90:refresh-layout-kernel:2.1.0'      //核心必须依赖
-    }
-    //xui
-    //    allprojects {
-    //        repositories {
-    //            maven { url "https://jitpack.io" }
-    //        }
-    //    }
-    dependencies {
-        //androidx project
+        implementation ("com.github.bumptech.glide:glide:4.16.0")
+        dependencies {
+            implementation "io.github.cymchad:BaseRecyclerViewAdapterHelper4:4.1.1"
+            implementation  'io.github.scwang90:refresh-layout-kernel:2.1.0'      //核心必须依赖
+        }
+        dependencies {
+            implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+            implementation 'com.google.ar.sceneform:filament-android:1.17.1'
+        }
         implementation("com.github.xuexiangjys:XUI:1.2.1")
+        implementation 'com.airbnb.android:lottie:6.1.0'
     }
+    implementation project(path: ':lib_keyboard')
+    //tools
+    dependencies {
+        //hit
+        dependencies {
+            implementation 'com.google.dagger:hilt-android:2.48.1'
+            kapt 'com.google.dagger:hilt-compiler:2.48.1'
+        }
+        implementation project(path: ':lib_room')
+    }
+
+
     implementation project(path: ':lib_view')
     implementation project(path: ':powerspinner')
     implementation project(path: ':study_project')
     api project(path: ':lib_shapeview')
     implementation project(path: ':lib_edgeLight')
-
-    //lottie 动画插件
-    dependencies {
-        implementation 'com.airbnb.android:lottie:6.1.0'
-    }
-
-
-    implementation project(path: ':lib_room')
 
     //内存泄漏检查
     dependencies {
