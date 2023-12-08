@@ -1,17 +1,17 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'maven-publish'
+//    id 'maven-publish'
 }
 
 android {
-    publishing {
-        singleVariant('release') {
-            withSourcesJar()
-            withJavadocJar()
-        }
-        // ...
-    }
+//    publishing {
+//        singleVariant('release') {
+//            withSourcesJar()
+//            withJavadocJar()
+//        }
+//        // ...
+//    }
 
     buildFeatures {
         buildConfig = true
@@ -43,22 +43,24 @@ android {
     }
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.oneBit.lib_base1' //groupId 随便取
-                artifactId = 'lib-base'  //artifactId 随便取
-//                version = '1.0.8'
-            }
-        }
-    }
-}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//                groupId = 'com.oneBit.lib_base1' //groupId 随便取
+//                artifactId = 'lib-base'  //artifactId 随便取
+////                version = '1.0.8'
+//            }
+//        }
+//    }
+//}
+
+
 
 dependencies {
     //viewmodel中的 life
-    api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
     dependencies {
         // 日志调试框架：https://github.com/getActivity/Logcat
         //android.enableJetifier = true
@@ -66,7 +68,7 @@ dependencies {
     }
     //shapeView
     dependencies {
-        api project(path: ':lib_shapeview')
+//        api project(path: ':lib_shapeview')
 //        //表示将第三方库迁移到 AndroidX
 //        //android.enableJetifier = true
 //        // Shape 框架：https://github.com/getActivity/ShapeView
