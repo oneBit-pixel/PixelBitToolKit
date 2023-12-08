@@ -3,7 +3,6 @@ package com.onBit.pixelDemo.ui.activity
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.graphics.PixelFormat
 import android.os.Build
 import android.provider.Settings
@@ -11,20 +10,16 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
-import android.view.ViewGroup
 import android.view.WindowManager
 import com.onBit.PixelBitToolKit.databinding.ActivityMainBinding
 import com.onBit.lib_base.base.BaseActivity
-import com.onBit.pixelDemo.ui.dialog.DialogDemo
 import com.onBit.pixelDemo.ui.viewGroup.TestFrameLayout
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding
         get() = ActivityMainBinding::inflate
 
-    private val dialog by lazy {
-        DialogDemo(this)
-    }
+
     private var windowManager: WindowManager? = null
     private var floatingView: View? = null
 

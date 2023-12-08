@@ -1,12 +1,13 @@
 package com.onBit.lib_base.base.dialog
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
-import com.onBit.lib_base.base.dialog.dao.DialogDao
+import com.onBit.lib_base.R
 
 /**
  * 快速自定义dialog 基类
@@ -19,19 +20,12 @@ import com.onBit.lib_base.base.dialog.dao.DialogDao
 
 abstract class BaseDialog<VB : ViewBinding>(
     private val context: Context
-) : DefaultLifecycleObserver, DialogDao {
+) :AlertDialog(context, R.style.RoundDialogTheme), DefaultLifecycleObserver{
 
     abstract val bindingInflater: (LayoutInflater) -> VB
 
     protected open val mBinding by lazy {
         bindingInflater.invoke(LayoutInflater.from(context))
-    }
-
-
-    protected open val dialog by lazy {
-        AlertDialog.Builder(context)
-            .setView(mBinding.root)
-            .create()
     }
 
     init {
@@ -41,31 +35,32 @@ abstract class BaseDialog<VB : ViewBinding>(
         }
     }
 
-    override fun showDialog() {
-        dialog.apply {
-            setCancelable(true)
-            setCanceledOnTouchOutside(true)
-            show()
-
-            window?.setBackgroundDrawable(null)
-
-
-            setOnCancelListener {
-                dismiss()
-            }
-        }
-
+    override fun show() {
+        super.show()
         initView()
         initListener()
+        initEvent()
+    }
+    abstract fun initView()
+    abstract fun initListener()
+    abstract fun initEvent()
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super<AlertDialog>.onCreate(savedInstanceState)
+        setContentView(mBinding.root)
+
     }
 
-    override fun dismissDialog() {
-        dialog.dismiss()
+    override fun cancel() {
+        super.cancel()
+        dismiss()
     }
+
 
     override fun onDestroy(owner: LifecycleOwner) {
         super.onDestroy(owner)
-        dialog.dismiss()
+        dismiss()
         owner.lifecycle.removeObserver(this)
     }
 }

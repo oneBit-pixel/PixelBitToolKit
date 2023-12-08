@@ -9,12 +9,15 @@ import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 import com.github.mikephil.charting.renderer.HorizontalBarChartRenderer
 import com.onBit.PixelBitToolKit.databinding.ActivityChartBinding
 import com.onBit.lib_base.base.BaseActivity
+import com.onBit.pixelDemo.ui.dialog.MyDialog
 import com.onBit.pixelDemo.ui.view.RoundRenderer
 
 class ChartActivity : BaseActivity<ActivityChartBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityChartBinding
         get() = ActivityChartBinding::inflate
 
+
+    private val myDialog by lazy { MyDialog(this) }
 
     private val value by lazy {
         listOf(
@@ -47,7 +50,11 @@ class ChartActivity : BaseActivity<ActivityChartBinding>() {
             chart.renderer=RoundRenderer(chart,chart.animator,chart.viewPortHandler)
             chart.setDrawValueAboveBar(true)
 
+            chart.setOnClickListener {
+                myDialog.show()
+            }
         }
+
     }
 
 }

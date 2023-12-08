@@ -41,10 +41,13 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         setTheme()
     }
 
+    //继承类可以判断是更具颜色设置
     protected open fun setTheme() {
-        BarUtils.setNavBarVisibility(this, !isHideNavigation())
-        BarUtils.setStatusBarVisibility(this, !isHideStatusBar())
-        setFullScreen(isFullScreen())
+//        BarUtils.setNavBarVisibility(this, !isHideNavigation())
+//        BarUtils.setStatusBarVisibility(this, !isHideStatusBar())
+//        setFullScreen(isFullScreen())
+        BarUtils.setStatusBarColor(this,Color.TRANSPARENT)
+        BarUtils.transparentNavBar(this)
     }
 
 
