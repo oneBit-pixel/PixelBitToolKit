@@ -2,6 +2,7 @@ package com.onBit.lib_camerax.ui.fragment
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.view.LayoutInflater
 import android.view.ScaleGestureDetector
 import com.blankj.utilcode.util.LogUtils
 import com.onBit.lib_base.base.BaseFragment
@@ -9,7 +10,7 @@ import com.onBit.lib_camerax.CameraxHelper
 import com.onBit.lib_camerax.databinding.FragmentCameraBinding
 import com.tbruyelle.rxpermissions3.RxPermissions
 
-class CameraFragment : BaseFragment<FragmentCameraBinding>(FragmentCameraBinding::inflate) {
+class CameraFragment : BaseFragment<FragmentCameraBinding>() {
 
     private val rxPermissions by lazy {
         RxPermissions(this)
@@ -20,6 +21,9 @@ class CameraFragment : BaseFragment<FragmentCameraBinding>(FragmentCameraBinding
 
         initCamera()
     }
+
+    override val bindingInflater: (LayoutInflater) -> FragmentCameraBinding
+        get() = FragmentCameraBinding::inflate
 
 
     @SuppressLint("ClickableViewAccessibility")

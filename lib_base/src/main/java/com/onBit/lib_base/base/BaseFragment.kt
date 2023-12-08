@@ -14,12 +14,13 @@ import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.ColorUtils
 import com.onBit.lib_base.base.utils.ColorUtilsEx
 
-abstract class BaseFragment<T : ViewBinding>(
-    binding:(LayoutInflater)->T
-) : Fragment() {
+abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
-    protected  open val mBinding by lazy {
-        binding.invoke(layoutInflater)
+    protected abstract val bindingInflater: (LayoutInflater) -> VB
+
+
+    protected open val mBinding by lazy {
+        bindingInflater.invoke(layoutInflater)
     }
 
     override fun onCreateView(
