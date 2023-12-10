@@ -24,6 +24,11 @@ public class BarEntry extends Entry {
     private Range[] mRanges;
 
     /**
+     * 真实值
+     */
+    private Range[] mRealRanges;
+
+    /**
      * the sum of all negative values this entry (if stacked) contains
      */
     private float mNegativeSum;
@@ -189,6 +194,13 @@ public class BarEntry extends Entry {
     }
 
     /**
+     * @return 返回真实值
+     */
+    public Range[] getRealRanges() {
+        return mRealRanges;
+    }
+
+    /**
      * Returns true if this BarEntry is stacked (has a values array), false if not.
      *
      * @return
@@ -288,6 +300,7 @@ public class BarEntry extends Entry {
             return;
 
         mRanges = new Range[values.length];
+        mRealRanges = new Range[values.length];
 
         float negRemain = -getNegativeSum();
         float posRemain = 0f;
@@ -303,6 +316,26 @@ public class BarEntry extends Entry {
                 mRanges[i] = new Range(posRemain, posRemain + value);
                 posRemain += value;
             }
+        }
+
+        negRemain = -getNegativeSum();
+        posRemain = -1f;
+        for (int i = 0; i < mRealRanges.length; i++) {
+            float value = values[i];
+            System.out.println("value==>" + value);
+//            if (value < 0) {
+//                mRealRanges[i] = new Range(negRemain, -value);
+//                negRemain = -value;
+//            } else {
+//                mRealRanges[i] = new Range(posRemain, value);
+//                posRemain = value;
+//            }
+            if (posRemain > 0) {
+                mRealRanges[i] = new Range(posRemain, value);
+            } else {
+                mRealRanges[i] = new Range(0, 0);
+            }
+            posRemain = value;
         }
     }
 }

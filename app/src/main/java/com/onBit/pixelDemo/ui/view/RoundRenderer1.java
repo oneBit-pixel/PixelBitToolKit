@@ -1,27 +1,16 @@
 package com.onBit.pixelDemo.ui.view;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
 import com.github.mikephil.charting.animation.ChartAnimator;
-import com.github.mikephil.charting.buffer.BarBuffer;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.dataprovider.BarDataProvider;
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.github.mikephil.charting.model.GradientColor;
 import com.github.mikephil.charting.renderer.BarChartRenderer;
-import com.github.mikephil.charting.utils.Fill;
-import com.github.mikephil.charting.utils.Transformer;
-import com.github.mikephil.charting.utils.Utils;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
-public class RoundRenderer extends BarChartRenderer {
-    public RoundRenderer(BarDataProvider chart, ChartAnimator animator,
-                         ViewPortHandler viewPortHandler) {
+public class RoundRenderer1 extends BarChartRenderer {
+    public RoundRenderer1(BarDataProvider chart, ChartAnimator animator,
+                          ViewPortHandler viewPortHandler) {
         super(chart, animator, viewPortHandler);
         mValuePaint.setTextAlign(Paint.Align.LEFT);
     }

@@ -838,7 +838,6 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
      * @param xValue
      */
     public void moveViewToX(float xValue) {
-
         Runnable job = MoveViewJob.getInstance(mViewPortHandler, xValue, 0f,
                 getTransformer(AxisDependency.LEFT), this);
 
