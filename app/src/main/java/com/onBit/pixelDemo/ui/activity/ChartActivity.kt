@@ -2,6 +2,7 @@ package com.onBit.pixelDemo.ui.activity
 
 import android.graphics.Color
 import android.view.LayoutInflater
+import com.blankj.utilcode.util.GsonUtils
 import com.blankj.utilcode.util.LogUtils
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.components.XAxis
@@ -9,11 +10,11 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
-import com.github.mikephil.charting.renderer.BarChartRenderer
 import com.github.mikephil.charting.renderer.RoundRenderer
 import com.onBit.PixelBitToolKit.databinding.ActivityChartBinding
 import com.onBit.lib_base.base.BaseActivity
-import com.onBit.pixelDemo.ui.view.RoundRenderer2
+import com.onBit.pixelDemo.utls.XorUtils
+import java.util.Base64
 
 class ChartActivity : BaseActivity<ActivityChartBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityChartBinding
@@ -39,6 +40,18 @@ class ChartActivity : BaseActivity<ActivityChartBinding>() {
 
     override fun initView() {
         super.initView()
+        val hashMap = HashMap<String, Any>()
+        hashMap["header"]=XorUtils.toMap()
+        hashMap["data"]=XorUtils.toData()
+        val toJson = GsonUtils.toJson(hashMap)
+        LogUtils.d("toJson==>${toJson}")
+        val xor = XorUtils.xor("original", toJson.toByteArray())
+        val decode = XorUtils.decode("original","Yjt9eG14OyNiO3p2d218d207Izvxtq79pLn8mJ7xt6f9pLn/gbb9orz9oaP8uI3+pI7+kJX8lLn8lIX8oZE7ZDU7cXx4fXxrOyNiO3hpaTsjO3p2dDd2d1twbTdJcGF8dVtwbU12dnVScG07NTttajsjOyguKSsrLi4gISEoLCg7ZGQ=")
+        val encode = XorUtils.encode("original", toJson)
+        LogUtils.d("decode==>${decode}")
+        LogUtils.d("encode==>${encode}")
+        val bytes = android.util.Base64.decode(encode, android.util.Base64.NO_WRAP)
+        val string = String(bytes)
         mBinding.apply {
             val barDataSet = BarDataSet(value, "这是一个标题")
             barDataSet.colors = listOf(Color.TRANSPARENT,Color.BLUE,Color.TRANSPARENT,Color.RED)

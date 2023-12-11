@@ -82,8 +82,9 @@ class ClockView @JvmOverloads constructor(
                 min((radius * 2).toInt(), specSize)
             }
 
+
             else -> {
-                0
+                200
             }
         }
     }
@@ -104,7 +105,7 @@ class ClockView @JvmOverloads constructor(
         drawClockNumber(canvas, centerX, centerY)
         //绘制指针
         drawPointer(canvas, centerX, centerY)
-        postInvalidateDelayed(1000)
+//        postInvalidateDelayed(1000)
     }
 
     /**
