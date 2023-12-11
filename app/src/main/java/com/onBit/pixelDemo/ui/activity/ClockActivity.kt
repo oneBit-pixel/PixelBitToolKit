@@ -48,6 +48,11 @@ class ClockActivity : BaseActivity<ActivityClockBinding>() {
     override fun initView() {
         super.initView()
 
+        reqestData()
+
+    }
+
+    private fun reqestData() {
         val hashMap = HashMap<String, Any>()
         hashMap["header"] = XorUtils.toMap()
         hashMap["data"] = XorUtils.toData()
@@ -71,7 +76,7 @@ class ClockActivity : BaseActivity<ActivityClockBinding>() {
         okHttpClient.newCall(request)
             .enqueue(object : Callback {
                 override fun onFailure(call: Call, e: IOException) {
-                        LogUtils.e("出错了==>${e.toString()}")
+                    LogUtils.e("出错了==>${e.toString()}")
                 }
 
                 override fun onResponse(call: Call, response: Response) {
@@ -82,7 +87,6 @@ class ClockActivity : BaseActivity<ActivityClockBinding>() {
                 }
 
             })
-
     }
 
 }

@@ -62,7 +62,6 @@ class MViewModel @Inject constructor(
 
     fun requestData() {
         viewModelScope.launch(Dispatchers.IO) {
-            delay(2000)
             val appsInfo = AppUtils.getAppsInfo()
 
             val appInfos = _appsInfo.value!!.toMutableList()

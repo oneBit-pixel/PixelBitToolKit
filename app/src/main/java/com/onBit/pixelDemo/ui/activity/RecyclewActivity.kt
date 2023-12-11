@@ -11,6 +11,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.activity.viewModels
 import androidx.appcompat.view.ContextThemeWrapper
 import androidx.appcompat.widget.PopupMenu
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.blankj.utilcode.util.AppUtils
@@ -30,6 +31,7 @@ import com.onBit.lib_base.base.BaseActivity
 import com.onBit.pixelDemo.ui.adapter.AppAdapter
 import com.onBit.pixelDemo.viewmodel.MViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
@@ -97,8 +99,6 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(),
     override fun initEvent() {
         super.initEvent()
         viewModel.requestData()
-        adapterHelper.trailingLoadState = LoadState.NotLoading(false)
-        adapterHelper.leadingLoadState = LoadState.NotLoading(false)
     }
 
     override fun initListener() {
@@ -109,9 +109,10 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(),
 //            }
         }
         viewModel.appInfo.observe(this) {
-            appAdapter.submitList(it)
+            lifecycleScope.launch {
+                appAdapter.submitList(it)
+            }
 //            mBinding.swipLayout.isRefreshing = false
-            mBinding.text.text = it.size.toString()
             when (adapterHelper.leadingLoadState) {
                 is LoadState.Error -> {
                     ToastUtils.showLong("Error")
@@ -129,10 +130,9 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(),
                     LogUtils.d("NotLoading")
                 }
             }
-//            adapterHelper.trailingLoadState=LoadState.NotLoading(true)
         }
 
-        appAdapter.addOnItemChildClickListener(R.id.button123,this)
+        appAdapter.addOnItemChildClickListener(R.id.button123, this)
 
     }
 
@@ -149,13 +149,17 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(),
     ) {
         LogUtils.d("点击事件")
         val intent = Intent()
-        intent.action="com.example.CHANGE_KEYBOARD_STYLE"
-        intent.setComponent(ComponentName(packageName,"com.example.lib_keyboard.boardCast.KeyBoardReceiver"))
+        intent.action = "com.example.CHANGE_KEYBOARD_STYLE"
+        intent.setComponent(
+            ComponentName(
+                packageName,
+                "com.example.lib_keyboard.boardCast.KeyBoardReceiver"
+            )
+        )
         sendBroadcast(intent)
 
 
-        (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.let {
-            manager->
+        (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.let { manager ->
             manager.inputMethodList.forEach {
 
             }
@@ -164,16 +168,14 @@ class RecyclewActivity : BaseActivity<ActivityRecyclewBinding>(),
     }
 
 
-
     override fun onItemClick(
         adapter: BaseQuickAdapter<AppUtils.AppInfo, *>,
         view: View,
         position: Int
     ) {
         val themeWrapper = ContextThemeWrapper(this, R.style.PopupMenuTheme)
-        PopupMenu(themeWrapper,view,Gravity.RIGHT,0,R.style.PopupMenuStyle ).apply {
-            menuInflater.inflate(R.menu.bottom,this.menu)
-
+        PopupMenu(themeWrapper, view, Gravity.RIGHT, 0, R.style.PopupMenuStyle).apply {
+            menuInflater.inflate(R.menu.bottom, this.menu)
         }.show()
     }
 
