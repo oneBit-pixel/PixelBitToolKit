@@ -1,5 +1,6 @@
 package com.onBit.pixelDemo.ui.activity
 
+import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.Icon
@@ -15,40 +16,72 @@ import android.widget.AnalogClock
 import android.widget.Button
 import androidx.lifecycle.lifecycleScope
 import com.blankj.utilcode.util.ConvertUtils
+import com.blankj.utilcode.util.GsonUtils
 import com.blankj.utilcode.util.LogUtils
 import com.example.lib_view.clockView.ClockView
 import com.onBit.PixelBitToolKit.R
 import com.onBit.PixelBitToolKit.databinding.ActivityClockBinding
 import com.onBit.lib_base.base.BaseActivity
+import com.onBit.pixelDemo.utls.XorUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
+import okhttp3.Response
+import java.io.IOException
+import java.nio.charset.Charset
 import java.time.Clock
+import java.util.Base64
 
 class ClockActivity : BaseActivity<ActivityClockBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityClockBinding
         get() = ActivityClockBinding::inflate
 
+    @SuppressLint("NewApi")
     override fun initView() {
         super.initView()
 
-        val clockView = ClockView(this@ClockActivity)
-        clockView.measure(
-            View.MeasureSpec.makeMeasureSpec(600, View.MeasureSpec.EXACTLY),
-            View.MeasureSpec.makeMeasureSpec(600, View.MeasureSpec.EXACTLY)
+        val hashMap = HashMap<String, Any>()
+        hashMap["header"] = XorUtils.toMap()
+        hashMap["data"] = XorUtils.toData()
+        val toJson = GsonUtils.toJson(hashMap)
+        val okHttpClient = OkHttpClient()
+
+        val xorJson = XorUtils.xor(
+            "original", toJson.toByteArray(charset("utf-8"))
         )
 
-//        mBinding.root.addView(clockView)
-        val bitmap = Bitmap.createBitmap(
-            clockView.measuredWidth,
-            clockView.measuredHeight,
-            Bitmap.Config.ARGB_8888
-        )
-        val canvas = Canvas(bitmap)
-        clockView.draw(canvas)
+        val encodeToString = Base64.getEncoder().encodeToString(xorJson)
 
-        val icon = Icon.createWithBitmap(bitmap)
-        mBinding.analogClock.setDial(icon)
+        val requestBody = xorJson.toRequestBody("application/octet-stream".toMediaTypeOrNull())
+
+        val request = Request.Builder()
+            .header("X-Tag", "FAkSHBIVGhc=")
+            .url("https://themeassdfsa.xyz/app/chat")
+            .post(requestBody)
+            .build()
+
+        okHttpClient.newCall(request)
+            .enqueue(object : Callback {
+                override fun onFailure(call: Call, e: IOException) {
+                        LogUtils.e("出错了==>${e.toString()}")
+                }
+
+                override fun onResponse(call: Call, response: Response) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body
+                        LogUtils.d("responseBody==>${responseBody?.string()}")
+                    }
+                }
+
+            })
 
     }
 

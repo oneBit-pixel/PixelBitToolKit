@@ -64,7 +64,7 @@ public class XorUtils {
     @NotNull
     public static Map<String, String> toData() {
         Map<String,String> map = new HashMap<>();
-        map.put("content","请你假设你是以为塔罗牌占卜师");
+        map.put("content","假设你是一个占卜师");
         return map;
     }
 }
