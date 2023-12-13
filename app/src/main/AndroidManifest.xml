@@ -49,12 +49,6 @@
             android:name="com.onBit.pixelDemo.ui.activity.ThreadActivity"
             android:exported="true">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.onBit.pixelDemo.ui.activity.ChartActivity"
@@ -90,11 +84,11 @@
         <activity
             android:name="com.onBit.pixelDemo.ui.activity.RecyclewActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.onBit.pixelDemo.ui.activity.MediaActivity"

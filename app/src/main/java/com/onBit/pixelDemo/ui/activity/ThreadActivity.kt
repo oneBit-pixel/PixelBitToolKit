@@ -3,6 +3,9 @@ package com.onBit.pixelDemo.ui.activity
 import android.util.Log
 import android.view.LayoutInflater
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.PagingConfig
+import androidx.recyclerview.widget.DiffUtil
+import androidx.viewpager.widget.PagerAdapter
 import com.blankj.utilcode.util.LogUtils
 import com.onBit.PixelBitToolKit.databinding.ActivityThreadBinding
 import com.onBit.lib_base.base.BaseActivity
@@ -76,6 +79,8 @@ class ThreadActivity : BaseActivity<ActivityThreadBinding>() {
             LogUtils.d("执行完毕==>${list}")
 
         }
+
+
 
     }
 
