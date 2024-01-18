@@ -19,8 +19,8 @@ import com.onBit.lib_base.R
  **/
 
 abstract class BaseDialog<VB : ViewBinding>(
-    private val context: Context
-) :AlertDialog(context, R.style.RoundDialogTheme), DefaultLifecycleObserver{
+    private val context: Context,themeResId:Int=R.style.RoundDialogTheme
+) :AlertDialog(context, themeResId), DefaultLifecycleObserver{
 
     abstract val bindingInflater: (LayoutInflater) -> VB
 
@@ -49,7 +49,6 @@ abstract class BaseDialog<VB : ViewBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super<AlertDialog>.onCreate(savedInstanceState)
         setContentView(mBinding.root)
-
     }
 
     override fun cancel() {

@@ -1,22 +1,26 @@
 android {
-    compileSdk 34
+    compileSdk libs.versions.compileSdk.get().toInteger()
     defaultConfig {
-        minSdk 21
-        targetSdk 34
+        minSdk libs.versions.minSdk.get().toInteger()
+        targetSdk libs.versions.targetSdk.get().toInteger()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
-    buildTypes {
-        debug {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-        release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
+//    buildTypes {
+//        debug {
+//            //启用资源压缩
+//            shrinkResources true
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//        release {
+//            //启用资源压缩
+//            shrinkResources true
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
     buildFeatures {
         buildConfig = true
         viewBinding = true
@@ -39,96 +43,108 @@ apply {
     plugin("com.google.devtools.ksp")
 }
 
-//hilt
 dependencies {
-    implementation "com.google.dagger:hilt-android:2.49"
-    kapt 'com.google.dagger:hilt-compiler:2.49'
+    //圆圈指示器
+    implementation libs.circleindicator
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
     // For instrumentation tests
-    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.49'
-    kaptAndroidTest 'com.google.dagger:hilt-compiler:2.49'
+    androidTestImplementation libs.hilt.android.testing
+    kaptAndroidTest libs.hilt.compiler
     // For local unit tests
-    testImplementation 'com.google.dagger:hilt-android-testing:2.49'
-    kaptTest 'com.google.dagger:hilt-compiler:2.49'
+    testImplementation libs.hilt.android.testing
+    kaptTest libs.hilt.compiler
 }
 
 //room
 dependencies {
-    implementation "androidx.room:room-runtime:2.6.1"
+    implementation libs.androidx.room.runtime
     //java注解
 //    annotationProcessor "androidx.room:room-compiler:2.5.0"
     //kotlin 注解
-    ksp "androidx.room:room-compiler:2.6.1"
+    implementation libs.androidx.room.ktx
+    ksp libs.androidx.room.compiler
     // optional - Test helpers
-    testImplementation "androidx.room:room-testing:2.6.1"
+    testImplementation libs.androidx.room.testing
     // optional - Paging 3 Integration
     //数据分页
-    implementation "androidx.room:room-paging:2.6.1"
+    implementation libs.androidx.room.paging
 }
 
 //navigation
 dependencies {
     //navigation  Kotlin
-    implementation "androidx.navigation:navigation-fragment-ktx:2.7.5"
-    implementation "androidx.navigation:navigation-ui-ktx:2.7.5"
+    // Kotlin
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+    // Feature module Support
+    implementation libs.androidx.navigation.dynamic.features.fragment
+    // Testing Navigation
+    androidTestImplementation libs.androidx.navigation.testing
+
+    // Java language implementation
+//    implementation "androidx.navigation:navigation-fragment:2.7.5"
+//    implementation "androidx.navigation:navigation-ui:2.7.5"
+
+    // Jetpack Compose Integration
+//    implementation "androidx.navigation:navigation-compose:2.7.5"
 }
 
-//ui 第三方框架
+//tools 第三方框架
 dependencies {
+    //MPAndroidChart 图标库
+//    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     //adapter
-    implementation "io.github.cymchad:BaseRecyclerViewAdapterHelper4:4.1.2"
-    implementation("com.github.xuexiangjys:XUI:1.2.1")
+    implementation libs.baserecycler
+//    implementation(libs.XUI)
+    implementation libs.xui
     //表示将第三方库迁移到 AndroidX
     //android.enableJetifier = true
     // Shape 框架：https://github.com/getActivity/ShapeView
-    implementation("com.github.getActivity:ShapeView:9.0")
+    implementation(libs.shapeView)
     //lottie
-    implementation 'com.airbnb.android:lottie:6.1.0'
+    implementation libs.lottie
     //glide
-    implementation("com.github.bumptech.glide:glide:4.16.0")
-
-    //MPAndroidChart 图标库
-    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
-    //exoplayer
-    implementation 'com.google.android.exoplayer:exoplayer-core:2.19.1'
-    implementation 'com.google.android.exoplayer:exoplayer-core:2.19.1'
-    implementation 'com.google.android.exoplayer:exoplayer-dash:2.19.1'
-    implementation 'com.google.android.exoplayer:exoplayer-ui:2.19.1'
+    implementation(libs.glide)
 }
 
 //tools
 dependencies {
+    implementation libs.androidx.lifecycle.livedata.ktx
     //tools
     //activity 快速创建ViewModel
     dependencies {
         // Java language implementation
 //        implementation "androidx.activity:activity:1.6.1"
         // Kotlin
-        implementation "androidx.activity:activity-ktx:1.8.1"
-        implementation 'androidx.fragment:fragment-ktx:1.6.2'
+        implementation libs.androidx.activity.ktx
+        implementation libs.androidx.fragment.ktx
     }
     //retrofit
     dependencies {
-        implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+        implementation libs.square.okhttp
+        implementation libs.retrofit
         //gson转换器
-        implementation 'com.google.code.gson:gson:2.10.1'
-        implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+        implementation libs.gson
+        implementation libs.converter.gson
     }
-    //okhttp
-    implementation("com.squareup.okhttp3:okhttp:4.11.0")
     // 日志调试框架：https://github.com/getActivity/Logcat
     //android.enableJetifier = true
 //    debugImplementation 'com.github.getActivity:Logcat:11.8'
     //utilcodex
-    implementation("com.blankj:utilcodex:1.31.1")
+    implementation(libs.utilcodex)
 }
 
 //init
 dependencies {
-    implementation 'androidx.core:core-ktx:1.12.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation libs.auto.value.annotations
+    annotationProcessor libs.auto.value
+
+    implementation libs.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.android.view.material
+    implementation libs.androidx.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
 }
