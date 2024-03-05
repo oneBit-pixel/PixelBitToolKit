@@ -80,7 +80,6 @@ dependencies {
 
     // 日志工具
     api (libs.utilcodex)
-
     implementation libs.core.ktx
     implementation libs.androidx.appcompat
     implementation libs.android.view.material

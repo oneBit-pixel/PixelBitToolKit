@@ -11,9 +11,15 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
+import androidx.core.os.bundleOf
+import com.google.firebase.Firebase
+import com.google.firebase.analytics.analytics
+import com.onBit.PixelBitToolKit.BuildConfig
 import com.onBit.PixelBitToolKit.databinding.ActivityMainBinding
 import com.onBit.lib_base.base.BaseActivity
 import com.onBit.pixelDemo.ui.viewGroup.TestFrameLayout
+import com.v2ray.ang.service.V2RayServiceManager
+import java.lang.RuntimeException
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding
@@ -32,7 +38,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun initView() {
         super.initView()
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -52,10 +57,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun initListener() {
         super.initListener()
-
+        Firebase.analytics.logEvent("MainActivity",bundleOf().apply {
+            putString("testView","View")
+        })
         mBinding.apply {
             dialogBtn.setOnClickListener {
-                finish()
+                Firebase.analytics.logEvent("MainActivity",bundleOf().apply {
+                    putInt("testInt",1)
+                })
+
             }
         }
 

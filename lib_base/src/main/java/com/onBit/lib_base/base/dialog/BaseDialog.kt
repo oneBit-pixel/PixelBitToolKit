@@ -1,5 +1,6 @@
 package com.onBit.lib_base.base.dialog
 
+import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,7 +21,7 @@ import com.onBit.lib_base.R
 
 abstract class BaseDialog<VB : ViewBinding>(
     private val context: Context,themeResId:Int=R.style.RoundDialogTheme
-) :AlertDialog(context, themeResId), DefaultLifecycleObserver{
+) :Dialog(context, themeResId), DefaultLifecycleObserver{
 
     abstract val bindingInflater: (LayoutInflater) -> VB
 
@@ -47,7 +48,7 @@ abstract class BaseDialog<VB : ViewBinding>(
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super<AlertDialog>.onCreate(savedInstanceState)
+        super<Dialog>.onCreate(savedInstanceState)
         setContentView(mBinding.root)
     }
 

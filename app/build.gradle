@@ -5,6 +5,9 @@ plugins {
     id 'com.google.devtools.ksp'
     id 'com.google.dagger.hilt.android'
     id 'kotlin-kapt'
+
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 apply {
@@ -14,10 +17,6 @@ apply {
 android {
     namespace 'com.onBit.PixelBitToolKit'
     compileSdk 34
-
-    buildFeatures {
-        viewBinding = true
-    }
 
     defaultConfig {
         applicationId "com.onBit.PixelBitToolKit"
@@ -49,6 +48,14 @@ android {
 }
 
 dependencies {
+    implementation project(':v2ray')
+    //firebase
+    dependencies {
+        implementation platform('com.google.firebase:firebase-bom:32.7.2')
+        implementation 'com.google.firebase:firebase-analytics'
+        implementation("com.google.firebase:firebase-crashlytics")
+    }
+
     implementation project(path: ':MPChartLib')
     //ui
     dependencies {

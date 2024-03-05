@@ -26,9 +26,7 @@ class ThreadActivity : BaseActivity<ActivityThreadBinding>() {
     override fun initView() {
         super.initView()
 
-        lifecycleScope.launch {
 
-        }
     }
 
     suspend fun log1(){
