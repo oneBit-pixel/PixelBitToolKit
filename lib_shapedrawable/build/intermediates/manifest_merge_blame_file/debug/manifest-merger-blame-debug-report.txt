@@ -3,6 +3,6 @@
 3    package="com.onepixel.shapedrawable" >
 4
 5    <uses-sdk android:minSdkVersion="16" />
-5-->D:\Android\Android Project\PixelBitToolKit\lib_shapedrawable\src\main\AndroidManifest.xml
+5-->D:\work\Android\Android Project\PixelBitToolKit\lib_shapedrawable\src\main\AndroidManifest.xml
 6
 7</manifest>

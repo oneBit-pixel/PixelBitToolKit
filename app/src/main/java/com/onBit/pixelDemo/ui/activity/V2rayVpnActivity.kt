@@ -40,15 +40,15 @@ class V2rayVpnActivity : BaseActivity<ActivityV2rayVpnBinding>() {
     override fun initListener() {
         super.initListener()
         mBinding.button.setOnClickListener {
-            importClipboard()
-            mainViewModel.serverList.forEach {
-                guid->
-            }
-//            startV2ray()
+            val guid = mainViewModel.serverList[4]
+            mainStorage?.encode(MmkvManager.KEY_SELECTED_SERVER, guid)
+            val serverConfig = MmkvManager.decodeServerConfig(guid)
+            LogUtils.d("serverConfig==>${serverConfig}")
+            startV2ray1()
         }
     }
 
-    private fun startV2ray() {
+    private fun startV2ray1() {
         if (mainViewModel.isRunning.value == true) {
             Utils.stopVService(this)
         } else if (settingsStorage?.decodeString(AppConfig.PREF_MODE) ?: "VPN" == "VPN") {
@@ -64,7 +64,6 @@ class V2rayVpnActivity : BaseActivity<ActivityV2rayVpnBinding>() {
     }
 
     fun startV2Ray() {
-        mainStorage?.encode(MmkvManager.KEY_SELECTED_SERVER,"")
 //        toast(R.string.toast_services_start)
         V2RayServiceManager.startV2Ray(this)
     }
