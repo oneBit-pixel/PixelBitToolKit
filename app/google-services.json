@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "307262577346",
+    "project_id": "subtle-isotope-415210",
+    "storage_bucket": "subtle-isotope-415210.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307262577346:android:777c4f556578d4e088f95b",
+        "android_client_info": {
+          "package_name": "com.onBit.PixelBitToolKit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtK5RRx9juNVUdtzuPvYeyuGLWp83we9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
