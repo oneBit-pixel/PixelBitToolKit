@@ -11,6 +11,36 @@ public class VideoContent {
     private String album;
     private String artist;
 
+    private long dateTaken;
+
+    private long dateAdd;
+
+    private long dateModify;
+
+    public long getDateModify() {
+        return dateModify;
+    }
+
+    public void setDateModify(long dateModify) {
+        this.dateModify = dateModify;
+    }
+
+    public long getDateAdd() {
+        return dateAdd;
+    }
+
+    public void setDateAdd(long dateAdd) {
+        this.dateAdd = dateAdd;
+    }
+
+    public long getDateTaken() {
+        return dateTaken;
+    }
+
+    public void setDateTaken(long dateTaken) {
+        this.dateTaken = dateTaken;
+    }
+
     public VideoContent(){ }
 
     public long getVideoId() {

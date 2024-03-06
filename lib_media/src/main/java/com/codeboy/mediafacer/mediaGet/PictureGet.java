@@ -39,7 +39,10 @@ public class PictureGet {
             MediaStore.Images.Media.BUCKET_DISPLAY_NAME,
             MediaStore.Images.Media.BUCKET_ID,
             MediaStore.Images.Media._ID,
-            MediaStore.Images.Media.DATE_TAKEN};
+            MediaStore.Images.Media.DATE_TAKEN,
+            MediaStore.Images.Media.DATE_ADDED,
+            MediaStore.Images.Media.DATE_MODIFIED
+    };
 
     /**
      * Returns an ArrayList of {@link PictureContent}
@@ -48,7 +51,7 @@ public class PictureGet {
     public ArrayList<PictureContent> getAllPictureContents(Uri contentLocation) {
         ArrayList<PictureContent> images = new ArrayList<>();
         cursor = pictureContext.getContentResolver().query(contentLocation, Projections, null, null,
-                "LOWER (" + MediaStore.Images.Media.DATE_TAKEN + ") DESC");
+                "LOWER (" + MediaStore.Images.Media.DATE_MODIFIED + ") DESC");
         try {
             cursor.moveToFirst();
             do {
@@ -59,6 +62,12 @@ public class PictureGet {
                 pictureContent.setPicturePath(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)));
 
                 pictureContent.setPictureSize(cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.SIZE)));
+
+                pictureContent.setPictureDateTaken(cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATE_TAKEN)));
+
+                pictureContent.setPictureDateAdd(cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATE_ADDED)));
+
+                pictureContent.setPictureDateModify(cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATE_MODIFIED)) * 1000L);
 
                 int id = cursor.getInt(cursor.getColumnIndexOrThrow(MediaStore.Images.Media._ID));
                 pictureContent.setPictureId(id);

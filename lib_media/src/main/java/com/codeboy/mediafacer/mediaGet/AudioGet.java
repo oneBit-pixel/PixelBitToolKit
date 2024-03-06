@@ -50,7 +50,9 @@ public class AudioGet {
             MediaStore.Audio.Media.DATA,
             MediaStore.Audio.Media.DURATION,
             MediaStore.Audio.Media.BUCKET_ID,
-
+            MediaStore.Audio.Media.DATE_ADDED,
+            MediaStore.Audio.Media.DATE_TAKEN,
+            MediaStore.Audio.Media.DATE_MODIFIED,
     };
 
     /**Returns an Arraylist of {@link AudioContent} */
@@ -62,7 +64,7 @@ public class AudioGet {
                 ,Projections
                 ,Selection,
                 null,
-                "LOWER ("+MediaStore.Audio.Media.TITLE + ") ASC");//"LOWER ("+MediaStore.Audio.Media.TITLE + ") ASC"
+                "LOWER ("+MediaStore.Audio.Media.DATE_MODIFIED + ") ASC");//"LOWER ("+MediaStore.Audio.Media.TITLE + ") ASC"
         if (cursor != null) {
             if (cursor.moveToFirst()) {
                 do {
@@ -81,9 +83,15 @@ public class AudioGet {
                     audioContent.setFilePath(path);
                     audioContent.setMusicSize(cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.SIZE)));
 
+                    audioContent.setDateAdd(cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATE_ADDED)));
+
                     audioContent.setAlbum(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM)));
 
                     audioContent.setDuration(cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION)));
+
+                    audioContent.setDateTaken(cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATE_TAKEN)));
+
+                    audioContent.setDateModify(cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATE_MODIFIED))*1000);
 
                     long album_id = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ID));
                     Uri sArtworkUri = Uri.parse("content://media/external/audio/albumart");

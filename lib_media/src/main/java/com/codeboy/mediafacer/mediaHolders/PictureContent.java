@@ -7,6 +7,35 @@ public class PictureContent {
     private  Long pictureSize;
     private  String photoUri;
     private  int pictureId;
+    private long pictureDateTaken;
+
+    private long pictureDateAdd;
+
+    private long pictureDateModify;
+
+    public long getPictureDateModify() {
+        return pictureDateModify;
+    }
+
+    public void setPictureDateModify(long pictureDateModify) {
+        this.pictureDateModify = pictureDateModify;
+    }
+
+    public long getPictureDateAdd() {
+        return pictureDateAdd;
+    }
+
+    public void setPictureDateAdd(long pictureDateAdd) {
+        this.pictureDateAdd = pictureDateAdd;
+    }
+
+    public long getPictureDateTaken() {
+        return pictureDateTaken;
+    }
+
+    public void setPictureDateTaken(long pictureDateTaken) {
+        this.pictureDateTaken = pictureDateTaken;
+    }
 
     public PictureContent() { }
 

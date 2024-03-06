@@ -2,6 +2,8 @@ package com.codeboy.mediafacer.mediaHolders;
 
 import android.net.Uri;
 
+import java.lang.ref.PhantomReference;
+
 public class AudioContent {
 
 
@@ -17,6 +19,35 @@ public class AudioContent {
     private long duration;
     private long musicId;
     private String musicUri;
+    private long dateAdd;
+
+    private long dateTaken;
+
+    private long dateModify;
+
+    public long getDateModify() {
+        return dateModify;
+    }
+
+    public void setDateModify(long dateModify) {
+        this.dateModify = dateModify;
+    }
+
+    public long getDateTaken() {
+        return dateTaken;
+    }
+
+    public void setDateTaken(long dateTaken) {
+        this.dateTaken = dateTaken;
+    }
+
+    public long getDateAdd() {
+        return dateAdd;
+    }
+
+    public void setDateAdd(long dateAdd) {
+        this.dateAdd = dateAdd;
+    }
 
     public AudioContent(){ }
 
