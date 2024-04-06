@@ -45,4 +45,8 @@
         <attr name="cd_colors" format="reference" />
         <attr name="android:src" format="reference" />
     </declare-styleable>
+
+    <declare-styleable name="StreamShapeView">
+        <attr name="stream_colors" format="reference"/>
+    </declare-styleable>
 </resources>

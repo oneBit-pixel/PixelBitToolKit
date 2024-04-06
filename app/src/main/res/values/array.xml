@@ -7,4 +7,15 @@
         <item>这是4</item>
     </string-array>
 
+    <string-array name="example">
+        <item>#FEF9F6</item>
+        <item>#F5C6A8</item>
+        <item>#D10A0A</item>
+        <item>#FEF9F6</item>
+        <item>#F5C6A8</item>
+        <item>#FF000000</item>
+        <item>#FEF9F6</item>
+        <item>#3E99D2</item>
+        <item>#FBDECC</item>
+    </string-array>
 </resources>
