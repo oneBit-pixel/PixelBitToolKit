@@ -8,6 +8,7 @@ plugins {
 
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+
 }
 
 apply {
@@ -48,6 +49,15 @@ android {
 }
 
 dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+
+    implementation 'org.ow2.asm:asm:9.2'
+    implementation 'org.ow2.asm:asm-commons:9.2'
+
+
+    implementation 'org.aspectj:aspectjrt:1.9.6'
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
     implementation project(':v2ray')
     //firebase
     dependencies {
@@ -62,10 +72,10 @@ dependencies {
         //MPAndroidChart 图标库
 //        implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
-        implementation ("com.github.bumptech.glide:glide:4.16.0")
+        implementation("com.github.bumptech.glide:glide:4.16.0")
         dependencies {
             implementation "io.github.cymchad:BaseRecyclerViewAdapterHelper4:4.1.1"
-            implementation  'io.github.scwang90:refresh-layout-kernel:2.1.0'      //核心必须依赖
+            implementation 'io.github.scwang90:refresh-layout-kernel:2.1.0'      //核心必须依赖
         }
         dependencies {
             implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'

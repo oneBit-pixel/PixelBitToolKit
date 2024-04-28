@@ -52,6 +52,7 @@ mockito-core = "3.9.0"
 robolectric = "4.10.2"
 utilcodex = "1.31.1"
 xui = "1.2.1"
+org-jetbrains-kotlin-jvm = "1.9.21"
 
 [libraries]
 android-view-material = { group = "com.google.android.material", name = "material", version.ref = "android-view-material" }
@@ -125,3 +126,4 @@ android-hilt = { id = "com.google.dagger.hilt.android", version.ref = "android-h
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-kapt = {id = "org.jetbrains.kotlin.kapt",version.ref="kotlin-kapt"}
 kotlin-ksp = {id = "com.google.devtools.ksp",version.ref="kotlin-ksp"}
+org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }

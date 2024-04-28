@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.onepixel.plugin",
+    "module": "plugin",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "plugin-1.0.0.jar",
+          "url": "plugin-1.0.0.jar",
+          "size": 1980,
+          "sha512": "9f1905c15de35afa6e840a81346d418ae0e69382344e65e74ff8c9c3d813e31922a28d52088dc0b8aaa9a6cf0d654b9ac609fd647726ef91e3efda8407a6a2d8",
+          "sha256": "0d34e7211a6fe015ccb99821da2b71de6cfe7ce04595fe72ea92ceade8f58dc7",
+          "sha1": "63507fc397937bcf338ed1a2983b497e34438fdd",
+          "md5": "46e6b0d34e3633f0a4f07eb069c05011"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "plugin-1.0.0.jar",
+          "url": "plugin-1.0.0.jar",
+          "size": 1980,
+          "sha512": "9f1905c15de35afa6e840a81346d418ae0e69382344e65e74ff8c9c3d813e31922a28d52088dc0b8aaa9a6cf0d654b9ac609fd647726ef91e3efda8407a6a2d8",
+          "sha256": "0d34e7211a6fe015ccb99821da2b71de6cfe7ce04595fe72ea92ceade8f58dc7",
+          "sha1": "63507fc397937bcf338ed1a2983b497e34438fdd",
+          "md5": "46e6b0d34e3633f0a4f07eb069c05011"
+        }
+      ]
+    }
+  ]
+}
