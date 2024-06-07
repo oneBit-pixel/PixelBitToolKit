@@ -1,0 +1,5 @@
+com.masterfile.asmdemo.test.AsmDemo-androidTest-0 D:\Android\Android Project\PixelBitToolKit\AsmDemo\build\generated\res\resValues\androidTest\debug
+com.masterfile.asmdemo.test.AsmDemo-mergeDebugAndroidTestResources-1 D:\Android\Android Project\PixelBitToolKit\AsmDemo\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.masterfile.asmdemo.test.AsmDemo-mergeDebugAndroidTestResources-2 D:\Android\Android Project\PixelBitToolKit\AsmDemo\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.masterfile.asmdemo.test.AsmDemo-merged_res-3 D:\Android\Android Project\PixelBitToolKit\AsmDemo\build\intermediates\merged_res\debugAndroidTest
+com.masterfile.asmdemo.test.AsmDemo-packaged_res-4 D:\Android\Android Project\PixelBitToolKit\AsmDemo\build\intermediates\packaged_res\debug

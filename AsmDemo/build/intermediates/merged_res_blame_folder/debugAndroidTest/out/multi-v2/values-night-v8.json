@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.masterfile.asmdemo.test.AsmDemo-mergeDebugAndroidTestResources-1:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "D:\\Android\\Android Project\\PixelBitToolKit\\AsmDemo\\build\\intermediates\\packaged_res\\debug\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "631"
+                    }
+                }
+            ]
+        }
+    ]
+}

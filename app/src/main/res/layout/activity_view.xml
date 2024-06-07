@@ -3,29 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#141B5E"
     android:layout_height="match_parent">
 
-    <com.example.lib_view.streamView.StreamShapeView
-        android:layout_width="@dimen/dp_300"
-        android:layout_height="@dimen/dp_300"
-        app:shape_radius="@dimen/dp_20"
-        app:shape_solidColor="@color/red"
-        app:stream_colors="@array/example"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
 
-        <com.hjq.shape.view.ShapeTextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="123"
-            android:textSize="@dimen/sp_30"
-            android:textColor="@color/black"
-            android:gravity="center"
-            />
-
-    </com.example.lib_view.streamView.StreamShapeView>
 </androidx.constraintlayout.widget.ConstraintLayout>
