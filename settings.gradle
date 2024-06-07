@@ -3,6 +3,9 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven {
+            url = uri("./plugin")
+        }
     }
 }
 dependencyResolutionManagement {
@@ -31,3 +34,4 @@ include ':lib_edgeLight'
 include ':lib_keyboard'
 include ':MPChartLib'
 include ':v2ray'
+include ':plugin'

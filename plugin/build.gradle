@@ -1,0 +1,29 @@
+plugins {
+    id("java-gradle-plugin")
+    alias(libs.plugins.org.jetbrains.kotlin.jvm)
+    id("maven-publish")
+}
+
+gradlePlugin {
+    plugins {
+        create("onepixelPlugin") {
+            group = "com.onepixel.plugin"
+            version = "1.0.0"
+            id = "com.onepixel.plugin" //插件的唯一标识，使用插件的时候就是这个id
+            implementationClass = "com.onepixel.plugin.MyClass" //PageAnalysisPlugin的全类名 取代resources声明
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            url = uri("../plugin") //本地maven地址
+        }
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
