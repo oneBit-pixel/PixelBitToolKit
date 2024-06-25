@@ -12,6 +12,40 @@ import android.provider.Settings
  *   <uses-permission
  *         android:name="android.permission.PACKAGE_USAGE_STATS"
  *         tools:ignore="ProtectedPermissions" />
+ *
+ *                 if (UsageAccessPermissionUtils.hasUsageStatsPermission(this)) {
+ *             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+ *                 val calendar = Calendar.getInstance()
+ *                 val endTime = calendar.timeInMillis
+ *                 calendar.add(Calendar.WEEK_OF_MONTH, -1)
+ *                 val startTime = calendar.timeInMillis
+ *                 val usageStatsManager =
+ *                     getSystemService(Context.USAGE_STATS_SERVICE) as UsageStatsManager
+ *                 //INTERVAL_BEST 精准事件查询
+ *                 usageStatsManager.queryUsageStats(
+ *                     UsageStatsManager.INTERVAL_BEST,
+ *                     startTime,
+ *                     endTime
+ *                 ).let {
+ *                     it.forEach {
+ *                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+ *                             val hour = TimeUnit.MILLISECONDS.toHours(it.totalTimeInForeground)
+ *                             val minutes =
+ *                                 TimeUnit.MILLISECONDS.toMinutes(it.totalTimeInForeground) % 60
+ *                             val seconds =
+ *                                 TimeUnit.MILLISECONDS.toSeconds(it.totalTimeInForeground) % 60
+ *
+ *                             if (it.lastTimeUsed >= startTime) {
+ *
+ * //                                LogUtils.d("appName==>$appName userTime==>${hour}:${minutes}:${seconds}")
+ *                             }
+ *                         }
+ *                     }
+ *                 }
+ *             }
+ *         } else {
+ *             UsageAccessPermissionUtils.requestUsageStatsPermission(this)
+ *         }
  */
 object UsageAccessPermissionUtils {
     // Check if permission is granted

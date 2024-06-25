@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!--app使用情况 详情权限-->
-    <uses-permission
-        android:name="android.permission.PACKAGE_USAGE_STATS"
-        tools:ignore="ProtectedPermissions" />
+<!--    <uses-permission-->
+<!--        android:name="android.permission.PACKAGE_USAGE_STATS"-->
+<!--        tools:ignore="ProtectedPermissions" />-->
+
 
     <!--网络权限-->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -37,6 +38,49 @@
     <uses-feature
         android:name="android.software.live_wallpaper"
         android:required="true" />
+
+    <queries>
+        <package android:name="com.android.vending"/>
+        <package android:name="com.huawei.appmarket"/>
+        <package android:name="com.samsung.android.lool"/>
+        <package android:name="com.samsung.android.sm"/>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.GET_CONTENT"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND"/>
+        </intent>
+        <intent>
+            <action android:name="com.applovin.am.intent.action.APPHUB_SERVICE"/>
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="https"/>
+        </intent>
+        <package android:name="com.facebook.katana"/>
+        <intent>
+            <action android:name="com.android.vending.billing.InAppBillingService.BIND"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent>
+        <package android:name="com.instagram.android"/>
+        <intent>
+            <action android:name="com.digitalturbine.ignite.cl.IgniteRemoteService"/>
+        </intent>
+    </queries>
+
 
     <application
 
