@@ -53,6 +53,7 @@ robolectric = "4.10.2"
 utilcodex = "1.31.1"
 xui = "1.2.1"
 org-jetbrains-kotlin-jvm = "1.9.21"
+androidxComposeBom="2024.05.00"
 
 [libraries]
 material = { group = "com.google.android.material", name = "material", version.ref = "android-view-material" }
@@ -110,6 +111,10 @@ rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
 shapeView = { group = "com.github.getActivity",name="ShapeView",version.ref = "shapeView" }
 square-okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "square-okhttp" }
 
+#compose
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-material3 = { module = "androidx.compose.material3:material3" }
 
 # Test
 androidx-test-core = { group = "androidx.test", name = "core", version.ref = "androidx-test-core" }
